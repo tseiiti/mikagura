@@ -279,7 +279,7 @@ class Config {
     if (aux > 2) {
       this.property('size-base', `${ aux }px`)
       this.set('tamanho', aux)
-      qs('.tamanho').innerHTML = `${ aux }px` // precisa de classe tamanho
+      qs('.font_size').innerHTML = aux // precisa de classe tamanho
     }
   }
 
@@ -288,7 +288,7 @@ class Config {
     if (aux > 0.8) {
       this.property('size-width-multiply', aux.toFixed(2))
       this.set('espaco', aux)
-      qs('.espaco').innerHTML = `${ aux.toFixed(2) }x` // precisa de classe espaco
+      qs('.space_width').innerHTML = aux.toFixed(2) // precisa de classe space_width
     }
   }
 
@@ -296,14 +296,14 @@ class Config {
   bpm(aux) {
     if (aux > 0) {
       this.set('bpm', aux)
-      qs('.bpm').value = aux // precisa de classe bpm
+      qs('.bpm_time').value = aux // precisa de classe bpm
     }
   }
 
   // define animação
   anima(aux) {
     this.set('anima', aux)
-    qs('.anima').checked = aux
+    qs('.animation').checked = aux
     this.fill = new Fill(this)
   }
 
@@ -314,7 +314,7 @@ class Config {
       let qtd_s = this.get('qtd_s')
       qtd_s[i] = aux
       this.set('qtd_s', qtd_s)
-      qs(`.qs_${i}`).value = aux // precisa de classes qs_*
+      qs(`.suwari_${i}`).value = aux // precisa de classes suwari_*
     }
   }
 
@@ -323,11 +323,11 @@ class Config {
     let html = ''
     for (let chave of INSTRUMENTS) {
       html += `
-        <div class="form-check mx-1 my-1">
-          <input type="checkbox" class="form-check-input instrumento" name="${ chave }" 
+        <li class="dropdown-item form-check ps-4">
+          <input type="checkbox" class="form-check-input instrument" name="${ chave }" 
             id="check_${ chave }" onchange="conf.instrument(this)">
           <label class="form-check-label" for="check_${ chave }">${ chave }</label>
-        </div>`
+        </li>`
     }
     return html
   }
@@ -350,7 +350,7 @@ class Config {
   instrument(c) {
     this.instrument_icon(c.name, c.checked)
     let count = 0
-    qsa('.instrumento').forEach(e => { if (e.checked) count += 1 }) // depende de .instrumento
+    qsa('.instrument').forEach(e => { if (e.checked) count += 1 }) // depende de .instrument
     qs('#chk_all').checked  = count == INSTRUMENTS.length // depende de #chk_all
     qs('#chk_none').checked = count == 0 // depende de #ch_nenhum
   }
@@ -358,7 +358,7 @@ class Config {
   // execução de todos instrument_icon
   instrument_all() {
     let c = qs('[name="chk_all"]')
-    qsa('.instrumento').forEach(e => {
+    qsa('.instrument').forEach(e => {
       e.checked = c.checked
       this.instrument_icon(e.name, e.checked)
     })
