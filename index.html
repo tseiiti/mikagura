@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <title>Mikagura Uta</title>
   <link rel="shortcut icon" href="favicon.ico">
@@ -17,28 +18,23 @@
 <body>
   <nav class="navbar navbar-expand-md p-1" style="background-color: #69318e;" data-bs-theme="dark">
     <div class="container-lg">
-      <a class="navbar-brand p-0" href="#"><strong></strong>Mikagura Uta</a>
-      <button class="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbar_content" 
-          aria-controls="navbar_content" 
-          style="padding: 2px 6px;">
+      <a class="navbar-brand p-0"><strong>Mikagura Uta</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_content" 
+          aria-controls="navbar_content" style="padding: 2px 6px;">
         <span class="navbar-toggler-icon" style="height: 24px; width: 24px;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar_content">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown my-2 my-md-0">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Hinos
             </a>
-            <div class="dropdown-menu">
-              <ul class="list-group list-group-flush px-1 text-nowrap text-capitalize hinos">
-              </ul>
-            </div>
+            <ul class="dropdown-menu text-nowrap text-capitalize menu-hymn">
+              <li class="mx-2"></li>
+            </ul>
           </li>
           <li class="nav-item dropdown mb-2 mb-md-0">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Instrumentos
             </a>
             <div class="dropdown-menu px-3 text-capitalize instrumentos">
@@ -54,7 +50,7 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ajustes
             </a>
             <ul class="dropdown-menu px-3 px-md-2">

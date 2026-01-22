@@ -30,11 +30,10 @@ class Hino {
     for (let chave in HYMNS) {
       let aux = chave == 'hino_' + this.id ? 'active' : ''
       html += `
-        <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
+        <a class="list-group-item list-group-item-action ${ aux }"
           href="javascript:conf.set_hymn('${ chave.replace('hino_', '') }')">
             ${ HYMNS[chave].titulo }
-        </a>
-        <hr class="dropdown-divider m-0">`
+        </a>`
     }
     return html
   }
@@ -230,7 +229,7 @@ class Config {
     if (id != null) this.control.id = id
     this.hino = new Hino(this.control.id, this.control.tamanho, this.control.espaco)
 
-    qs('.menu-hymn li').innerHTML = this.hino.get_links()
+    qs('.hinos').innerHTML = this.hino.get_links()
     qs('main').innerHTML = this.hino.get_hymn_html()
     qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hino.dado.titulo }`
 
