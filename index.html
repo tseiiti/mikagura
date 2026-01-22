@@ -25,30 +25,36 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar_content">
         <ul class="navbar-nav me-auto">
+
           <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Hinos
             </a>
-            <ul class="dropdown-menu text-nowrap text-capitalize menu-hymn">
+            <ul class="dropdown-menu text-nowrap text-capitalize menu-hymns">
               <li class="mx-2"></li>
             </ul>
           </li>
-          <li class="nav-item dropdown mb-2 mb-md-0">
+
+          <li class="nav-item dropdown mb-2 mb-md-0 open-on-hover">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Instrumentos
             </a>
-            <div class="dropdown-menu px-3 text-capitalize instrumentos">
+            <ul class="dropdown-menu ps-3 text-capitalize menu-instruments">
+
               <hr class="my-2 mx-0">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="todos" id="ch_todos" onchange="conf.instrument_all()">
-                <label class="form-check-label" for="ch_todos">todos</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="todos" id="ch_nenhum" onchange="conf.instrument_all()" checked>
-                <label class="form-check-label" for="ch_nenhum">nenhum</label>
-              </div>
-            </div>
+              <li class="dropdown-item form-check ps-4">
+                <input class="form-check-input" type="radio" name="chk_all" id="chk_all"
+                  onchange="conf.instrument_all()">
+                <label class="form-check-label" for="chk_all">todos</label>
+              </li>
+              <li class="dropdown-item form-check ps-4">
+                <input class="form-check-input" type="radio" name="chk_all" id="chk_none"
+                  onchange="conf.instrument_all()">
+                <label class="form-check-label" for="chk_none">nenhum</label>
+              </li>
+            </ul>
           </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ajustes

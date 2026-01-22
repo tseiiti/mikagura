@@ -216,7 +216,7 @@ class Config {
     this.quant(0, this.control.qtd_s[0])
     this.quant(1, this.control.qtd_s[1])
     this.quant(2, this.control.qtd_s[2])
-    qs('.instrumentos').innerHTML = this.get_instruments() + qs('.instrumentos').innerHTML
+    qs('.menu-instruments').innerHTML = this.get_instruments() + qs('.menu-instruments').innerHTML
     
     this.hino
     this.fill
@@ -230,7 +230,7 @@ class Config {
     if (id != null) this.control.id = id
     this.hino = new Hino(this.control.id, this.control.tamanho, this.control.espaco)
 
-    qs('.menu-hymn li').innerHTML = this.hino.get_links()
+    qs('.menu-hymns li').innerHTML = this.hino.get_links()
     qs('main').innerHTML = this.hino.get_hymn_html()
     qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hino.dado.titulo }`
 
@@ -351,13 +351,13 @@ class Config {
     this.instrument_icon(c.name, c.checked)
     let count = 0
     qsa('.instrumento').forEach(e => { if (e.checked) count += 1 }) // depende de .instrumento
-    qs('#ch_todos').checked  = count == INSTRUMENTS.length // depende de #ch_todos
-    qs('#ch_nenhum').checked = count == 0 // depende de #ch_nenhum
+    qs('#chk_all').checked  = count == INSTRUMENTS.length // depende de #chk_all
+    qs('#chk_none').checked = count == 0 // depende de #ch_nenhum
   }
 
   // execução de todos instrument_icon
   instrument_all() {
-    let c = qs('[name="todos"]')
+    let c = qs('[name="chk_all"]')
     qsa('.instrumento').forEach(e => {
       e.checked = c.checked
       this.instrument_icon(e.name, e.checked)
