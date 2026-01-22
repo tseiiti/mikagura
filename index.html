@@ -16,147 +16,149 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md p-1" style="background-color: #69318e;" data-bs-theme="dark">
-    <div class="container-lg">
-      <a class="navbar-brand p-0"><strong>Mikagura Uta</strong></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_content" 
-          aria-controls="navbar_content" style="padding: 2px 6px;">
-        <span class="navbar-toggler-icon" style="height: 24px; width: 24px;"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar_content">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Hinos
-            </a>
-            <ul class="dropdown-menu text-nowrap text-capitalize menu-hymns">
-              <li class="mx-2"></li>
-            </ul>
-          </li>
+  <header>
+    <nav class="navbar navbar-expand-md p-1" style="background-color: #69318e;" data-bs-theme="dark">
+      <div class="container-lg">
+        <a class="navbar-brand p-0"><strong>Mikagura Uta</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_content" 
+            aria-controls="navbar_content" style="padding: 2px 6px;">
+          <span class="navbar-toggler-icon" style="height: 24px; width: 24px;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar_content">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hinos
+              </a>
+              <ul class="dropdown-menu text-nowrap text-capitalize menu-hymns">
+                <li class="mx-2"></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown mb-2 mb-md-0 open-on-hover">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Instrumentos
-            </a>
-            <ul class="dropdown-menu ps-3 text-capitalize menu-instruments">
-              <hr class="my-2 me-3">
-              <li class="dropdown-item form-check ps-4">
-                <input class="form-check-input" type="radio" name="chk_all" id="chk_all"
-                  onchange="conf.instrument_all()">
-                <label class="form-check-label" for="chk_all">todos</label>
-              </li>
-              <li class="dropdown-item form-check ps-4">
-                <input class="form-check-input" type="radio" name="chk_all" id="chk_none"
-                  onchange="conf.instrument_all()">
-                <label class="form-check-label" for="chk_none">nenhum</label>
-              </li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown mb-2 mb-md-0 open-on-hover">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Instrumentos
+              </a>
+              <ul class="dropdown-menu ps-3 text-capitalize menu-instruments">
+                <hr class="my-2 me-3">
+                <li class="dropdown-item form-check ps-4">
+                  <input class="form-check-input" type="radio" name="chk_all" id="chk_all"
+                    onchange="conf.instrument_all()">
+                  <label class="form-check-label" for="chk_all">todos</label>
+                </li>
+                <li class="dropdown-item form-check ps-4">
+                  <input class="form-check-input" type="radio" name="chk_all" id="chk_none"
+                    onchange="conf.instrument_all()">
+                  <label class="form-check-label" for="chk_none">nenhum</label>
+                </li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown open-on-hover">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ajustes
-            </a>
-            <ul class="dropdown-menu px-3 px-md-2">
-              <li class="nav-item">
-                <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras" 
-                    href="javascript:conf.tamanho(conf.get('tamanho') - 1)">
-                  <i class="bi bi-zoom-out"></i>
-                </a>
-                <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar o tamanho das letras" 
-                    href="javascript:conf.tamanho(conf.get('tamanho') + 1)">
-                  <i class="bi bi-zoom-in"></i>
-                </a>
-                <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary">
-                  <span class="font_size">16</span>px
-                </span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre notas" 
-                    href="javascript:conf.espaco(conf.get('espaco') - 0.05)">
-                  <i class="bi bi-arrows-collapse-vertical"></i>
-                </a>
-                <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar espaço entre notas" 
-                    href="javascript:conf.espaco(conf.get('espaco') + 0.05)">
-                  <i class="bi bi-arrows-expand-vertical"></i>
-                </a>
-                <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary espaco">
-                  <span class="space_width">1.30</span>x
-                </span>
-              </li>
+            <li class="nav-item dropdown open-on-hover">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Ajustes
+              </a>
+              <ul class="dropdown-menu px-3 px-md-2">
+                <li class="nav-item">
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras" 
+                      href="javascript:conf.tamanho(conf.get('tamanho') - 1)">
+                    <i class="bi bi-zoom-out"></i>
+                  </a>
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar o tamanho das letras" 
+                      href="javascript:conf.tamanho(conf.get('tamanho') + 1)">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary">
+                    <span class="font_size">16</span>px
+                  </span>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre notas" 
+                      href="javascript:conf.espaco(conf.get('espaco') - 0.05)">
+                    <i class="bi bi-arrows-collapse-vertical"></i>
+                  </a>
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar espaço entre notas" 
+                      href="javascript:conf.espaco(conf.get('espaco') + 0.05)">
+                    <i class="bi bi-arrows-expand-vertical"></i>
+                  </a>
+                  <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary espaco">
+                    <span class="space_width">1.30</span>x
+                  </span>
+                </li>
 
-              <hr class="my-2 mx-0">
+                <hr class="my-2 mx-0">
 
-              <li class="nav-item">
-                <div class="row py-1" title="tempo em batidas por minuto">
-                  <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
-                  <div class="col-4 col-sm-3 col-md-6 ps-0">
-                    <input class="form-control py-0 bpm_time menu-params" type="number" id="bpm_time" 
-                      value="60" onchange="conf.bpm(this.value)">
+                <li class="nav-item">
+                  <div class="row py-1" title="tempo em batidas por minuto">
+                    <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
+                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                      <input class="form-control py-0 bpm_time menu-params" type="number" id="bpm_time" 
+                        value="60" onchange="conf.bpm(this.value)">
+                    </div>
                   </div>
-                </div>
-                <div class="row py-1" title="quantidade de execução da 1a parte do suwari zutome">
-                  <label for="suwari_0" class="col-4 col-sm-3 col-md-6 pe-0">parte 1</label>
-                  <div class="col-4 col-sm-3 col-md-6 ps-0">
-                    <input class="form-control py-0 suwari_0 menu-params" type="number" id="suwari_0" 
-                      value="21" onchange="conf.quant(0, this.value)">
+                  <div class="row py-1" title="quantidade de execução da 1a parte do suwari zutome">
+                    <label for="suwari_0" class="col-4 col-sm-3 col-md-6 pe-0">parte 1</label>
+                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                      <input class="form-control py-0 suwari_0 menu-params" type="number" id="suwari_0" 
+                        value="21" onchange="conf.quant(0, this.value)">
+                    </div>
                   </div>
-                </div>
-                <div class="row py-1" title="quantidade de execução da 3a parte do suwari zutome">
-                  <label for="suwari_1" class="col-4 col-sm-3 col-md-6 pe-0">parte 3</label>
-                  <div class="col-4 col-sm-3 col-md-6 ps-0">
-                    <input class="form-control py-0 suwari_1 menu-params" type="number" id="suwari_1" 
-                      value="3" onchange="conf.quant(1, this.value)">
+                  <div class="row py-1" title="quantidade de execução da 3a parte do suwari zutome">
+                    <label for="suwari_1" class="col-4 col-sm-3 col-md-6 pe-0">parte 3</label>
+                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                      <input class="form-control py-0 suwari_1 menu-params" type="number" id="suwari_1" 
+                        value="3" onchange="conf.quant(1, this.value)">
+                    </div>
                   </div>
-                </div>
-                <div class="row py-1" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
-                  <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes</label>
-                  <div class="col-4 col-sm-3 col-md-6 ps-0">
-                    <input class="form-control py-0 suwari_2 menu-params" type="number" id="suwari_2" 
-                      value="3" onchange="conf.quant(2, this.value)">
+                  <div class="row py-1" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
+                    <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes</label>
+                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                      <input class="form-control py-0 suwari_2 menu-params" type="number" id="suwari_2" 
+                        value="3" onchange="conf.quant(2, this.value)">
+                    </div>
                   </div>
-                </div>
-              </li>
-              
-              <hr class="my-2 mx-0">
+                </li>
+                
+                <hr class="my-2 mx-0">
 
-              <li class="nav-item">
-                <div class="form-check mx-1 my-1">
-                  <input type="checkbox" class="form-check-input scroll" name="scroll" 
-                    id="scroll" onchange="conf.anima(this.checked)">
-                  <label class="form-check-label" for="scroll">rolagem</label>
-                </div>
-                <div class="form-check mx-1 my-1">
-                  <input type="checkbox" class="form-check-input animation" name="animation" 
-                    id="animation" onchange="conf.anima(this.checked)">
-                  <label class="form-check-label" for="animation">animação</label>
-                </div>
-              </li>
-            </ul>
-          </li>
+                <li class="nav-item">
+                  <div class="form-check mx-1 my-1">
+                    <input type="checkbox" class="form-check-input scroll" name="scroll" 
+                      id="scroll" onchange="conf.anima(this.checked)">
+                    <label class="form-check-label" for="scroll">rolagem</label>
+                  </div>
+                  <div class="form-check mx-1 my-1">
+                    <input type="checkbox" class="form-check-input animation" name="animation" 
+                      id="animation" onchange="conf.anima(this.checked)">
+                    <label class="form-check-label" for="animation">animação</label>
+                  </div>
+                </li>
+              </ul>
+            </li>
 
-          <li class="nav-item py-2 py-md-1 col-12 col-md-auto text-white">
-            <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
-            <hr class="d-md-none my-2">
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.reset()" title="recomeçar">
-              <i class="bi bi-arrow-counterclockwise"></i>
-            </a>
-            <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:conf.fill.track()" title="tocar">
-              <i class="bi bi-play-fill"></i>
-            </a>
-            <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.previous()" title="hino anterior">
-              <i class="bi bi-arrow-left-circle-fill"></i>
-            </a>
-            <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.next()" title="próximo hino">
-              <i class="bi bi-arrow-right-circle-fill"></i>
-            </a>
-          </li>
-        </ul>
+            <li class="nav-item py-2 py-md-1 col-12 col-md-auto text-white">
+              <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
+              <hr class="d-md-none my-2">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.reset()" title="recomeçar">
+                <i class="bi bi-arrow-counterclockwise"></i>
+              </a>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:conf.fill.track()" title="tocar">
+                <i class="bi bi-play-fill"></i>
+              </a>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.previous()" title="hino anterior">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+              </a>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:conf.fill.next()" title="próximo hino">
+                <i class="bi bi-arrow-right-circle-fill"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main class="container-lg my-4"></main>
 
