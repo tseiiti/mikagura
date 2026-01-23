@@ -20,10 +20,6 @@ class Play {
     return this.conf.get(p)
   }
 
-  gs(i) {
-    return this.cg('qtd_s')[i]
-  }
-
   enfase_aux(e, f) {
     if (f) {
       e.classList.add('fw-bold')
@@ -113,14 +109,14 @@ class Play {
 
   play_suwari() {
     let e = this.beats[this.atual]
-    if (this.qs_0 < this.gs(0) && e.dataset.paragraph == 0) {
+    if (this.qs_0 < this.cg('suwari_0') && e.dataset.paragraph == 0) {
       this.play_suwari_aux_1()
       this.qs_0 += 1
       qsa('.mensagem p')[0].innerText = `${ this.qs_0 } de ${ this.cg('qtd_s')[0] } vezes`
       return true
     }
 
-    if (this.qs_1 < this.gs(1) && e.dataset.paragraph == 2) {
+    if (this.qs_1 < this.cg('suwari_1') && e.dataset.paragraph == 2) {
       this.play_suwari_aux_1()
       this.qs_1 += 1
       qsa('.mensagem p')[2].innerText = `${ this.qs_1 } de ${ this.cg('qtd_s')[1] } vezes (de ${ this.qs_2 } de ${ this.cg('qtd_s')[2] })`
@@ -128,7 +124,7 @@ class Play {
     }
 
     this.qs_3 = 0
-    if (this.qs_2 < this.gs(2) && e.dataset.paragraph == 2) {
+    if (this.qs_2 < this.cg('suwari_2') && e.dataset.paragraph == 2) {
       this.qs_1 = 1
       this.qs_2 += 1
       this.qs_3 = 1

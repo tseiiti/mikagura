@@ -136,10 +136,10 @@ class Config {
   get_links() {
     let html = ''
     for (let key in HYMNS) {
-      let aux = key == 'hymn_' + this.hymn_id ? 'active' : ''
+      let aux = key == 'hymn_' + this.control.hymn_id ? 'active' : ''
       html += `
         <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
-          href="javascript:conf.set_hymn('${ key.replace('hymn_', '') }')">
+          href="javascript:config.set_hymn('${ key.replace('hymn_', '') }')">
             ${ HYMNS[key].title }
         </a>
         <hr class="dropdown-divider m-0">`
@@ -154,7 +154,7 @@ class Config {
       html += `
         <li class="dropdown-item form-check ps-4">
           <input type="checkbox" class="form-check-input instrument" name="${ key }" 
-            id="check_${ key }" onchange="conf.instrument(this)">
+            id="check_${ key }" onchange="config.instrument(this)">
           <label class="form-check-label" for="check_${ key }">${ key }</label>
         </li>`
     }

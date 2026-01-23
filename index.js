@@ -1,4 +1,4 @@
-var conf
+var config
 document.addEventListener('DOMContentLoaded', function() {
-  conf = new Config()
+  config = new Config()
 })
