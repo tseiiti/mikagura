@@ -1,203 +1,3 @@
-class Hino {
-  static SEARCHES = [
-    '_', 'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 
-    'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
-    '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 
-    'do,', 'de,', 'ni,', 
-    'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'dō', 'fu', 'fū', 'ga', 'gi', 'go', 'gu', 'ha', 
-    'hi', 'ho', 'hō', 'ji', 'jo', 'jū', 'ka', 'ke', 'ki', 'ko', 'kō', 'ku', 'ma', 'me', 'mi', 
-    'mo', 'mu', 'na', 'ne', 'nē', 'ni', 'no', 'nō', 'nu', 'ra', 're', 'ri', 'ro', 'rō', 'ru', 
-    'sa', 'se', 'so', 'sō', 'su', 'ta', 'te', 'to', 'tō', 'wa', 'wō', 'xi', 'xo', 'ya', 'yo', 
-    'yō', 'yu', 'yū', 'za', 'zo', 'zu', 
-    'ō', 'i', 'o', 'n', 'e', 'u', 'a', 
-  ]
-
-  constructor(id, tamanho, espaco) {
-    this.id = id
-    this.dado    = HYMNS[`hino_${ this.id }`]
-    this.tamanho = tamanho
-    this.espaco  = espaco
-    this.largura = 0
-    this.regexs  = []
-    this.texto
-
-    for (let i in Hino.SEARCHES) { this.regexs.push(new RegExp(`^${ Hino.SEARCHES[i] }`)) }
-  }
-  
-  // cria lista de link dos hinos
-  get_links() {
-    let html = ''
-    for (let chave in HYMNS) {
-      let aux = chave == 'hino_' + this.id ? 'active' : ''
-      html += `
-        <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
-          href="javascript:conf.set_hymn('${ chave.replace('hino_', '') }')">
-            ${ HYMNS[chave].titulo }
-        </a>
-        <hr class="dropdown-divider m-0">`
-    }
-    return html
-  }
-
-  get_syllable_text() {
-    let silaba = null
-    for (let rg of this.regexs) {
-      let m = this.texto.match(rg)
-      if (m) {
-        silaba = m[0]
-        this.texto = this.texto.replace(rg, '')
-        break
-      }
-    }
-    return silaba
-  }
-
-  get_narimono(line, indice) {
-    let html = ''
-    for (let chave of INSTRUMENTS) {
-      if (line[chave]) {
-        let char = line[chave].charAt(indice).trim()
-        let aux = `${ chave == 'kotsuzumi' ? 'estica ' : '' }${ chave } `
-        if (char.length > 0) {
-          html += `<div class="icone ${ aux }${ chave }_${ char } d-none"></div>`
-        } else {
-          html += `<div class="icone ${ aux }d-none"></div>`
-        }
-      }
-    }
-    return html
-  }
-
-  get_syllable_part(silaba, classes, narimono) {
-    let html    = ''
-    if (silaba == '_')  silaba = ''
-    if (silaba == 'xi') silaba = 'i'
-    if (silaba == 'xo') silaba = 'o'
-    let datas = `data-paragraph="${ classes[2][0] }"
-      data-line="${ classes[2][1] }"
-      data-silaba="${ classes[2][2] }"
-      data-part="${ classes[2][3] }"`
-
-    html += `<span class="part ${ classes[0].join(' ').trim() }">`
-    html += `<progress class="${ classes[1].join(' ').trim() }" ${ datas } value="0" max="5">`
-    html += `</progress><div class="texto">${ silaba }</div>`
-    html += narimono
-    html += '</span>'
-
-    return html
-  }
-
-  get_line(line, i, j) {
-    this.texto = (line.texto || '').replace(/ /g, '')
-    let html   = ''
-
-    let id1 = 0
-    let id2 = 0
-    while (this.texto.length > 0) {
-      let silaba = this.get_syllable_text()
-      if (!silaba) {
-        console.log(this.texto)
-        return
-      }
-      html += `<div class="silaba silaba_${ id2 / 2 }">`
-      
-      let classes = [ 
-        [
-          [ `part_${ line.inverso ? '2' : '1' }`, line.fim && line.fim == id1 ? 'fim' : null ], 
-          [ line.fim && line.fim == id1 ? null : `tempo tempo_${ id2 + 1 }` ], 
-          [ i, j, id2 / 2, 1 ], 
-        ], [
-          [ `part_${ line.inverso ? '1' : '2' }`, line.fim && line.fim == id1 ? 'd-none' : null ], 
-          [ `tempo tempo_${ id2 + 2 }` ], 
-          [ i, j, id2 / 2, 2 ]
-        ], 
-      ]
-
-      html += this.get_syllable_part(silaba, classes[0], this.get_narimono(line, id2))
-      if (line.meios && line.meios.indexOf(id1 + 1) != -1) {
-        silaba = this.get_syllable_text(this.texto)
-        html += this.get_syllable_part(silaba, classes[1], this.get_narimono(line, id2 + 1))
-        id1 += 1
-      } else {
-        html += this.get_syllable_part('', classes[1], this.get_narimono(line, id2 + 1))
-      }
-      id1 += 1
-      id2 += 2
-      html += '</div>'
-    }
-
-    let aux = id2 * this.tamanho * this.espaco
-    if (j > 0) aux = (id2 + 3) * this.tamanho * this.espaco
-    if (aux > this.largura) this.largura = aux
-    
-    return html
-  }
-
-  get_hymn_html() {
-    let primeiro = true
-    let html = `<h1>${ this.dado.titulo }</h1>\n`
-    for (let i in this.dado.paragraphs) {
-      let paragraph = this.dado.paragraphs[i]
-      html += `<div class="paragraph paragraph_${ i }">`
-      for (let j in paragraph) {
-        let line = paragraph[j]
-        html += `<div class="line line_${ j } ${ line.parar ? 'parar' : '' }">`
-    
-        let datas = `data-paragraph="${ i }"
-          data-line="${ j }"
-          data-silaba="${ -1}"
-          data-part="${ 1 }"`
-
-        // criar sílaba inicial
-        html += `
-        <div class="silaba d-none d-md-block">
-          <progress class="tempo primeiro_tempo ${ primeiro ? 'd-none' : '' }" ${ datas } value="0" max="5">
-          </progress>`
-        if (primeiro) {
-          // sílaba inicial de três pontos do hino
-          html += `
-            <span class="primeiro_span paragraph_${ i } line_${ j }">
-              <span>.</span><span>.</span><span>.</span>
-            </span>`
-          primeiro = false
-        }
-        html += '</div>'
-        if (line.parar) primeiro = true
-
-        let aux = this.get_line(line, i, j)
-        if (j < paragraph.length - 1 || !line.parar) {
-          let div = document.createElement('div')
-          div.innerHTML = aux
-          let e = div.querySelector('.silaba:last-child span:last-child progress')
-          if (e) e.classList.remove('tempo')
-          html += div.innerHTML
-        } else {
-          html += aux
-        }
-        
-        if (line.mensagem) {
-          // criar parágrafo de mensagem sepadora
-          html += `
-            </div><div class="line" style="margin-left: ${ this.tamanho * this.espaco * 2.5 }px;">
-            <div class="border-bottom mb-4 px-1 mensagem">
-              <p class="text-end fst-italic fw-light m-1">${line.mensagem}</p>
-            </div>`
-        }
-        html += '</div>'
-      }
-      html += '</div>'
-    }
-
-    // ajuste da largura da mensagem
-    let div = document.createElement('div')
-    div.innerHTML = html
-    div.querySelectorAll('.mensagem').forEach(e => { e.style.width = `${this.largura}px` })
-    html = div.innerHTML
-  
-    return html
-  }
-}
-
 class Config {
   constructor() {
     let aux = localStorage.getItem('control')
@@ -228,7 +28,7 @@ class Config {
     this.fill.track_icon(0)
 
     if (id != null) this.control.id = id
-    this.hino = new Hino(this.control.id, this.control.tamanho, this.control.espaco)
+    this.hino = new Uta(this.control.id, this.control.tamanho, this.control.espaco)
 
     qs('.menu-hymns li').innerHTML = this.hino.get_links()
     qs('main').innerHTML = this.hino.get_hymn_html()
@@ -379,8 +179,8 @@ class Fill {
     this.qs_1     = 1
     this.qs_2     = 1
     this.qs_3     = 0
-    this.tempos   = qsa('progress.tempo')
-    this.t_len    = qsa('progress.tempo:not(.d-none)').length
+    this.beats   = qsa('progress.beat')
+    this.t_len    = qsa('progress.beat:not(.d-none)').length
     this.anima    = this.conf.get('anima')
   }
 
@@ -403,9 +203,9 @@ class Fill {
 
   enfase(f) {
     if (!this.anima) return
-    let e = this.tempos[this.atual]
+    let e = this.beats[this.atual]
     if (!e) return
-    e = e.parentElement.querySelector('.texto')
+    e = e.parentElement.querySelector('.part_text')
     if (e) this.enfase_aux(e, f)
   }
 
@@ -435,8 +235,8 @@ class Fill {
       this.play_suwari_aux_2()
     }
     this.track_icon(1)
-    let e = this.tempos[this.atual]
-    let es = qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
+    let e = this.beats[this.atual]
+    let es = qsa(`.first-span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
     es[0].scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
     
     if (this.anima) es[0].style.color = '#555'
@@ -456,32 +256,32 @@ class Fill {
 
   play_suwari_aux_1() {
     for (let i = this.inicio; i < this.atual; i++) {
-      this.tempos[i].value = 0
+      this.beats[i].value = 0
     }
     this.atual = this.inicio
-    let e = this.tempos[this.atual]
+    let e = this.beats[this.atual]
     e.classList.remove('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
+    e = qs(`.first-span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.add('d-none')
   }
 
   play_suwari_aux_2() {
-    let e = this.tempos[this.atual]
+    let e = this.beats[this.atual]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
+    e = qs(`.first-span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.remove('d-none')
     e.querySelectorAll('span').forEach(f => { f.style.color = '#ccc' })
   }
 
   play_suwari_aux_3() {
-    let e = this.tempos[this.inicio]
+    let e = this.beats[this.inicio]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
+    e = qs(`.first-span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.remove('d-none')
   }
 
   play_suwari() {
-    let e = this.tempos[this.atual]
+    let e = this.beats[this.atual]
     if (this.qs_0 < this.gs(0) && e.dataset.paragraph == 0) {
       this.play_suwari_aux_1()
       this.qs_0 += 1
@@ -509,14 +309,14 @@ class Fill {
   }
 
   play_aux() {
-    let e = this.tempos[this.atual]
+    let e = this.beats[this.atual]
     if (!e) return
     let lin = qs(`.paragraph_${e.dataset.paragraph} .line_${e.dataset.line}`)
     lin.scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
-    let es = lin.querySelectorAll('.tempo')
+    let es = lin.querySelectorAll('.beat')
     if (es[es.length - 1] == e) {
       this.enfase(false)
-      // this.enfase_aux(qs('.paragraph_0 .line_0 .silaba:last-child .part:last-child .texto'), false)
+      // this.enfase_aux(qs('.paragraph_0 .line_0 .syllable:last-child .part:last-child .part_text'), false)
 
       if (lin.classList.contains('parar')) {
         if (this.cg('id') == 's' && this.play_suwari()) return
@@ -530,8 +330,8 @@ class Fill {
   play() {
     this.track_icon(2)
 
-    let e = this.tempos[this.atual]
-    qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
+    let e = this.beats[this.atual]
+    qsa(`.first-span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
       .forEach(f => { if (this.anima) f.style.color = '#555' })
 
     if (this.cg('id') == 's') {
@@ -547,7 +347,7 @@ class Fill {
 
     let delay = 100 * 60 / this.cg('bpm')
     this.interval = setInterval(function(fx) {
-      let e = fx.tempos[fx.atual]
+      let e = fx.beats[fx.atual]
       if (!e) {
         fx.track_icon(3)
         return

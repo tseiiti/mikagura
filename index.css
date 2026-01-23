@@ -47,7 +47,7 @@ h1 {
 }
 
 /* Largura das notas */
-.silaba {
+.syllable {
   display: flex;
   width: calc(var(--size) * 2);
 }
@@ -59,7 +59,7 @@ h1 {
   text-align: center;
 }
 
-.texto {
+.part_text {
   width: var(--size);
   height: var(--size-base);
   position: relative;
@@ -67,7 +67,7 @@ h1 {
 }
 
 /* Linha Vertical */
-.texto:before {
+.part_text:before {
   content: "";
   position: absolute;
   border-left: 1px solid darkslategray;
@@ -77,12 +77,12 @@ h1 {
   visibility: visible;
 }
 
-.part_2 .texto:before {
+.part_2 .part_text:before {
   border-left: 1px dashed darkslategray;
 }
 
 /* Linha Horizontal */
-.texto:after {
+.part_text:after {
   content: "";
   position: absolute;
   border-top: 1px solid darkslategray;
@@ -92,10 +92,10 @@ h1 {
   visibility: visible;
 }
 
-.fim .texto:after {
+/* .fim .part_text:after {
   width: 0;
-}
-.silaba:last-child .part_2 .texto:after {
+} */
+.syllable:last-child .part:last-child .part_text:after {
   width: 0;
 }
 
@@ -177,6 +177,12 @@ h1 {
   text-transform: capitalize;
 }
 
+/* .checkbox-linha {
+  margin-top: var(--size-base);
+  display: flex;
+  flex-flow: row wrap;
+} */
+
 .checkbox-label {
   margin-right: var(--size-base);
   text-transform: capitalize;
@@ -185,7 +191,7 @@ h1 {
   margin-right: var(--size-xs);
 }
 
-.dropdown:hover .dropdown-menu {
+.open-on-hover:hover .dropdown-menu {
   display: block;
 }
 
@@ -208,18 +214,18 @@ progress::-webkit-progress-bar { background: #eee; }
 progress::-moz-progress-bar { background: #888; }
 progress::-webkit-progress-value { background: #888; }
 
-.silaba:last-child .part_2 progress {
+/* .syllable:last-child .part_2 progress {
   width: 0;
 }
 
 .fim progress {
   width: 0;
-}
+} */
 
-.primeiro_tempo {
+.first-beat {
   margin-left: calc(var(--size) * 1.5);
 }
-.primeiro_span span {
+.first-span span {
   font-size: 60px;
   line-height: 36px;
   color: #ccc;
