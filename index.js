@@ -73,7 +73,7 @@ class Hino {
     if (silaba == '_')  silaba = ''
     if (silaba == 'xi') silaba = 'i'
     if (silaba == 'xo') silaba = 'o'
-    let datas = `data-paragrafo="${ classes[2][0] }"
+    let datas = `data-paragraph="${ classes[2][0] }"
       data-linha="${ classes[2][1] }"
       data-silaba="${ classes[2][2] }"
       data-part="${ classes[2][3] }"`
@@ -136,14 +136,14 @@ class Hino {
   get_hymn_html() {
     let primeiro = true
     let html = `<h1>${ this.dado.titulo }</h1>\n`
-    for (let i in this.dado.paragrafos) {
-      let paragrafo = this.dado.paragrafos[i]
-      html += `<div class="paragrafo paragrafo_${ i }">`
-      for (let j in paragrafo) {
-        let linha = paragrafo[j]
+    for (let i in this.dado.paragraphs) {
+      let paragraph = this.dado.paragraphs[i]
+      html += `<div class="paragraph paragraph_${ i }">`
+      for (let j in paragraph) {
+        let linha = paragraph[j]
         html += `<div class="linha linha_${ j } ${ linha.parar ? 'parar' : '' }">`
     
-        let datas = `data-paragrafo="${ i }"
+        let datas = `data-paragraph="${ i }"
           data-linha="${ j }"
           data-silaba="${ -1}"
           data-part="${ 1 }"`
@@ -156,7 +156,7 @@ class Hino {
         if (primeiro) {
           // sílaba inicial de três pontos do hino
           html += `
-            <span class="primeiro_span paragrafo_${ i } linha_${ j }">
+            <span class="primeiro_span paragraph_${ i } linha_${ j }">
               <span>.</span><span>.</span><span>.</span>
             </span>`
           primeiro = false
@@ -165,7 +165,7 @@ class Hino {
         if (linha.parar) primeiro = true
 
         let aux = this.get_line(linha, i, j)
-        if (j < paragrafo.length - 1 || !linha.parar) {
+        if (j < paragraph.length - 1 || !linha.parar) {
           let div = document.createElement('div')
           div.innerHTML = aux
           let e = div.querySelector('.silaba:last-child span:last-child progress')
@@ -436,7 +436,7 @@ class Fill {
     }
     this.track_icon(1)
     let e = this.tempos[this.atual]
-    let es = qsa(`.primeiro_span.paragrafo_${e.dataset.paragrafo}.linha_${e.dataset.linha} span`)
+    let es = qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.linha_${e.dataset.linha} span`)
     es[0].scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
     
     if (this.anima) es[0].style.color = '#555'
@@ -461,14 +461,14 @@ class Fill {
     this.atual = this.inicio
     let e = this.tempos[this.atual]
     e.classList.remove('d-none')
-    e = qs(`.primeiro_span.paragrafo_${ e.dataset.paragrafo }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
     e.classList.add('d-none')
   }
 
   play_suwari_aux_2() {
     let e = this.tempos[this.atual]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragrafo_${ e.dataset.paragrafo }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
     e.classList.remove('d-none')
     e.querySelectorAll('span').forEach(f => { f.style.color = '#ccc' })
   }
@@ -476,20 +476,20 @@ class Fill {
   play_suwari_aux_3() {
     let e = this.tempos[this.inicio]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragrafo_${ e.dataset.paragrafo }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
     e.classList.remove('d-none')
   }
 
   play_suwari() {
     let e = this.tempos[this.atual]
-    if (this.qs_0 < this.gs(0) && e.dataset.paragrafo == 0) {
+    if (this.qs_0 < this.gs(0) && e.dataset.paragraph == 0) {
       this.play_suwari_aux_1()
       this.qs_0 += 1
       qsa('.mensagem p')[0].innerText = `${ this.qs_0 } de ${ this.cg('qtd_s')[0] } vezes`
       return true
     }
 
-    if (this.qs_1 < this.gs(1) && e.dataset.paragrafo == 2) {
+    if (this.qs_1 < this.gs(1) && e.dataset.paragraph == 2) {
       this.play_suwari_aux_1()
       this.qs_1 += 1
       qsa('.mensagem p')[2].innerText = `${ this.qs_1 } de ${ this.cg('qtd_s')[1] } vezes (de ${ this.qs_2 } de ${ this.cg('qtd_s')[2] })`
@@ -497,13 +497,13 @@ class Fill {
     }
 
     this.qs_3 = 0
-    if (this.qs_2 < this.gs(2) && e.dataset.paragrafo == 2) {
+    if (this.qs_2 < this.gs(2) && e.dataset.paragraph == 2) {
       this.qs_1 = 1
       this.qs_2 += 1
       this.qs_3 = 1
     }
     
-    qsa('.mensagem p')[1].innerText = `${ e.dataset.paragrafo >= 1 ? 1 : 0 } de 1 vez`
+    qsa('.mensagem p')[1].innerText = `${ e.dataset.paragraph >= 1 ? 1 : 0 } de 1 vez`
     this.play_suwari_aux_3()
     return false
   }
@@ -511,12 +511,12 @@ class Fill {
   play_aux() {
     let e = this.tempos[this.atual]
     if (!e) return
-    let lin = qs(`.paragrafo_${e.dataset.paragrafo} .linha_${e.dataset.linha}`)
+    let lin = qs(`.paragraph_${e.dataset.paragraph} .linha_${e.dataset.linha}`)
     lin.scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
     let es = lin.querySelectorAll('.tempo')
     if (es[es.length - 1] == e) {
       this.enfase(false)
-      // this.enfase_aux(qs('.paragrafo_0 .linha_0 .silaba:last-child .part:last-child .texto'), false)
+      // this.enfase_aux(qs('.paragraph_0 .linha_0 .silaba:last-child .part:last-child .texto'), false)
 
       if (lin.classList.contains('parar')) {
         if (this.cg('id') == 's' && this.play_suwari()) return
@@ -531,14 +531,14 @@ class Fill {
     this.track_icon(2)
 
     let e = this.tempos[this.atual]
-    qsa(`.primeiro_span.paragrafo_${e.dataset.paragrafo}.linha_${e.dataset.linha} span`)
+    qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.linha_${e.dataset.linha} span`)
       .forEach(f => { if (this.anima) f.style.color = '#555' })
 
     if (this.cg('id') == 's') {
       let es = qsa('.mensagem p')
       es[0].innerText = `${ this.qs_0 } de ${ this.cg('qtd_s')[0] } vezes`
-      es[1].innerText = `${ e.dataset.paragrafo >= 1 ? 1 : 0 } de 1 vez`
-      if (e.dataset.paragrafo == 2)
+      es[1].innerText = `${ e.dataset.paragraph >= 1 ? 1 : 0 } de 1 vez`
+      if (e.dataset.paragraph == 2)
         es[2].innerText = `${ this.qs_1 } de ${ this.cg('qtd_s')[1] } vezes (de ${ this.qs_2 } de ${ this.cg('qtd_s')[2] })`
     }
 

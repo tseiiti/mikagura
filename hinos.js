@@ -11,7 +11,7 @@ const INSTRUMENTS = [
 const HYMNS = {
   hino_s: {
     titulo: 'suwari zutome',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'ashiki o haro(o)te tasuke tamae',
         meios: [1, 3, 5, 7, 10, 13],
@@ -127,7 +127,7 @@ const HYMNS = {
   },
   hino_0: {
     titulo: 'yorozuyo',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'yorozu yo no sekai ichiretsu miharasedo',
         hyoshigi: '1   1   1   1   1   1   1   1   1',
@@ -293,7 +293,7 @@ const HYMNS = {
   },
   hino_1: {
     titulo: 'hito kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, shō(o)gatsu(u)',
         meios: [1],
@@ -430,7 +430,7 @@ const HYMNS = {
   },
   hino_2: {
     titulo: 'futa kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'ton ton(n) ton to shō(o)gatsu(u)',
         hyoshigi: '1   1   1   1   1   1   1',
@@ -566,7 +566,7 @@ const HYMNS = {
   },
   hino_3: {
     titulo: 'mi kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hi no moto shoyashiki no',
         meios: [1],
@@ -786,7 +786,7 @@ const HYMNS = {
   },
   hino_4: {
     titulo: 'yo kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hito ga nanigoto iwō(o) tomo',
         meios: [1],
@@ -1005,7 +1005,7 @@ const HYMNS = {
   },
   hino_5: {
     titulo: 'itsu kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hiroi sekai no uchi nareba',
         meios: [1],
@@ -1221,7 +1221,7 @@ const HYMNS = {
   },
   hino_6: {
     titulo: 'mutsu kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hito no kokoro to yū(u) mono wa',
         meios: [1],
@@ -1441,7 +1441,7 @@ const HYMNS = {
   },
   hino_7: {
     titulo: 'nana kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hitokoto hanashi wa hinokishin',
         meios: [1, 4],
@@ -1676,7 +1676,7 @@ const HYMNS = {
   },
   hino_8: {
     titulo: 'ya kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hiroi sekai ya kuni naka ni',
         meios: [1],
@@ -1891,7 +1891,7 @@ const HYMNS = {
   },
   hino_9: {
     titulo: 'kokono kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hiroi sekai o uchi mawari',
         meios: [1],
@@ -2102,7 +2102,7 @@ const HYMNS = {
   },
   hino_10: {
     titulo: 'to kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hito no kokoro to yū(u) mono wa',
         meios: [1],
@@ -2319,7 +2319,7 @@ const HYMNS = {
   },
   hino_11: {
     titulo: 'jūichi kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, hi no moto shoyashiki no',
         meios: [1],
@@ -2541,7 +2541,7 @@ const HYMNS = {
   },
   hino_12: {
     titulo: 'jūni kudari me',
-    paragrafos: [
+    paragraphs: [
       [{
         texto: 'hitotsu, ichi ni daiku no ukagai ni',
         meios: [1],
