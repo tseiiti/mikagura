@@ -29,19 +29,19 @@ h1 {
   margin-top: var(--size-base);
 }
 
-.linha {
+.line {
   margin-top: var(--size-base);
   display: flex;
   flex-flow: row wrap;
 }
 
 /* Margem na segunda linha */
-.linha:not(:first-child) {
+.line:not(:first-child) {
   margin-left: 0;
 }
 
 @media (min-width: 768px) {
-  .linha:not(:first-child) {
+  .line:not(:first-child) {
     margin-left: calc(var(--size) * 4);
   }
 }
@@ -175,12 +175,6 @@ h1 {
 
 .links a {
   text-transform: capitalize;
-}
-
-.checkbox-linha {
-  margin-top: var(--size-base);
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .checkbox-label {

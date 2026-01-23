@@ -52,11 +52,11 @@ class Hino {
     return silaba
   }
 
-  get_narimono(linha, indice) {
+  get_narimono(line, indice) {
     let html = ''
     for (let chave of INSTRUMENTS) {
-      if (linha[chave]) {
-        let char = linha[chave].charAt(indice).trim()
+      if (line[chave]) {
+        let char = line[chave].charAt(indice).trim()
         let aux = `${ chave == 'kotsuzumi' ? 'estica ' : '' }${ chave } `
         if (char.length > 0) {
           html += `<div class="icone ${ aux }${ chave }_${ char } d-none"></div>`
@@ -74,7 +74,7 @@ class Hino {
     if (silaba == 'xi') silaba = 'i'
     if (silaba == 'xo') silaba = 'o'
     let datas = `data-paragraph="${ classes[2][0] }"
-      data-linha="${ classes[2][1] }"
+      data-line="${ classes[2][1] }"
       data-silaba="${ classes[2][2] }"
       data-part="${ classes[2][3] }"`
 
@@ -87,8 +87,8 @@ class Hino {
     return html
   }
 
-  get_line(linha, i, j) {
-    this.texto = (linha.texto || '').replace(/ /g, '')
+  get_line(line, i, j) {
+    this.texto = (line.texto || '').replace(/ /g, '')
     let html   = ''
 
     let id1 = 0
@@ -103,23 +103,23 @@ class Hino {
       
       let classes = [ 
         [
-          [ `part_${ linha.inverso ? '2' : '1' }`, linha.fim && linha.fim == id1 ? 'fim' : null ], 
-          [ linha.fim && linha.fim == id1 ? null : `tempo tempo_${ id2 + 1 }` ], 
+          [ `part_${ line.inverso ? '2' : '1' }`, line.fim && line.fim == id1 ? 'fim' : null ], 
+          [ line.fim && line.fim == id1 ? null : `tempo tempo_${ id2 + 1 }` ], 
           [ i, j, id2 / 2, 1 ], 
         ], [
-          [ `part_${ linha.inverso ? '1' : '2' }`, linha.fim && linha.fim == id1 ? 'd-none' : null ], 
+          [ `part_${ line.inverso ? '1' : '2' }`, line.fim && line.fim == id1 ? 'd-none' : null ], 
           [ `tempo tempo_${ id2 + 2 }` ], 
           [ i, j, id2 / 2, 2 ]
         ], 
       ]
 
-      html += this.get_syllable_part(silaba, classes[0], this.get_narimono(linha, id2))
-      if (linha.meios && linha.meios.indexOf(id1 + 1) != -1) {
+      html += this.get_syllable_part(silaba, classes[0], this.get_narimono(line, id2))
+      if (line.meios && line.meios.indexOf(id1 + 1) != -1) {
         silaba = this.get_syllable_text(this.texto)
-        html += this.get_syllable_part(silaba, classes[1], this.get_narimono(linha, id2 + 1))
+        html += this.get_syllable_part(silaba, classes[1], this.get_narimono(line, id2 + 1))
         id1 += 1
       } else {
-        html += this.get_syllable_part('', classes[1], this.get_narimono(linha, id2 + 1))
+        html += this.get_syllable_part('', classes[1], this.get_narimono(line, id2 + 1))
       }
       id1 += 1
       id2 += 2
@@ -140,11 +140,11 @@ class Hino {
       let paragraph = this.dado.paragraphs[i]
       html += `<div class="paragraph paragraph_${ i }">`
       for (let j in paragraph) {
-        let linha = paragraph[j]
-        html += `<div class="linha linha_${ j } ${ linha.parar ? 'parar' : '' }">`
+        let line = paragraph[j]
+        html += `<div class="line line_${ j } ${ line.parar ? 'parar' : '' }">`
     
         let datas = `data-paragraph="${ i }"
-          data-linha="${ j }"
+          data-line="${ j }"
           data-silaba="${ -1}"
           data-part="${ 1 }"`
 
@@ -156,16 +156,16 @@ class Hino {
         if (primeiro) {
           // sílaba inicial de três pontos do hino
           html += `
-            <span class="primeiro_span paragraph_${ i } linha_${ j }">
+            <span class="primeiro_span paragraph_${ i } line_${ j }">
               <span>.</span><span>.</span><span>.</span>
             </span>`
           primeiro = false
         }
         html += '</div>'
-        if (linha.parar) primeiro = true
+        if (line.parar) primeiro = true
 
-        let aux = this.get_line(linha, i, j)
-        if (j < paragraph.length - 1 || !linha.parar) {
+        let aux = this.get_line(line, i, j)
+        if (j < paragraph.length - 1 || !line.parar) {
           let div = document.createElement('div')
           div.innerHTML = aux
           let e = div.querySelector('.silaba:last-child span:last-child progress')
@@ -175,12 +175,12 @@ class Hino {
           html += aux
         }
         
-        if (linha.mensagem) {
+        if (line.mensagem) {
           // criar parágrafo de mensagem sepadora
           html += `
-            </div><div class="linha" style="margin-left: ${ this.tamanho * this.espaco * 2.5 }px;">
+            </div><div class="line" style="margin-left: ${ this.tamanho * this.espaco * 2.5 }px;">
             <div class="border-bottom mb-4 px-1 mensagem">
-              <p class="text-end fst-italic fw-light m-1">${linha.mensagem}</p>
+              <p class="text-end fst-italic fw-light m-1">${line.mensagem}</p>
             </div>`
         }
         html += '</div>'
@@ -436,7 +436,7 @@ class Fill {
     }
     this.track_icon(1)
     let e = this.tempos[this.atual]
-    let es = qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.linha_${e.dataset.linha} span`)
+    let es = qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
     es[0].scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
     
     if (this.anima) es[0].style.color = '#555'
@@ -461,14 +461,14 @@ class Fill {
     this.atual = this.inicio
     let e = this.tempos[this.atual]
     e.classList.remove('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.add('d-none')
   }
 
   play_suwari_aux_2() {
     let e = this.tempos[this.atual]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.remove('d-none')
     e.querySelectorAll('span').forEach(f => { f.style.color = '#ccc' })
   }
@@ -476,7 +476,7 @@ class Fill {
   play_suwari_aux_3() {
     let e = this.tempos[this.inicio]
     e.classList.add('d-none')
-    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.linha_${ e.dataset.linha }`)
+    e = qs(`.primeiro_span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.remove('d-none')
   }
 
@@ -511,12 +511,12 @@ class Fill {
   play_aux() {
     let e = this.tempos[this.atual]
     if (!e) return
-    let lin = qs(`.paragraph_${e.dataset.paragraph} .linha_${e.dataset.linha}`)
+    let lin = qs(`.paragraph_${e.dataset.paragraph} .line_${e.dataset.line}`)
     lin.scrollIntoView({ behavior: "smooth", block: 'center', inline: "nearest" })
     let es = lin.querySelectorAll('.tempo')
     if (es[es.length - 1] == e) {
       this.enfase(false)
-      // this.enfase_aux(qs('.paragraph_0 .linha_0 .silaba:last-child .part:last-child .texto'), false)
+      // this.enfase_aux(qs('.paragraph_0 .line_0 .silaba:last-child .part:last-child .texto'), false)
 
       if (lin.classList.contains('parar')) {
         if (this.cg('id') == 's' && this.play_suwari()) return
@@ -531,7 +531,7 @@ class Fill {
     this.track_icon(2)
 
     let e = this.tempos[this.atual]
-    qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.linha_${e.dataset.linha} span`)
+    qsa(`.primeiro_span.paragraph_${e.dataset.paragraph}.line_${e.dataset.line} span`)
       .forEach(f => { if (this.anima) f.style.color = '#555' })
 
     if (this.cg('id') == 's') {
