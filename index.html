@@ -61,11 +61,11 @@
               <ul class="dropdown-menu px-3 px-md-2">
                 <li class="nav-item">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras" 
-                      href="javascript:conf.tamanho(conf.get('tamanho') - 1)">
+                      name="font_size" data-val="-1" onclick="conf.shift(this)">
                     <i class="bi bi-zoom-out"></i>
                   </a>
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar o tamanho das letras" 
-                      href="javascript:conf.tamanho(conf.get('tamanho') + 1)">
+                      name="font_size" data-val="1" onclick="conf.shift(this)">
                     <i class="bi bi-zoom-in"></i>
                   </a>
                   <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary">
@@ -74,14 +74,14 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre notas" 
-                      href="javascript:conf.espaco(conf.get('espaco') - 0.05)">
+                      name="space_width" data-val="-0.05" onclick="conf.shift(this)">
                     <i class="bi bi-arrows-collapse-vertical"></i>
                   </a>
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar espaço entre notas" 
-                      href="javascript:conf.espaco(conf.get('espaco') + 0.05)">
+                      name="space_width" data-val="0.05" onclick="conf.shift(this)">
                     <i class="bi bi-arrows-expand-vertical"></i>
                   </a>
-                  <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary espaco">
+                  <span class="d-inline-block px-3 py-2 px-md-2 py-md-1 text-secondary space_width">
                     <span class="space_width">1.30</span>x
                   </span>
                 </li>
@@ -93,28 +93,28 @@
                     <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
                       <input class="form-control py-0 bpm_time menu-params" type="number" id="bpm_time" 
-                        value="60" onchange="conf.bpm(this.value)">
+                        name="bpm_time" onchange="conf.change(this)">
                     </div>
                   </div>
                   <div class="row py-1" title="quantidade de execução da 1a parte do suwari zutome">
                     <label for="suwari_0" class="col-4 col-sm-3 col-md-6 pe-0">parte 1</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
                       <input class="form-control py-0 suwari_0 menu-params" type="number" id="suwari_0" 
-                        value="21" onchange="conf.quant(0, this.value)">
+                        name="suwari_0" onchange="conf.change(this)">
                     </div>
                   </div>
                   <div class="row py-1" title="quantidade de execução da 3a parte do suwari zutome">
                     <label for="suwari_1" class="col-4 col-sm-3 col-md-6 pe-0">parte 3</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
                       <input class="form-control py-0 suwari_1 menu-params" type="number" id="suwari_1" 
-                        value="3" onchange="conf.quant(1, this.value)">
+                        name="suwari_1" onchange="conf.change(this)">
                     </div>
                   </div>
                   <div class="row py-1" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
                     <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
                       <input class="form-control py-0 suwari_2 menu-params" type="number" id="suwari_2" 
-                        value="3" onchange="conf.quant(2, this.value)">
+                        name="suwari_2" onchange="conf.change(this)">
                     </div>
                   </div>
                 </li>
@@ -124,12 +124,12 @@
                 <li class="nav-item">
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input scroll" name="scroll" 
-                      id="scroll" onchange="conf.anima(this.checked)">
+                      id="scroll" onchange="conf.toggle(this)">
                     <label class="form-check-label" for="scroll">rolagem</label>
                   </div>
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input animation" name="animation" 
-                      id="animation" onchange="conf.anima(this.checked)">
+                      id="animation" onchange="conf.toggle(this)">
                     <label class="form-check-label" for="animation">animação</label>
                   </div>
                 </li>
