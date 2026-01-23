@@ -115,11 +115,11 @@ h1 {
   background-position: center center;
 }
 
-.estica {
+.stretch {
   width: var(--size);
   height: var(--size);
 }
-.estica::before {
+.stretch::before {
   width: var(--size);
   height: var(--size);
   background-size: var(--size) var(--size);

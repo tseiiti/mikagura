@@ -1,159 +1,152 @@
-const INSTRUMENTS = [
-  'hyoshigi',
-  'chanpon',
-  'surigane',
-  'taiko',
-  'kotsuzumi',
-  'fue',
-  'koto',
-]
+const HYMN_ST = {
+  title: 'suwari zutome',
+  size: 26,
+  paragraphs: [
+    [{
+      phrase: 'ashiki o haro(o)te tasuke tamae',
+      meios: [1, 3, 5, 7, 10, 13],
+      hyoshigi: '1   1   1   1',
+      chanpon: '  1   1   1   1',
+      surigane: '1 221 221 221 22',
+      taiko: '1   1       1',
+      kotsuzumi: '  12   4    12',
+      fue: '2  00  35  30 27',
+      koto: '4  44  32  33 45',
+      size: 16,
+      halfs: [ 1, 3, 5, 7, 10, 13 ],
+    }, {
+      phrase: 'tenri ō no mikoto _',
+      meios: [1],
+      parar: true,
+      mensagem: '21 vezes',
+      hyoshigi: '1   1   1   1',
+      chanpon: '  1   1   1   3',
+      surigane: '1 221 221 221 44',
+      taiko: '1   1     3 1',
+      kotsuzumi: '  123232',
+      fue: '3 0 2 6 7 2 0',
+      koto: '3 3 4 6 5 4 4',
+      size: 16,
+      halfs: [ 1 ],
+      pause: true,
+      message: '21 vezes',
+    }], [{
+      phrase: 'choto hanashi kami no yu koto kiitekure',
+      meios: [10, 12, 14],
+      hyoshigi: '1   1   1   1   1   1   2',
+      chanpon: '  1   1   1   1   1   1 2',
+      surigane: '1 221 221 221 221 221 223',
+      taiko: '1   1 2 1   1   1       1',
+      kotsuzumi: '    1332       4    12',
+      fue: '2     0 0 2 3   0 272 3 2',
+      koto: '4     4 4   3   3 454 3 4',
+      size: 26,
+      halfs: [ 10, 12, 14 ],
+    }, {
+      phrase: 'ashiki no koto(o)wa iwandena',
+      meios: [1, 3, 5, 7, 9, 11],
+      hyoshigi: '2   1   1   2',
+      chanpon: '2 1   1   1 2',
+      surigane: '3 221 221 223',
+      taiko: '1 2 1       1',
+      kotsuzumi: '  12   432',
+      fue: '72 0 3 2 3 20',
+      koto: ' 4 4 3 4 3 44',
+      size: 14,
+      halfs: [ 1, 3, 5, 7, 9, 11 ],
+    }, {
+      phrase: 'kono yono ji(i)to tento okatadorite',
+      meios: [1, 4, 6, 8, 10, 12, 14],
+      hyoshigi: '2   1   1   1   2',
+      chanpon: '2 1   1   1   1 2',
+      surigane: '3 221 221 221 223',
+      taiko: '1 2 1   1       1',
+      kotsuzumi: '12    12   432',
+      fue: '72 002 35 32 3 20',
+      koto: '54 44  32  4 3 44',
+      size: 18,
+      halfs: [ 1, 4, 6, 8, 10, 12, 14 ],
+    }, {
+      phrase: 'fufu okoshiraekitarudena',
+      meios: [2, 4, 6, 8, 10],
+      fim: 11,
+      hyoshigi: '2   1   1   1',
+      chanpon: '2 1   1   1',
+      surigane: '3 221 221 221',
+      taiko: '1 2 1       1',
+      kotsuzumi: '  12   432',
+      fue: '72 0 3 2 3 20',
+      koto: '54 4 3 4 3 44',
+      size: 13,
+      halfs: [ 2, 4, 6, 8, 10 ],
+    }, {
+      phrase: 'korewa konoyono hajimedashi __',
+      meios: [1, 3, 5, 7, 9, 11],
+      inverso: 1,
+      fim: 13,
+      hyoshigi: '   1   1   1',
+      chanpon: ' 1   1   1   1',
+      surigane: ' 221 221 221 22',
+      taiko: ' 2 1   1   1',
+      kotsuzumi: ' 12    12',
+      fue: '720 3 2 3 20',
+      koto: '544 3 4 3 44',
+      size: 15,
+      halfs: [ 1, 3, 5, 7, 9, 11 ],
+      inverse: 1,
+    }, {
+      phrase: 'namu tenri ō no mikoto',
+      meios: [3],
+      fim: 9,
+      parar: true,
+      mensagem: '1 vez',
+      hyoshigi: '1   1   1   1   1',
+      chanpon: '  1   1   1   1',
+      surigane: '1 221 221 221 221',
+      taiko: '1   1   1     2 1',
+      kotsuzumi: '  12   4    12',
+      fue: '7 2 3 0 2 6 7 2 0',
+      koto: '5 4 3 3 4 6 5 4 4',
+      size: 17,
+      halfs: [ 3 ],
+      pause: true,
+      message: '1 vez',
+    }], [{
+      phrase: 'ashiki o haro(o)te tasuke sekikomu',
+      meios: [1, 3, 5, 7, 10, 12, 14],
+      hyoshigi: '1   1   1   1',
+      chanpon: '  1   1   1   1',
+      surigane: '1 221 221 221 22',
+      taiko: '1   1       1',
+      kotsuzumi: '  12   4    12',
+      fue: '2  00  35  30 27',
+      koto: '4  44  32  33 45',
+      size: 16,
+      halfs: [ 1, 3, 5, 7, 10, 12, 14 ],
+    }, {
+      phrase: 'ichiretsu sumashite kanrodai _',
+      meios: [1, 3, 5, 7, 9, 12],
+      parar: true,
+      mensagem: '3 vezes ( de 3 )',
+      hyoshigi: '1   1   1   1',
+      chanpon: '  1   1   1   3',
+      surigane: '1 221 221 221 44',
+      taiko: '    1   1 2 1',
+      kotsuzumi: ' 43232',
+      fue: ' 3 00 272 3 2',
+      koto: ' 3 33 454 3 4',
+      size: 16,
+      halfs: [ 1, 3, 5, 7, 9, 12 ],
+      pause: true,
+      message: '3 vezes ( de 3 )',
+    }],
+  ]
+}
 
 const HYMNS = {
-  hino_s: {
-    titulo: 'suwari zutome',
-    paragraphs: [
-      [{
-        phrase: 'ashiki o haro(o)te tasuke tamae',
-        meios: [1, 3, 5, 7, 10, 13],
-        hyoshigi: '1   1   1   1',
-        chanpon: '  1   1   1   1',
-        surigane: '1 221 221 221 22',
-        taiko: '1   1       1',
-        kotsuzumi: '  12   4    12',
-        fue: '2  00  35  30 27',
-        koto: '4  44  32  33 45',
-        size: 16,
-        halfs: [ 1, 3, 5, 7, 10, 13 ]
-      }, {
-        phrase: 'tenri ō no mikoto _',
-        meios: [1],
-        parar: true,
-        mensagem: '21 vezes',
-        hyoshigi: '1   1   1   1',
-        chanpon: '  1   1   1   3',
-        surigane: '1 221 221 221 44',
-        taiko: '1   1     3 1',
-        kotsuzumi: '  123232',
-        fue: '3 0 2 6 7 2 0',
-        koto: '3 3 4 6 5 4 4',
-        size: 16,
-        halfs: [ 1 ],
-        pause: true,
-        message: "21 vezes"
-      }], [{
-        phrase: 'choto hanashi kami no yu koto kiitekure',
-        meios: [10, 12, 14],
-        hyoshigi: '1   1   1   1   1   1   2',
-        chanpon: '  1   1   1   1   1   1 2',
-        surigane: '1 221 221 221 221 221 223',
-        taiko: '1   1 2 1   1   1       1',
-        kotsuzumi: '    1332       4    12',
-        fue: '2     0 0 2 3   0 272 3 2',
-        koto: '4     4 4   3   3 454 3 4',
-        size: 26,
-        halfs: [ 10, 12, 14 ]
-      }, {
-        phrase: 'ashiki no koto(o)wa iwandena',
-        meios: [1, 3, 5, 7, 9, 11],
-        hyoshigi: '2   1   1   2',
-        chanpon: '2 1   1   1 2',
-        surigane: '3 221 221 223',
-        taiko: '1 2 1       1',
-        kotsuzumi: '  12   432',
-        fue: '72 0 3 2 3 20',
-        koto: ' 4 4 3 4 3 44',
-        size: 14,
-        halfs: [ 1, 3, 5, 7, 9, 11 ]
-      }, {
-        phrase: 'kono yono ji(i)to tento okatadorite',
-        meios: [1, 4, 6, 8, 10, 12, 14],
-        hyoshigi: '2   1   1   1   2',
-        chanpon: '2 1   1   1   1 2',
-        surigane: '3 221 221 221 223',
-        taiko: '1 2 1   1       1',
-        kotsuzumi: '12    12   432',
-        fue: '72 002 35 32 3 20',
-        koto: '54 44  32  4 3 44',
-        size: 18,
-        halfs: [ 1, 4, 6, 8, 10, 12, 14 ]
-      }, {
-        phrase: 'fufu okoshiraekitarudena',
-        meios: [2, 4, 6, 8, 10],
-        fim: 11,
-        hyoshigi: '2   1   1   1',
-        chanpon: '2 1   1   1',
-        surigane: '3 221 221 221',
-        taiko: '1 2 1       1',
-        kotsuzumi: '  12   432',
-        fue: '72 0 3 2 3 20',
-        koto: '54 4 3 4 3 44',
-        size: 13,
-        halfs: [ 2, 4, 6, 8, 10 ]
-      }, {
-        phrase: 'korewa konoyono hajimedashi __',
-        meios: [1, 3, 5, 7, 9, 11],
-        inverso: 1,
-        fim: 13,
-        hyoshigi: '   1   1   1',
-        chanpon: ' 1   1   1   1',
-        surigane: ' 221 221 221 22',
-        taiko: ' 2 1   1   1',
-        kotsuzumi: ' 12    12',
-        fue: '720 3 2 3 20',
-        koto: '544 3 4 3 44',
-        size: 15,
-        halfs: [ 1, 3, 5, 7, 9, 11 ],
-        inverse: 1
-      }, {
-        phrase: 'namu tenri ō no mikoto',
-        meios: [3],
-        fim: 9,
-        parar: true,
-        mensagem: '1 vez',
-        hyoshigi: '1   1   1   1   1',
-        chanpon: '  1   1   1   1',
-        surigane: '1 221 221 221 221',
-        taiko: '1   1   1     2 1',
-        kotsuzumi: '  12   4    12',
-        fue: '7 2 3 0 2 6 7 2 0',
-        koto: '5 4 3 3 4 6 5 4 4',
-        size: 17,
-        halfs: [ 3 ],
-        pause: true,
-        message: "1 vez"
-      }], [{
-        phrase: 'ashiki o haro(o)te tasuke sekikomu',
-        meios: [1, 3, 5, 7, 10, 12, 14],
-        hyoshigi: '1   1   1   1',
-        chanpon: '  1   1   1   1',
-        surigane: '1 221 221 221 22',
-        taiko: '1   1       1',
-        kotsuzumi: '  12   4    12',
-        fue: '2  00  35  30 27',
-        koto: '4  44  32  33 45',
-        size: 16,
-        halfs: [ 1, 3, 5, 7, 10, 12, 14 ]
-      }, {
-        phrase: 'ichiretsu sumashite kanrodai _',
-        meios: [1, 3, 5, 7, 9, 12],
-        parar: true,
-        mensagem: '3 vezes ( de 3 )',
-        hyoshigi: '1   1   1   1',
-        chanpon: '  1   1   1   3',
-        surigane: '1 221 221 221 44',
-        taiko: '    1   1 2 1',
-        kotsuzumi: ' 43232',
-        fue: ' 3 00 272 3 2',
-        koto: ' 3 33 454 3 4',
-        size: 16,
-        halfs: [ 1, 3, 5, 7, 9, 12 ],
-        pause: true,
-        message: "3 vezes ( de 3 )"
-      }],
-    ]
-  },
-  hino_0: {
-    titulo: 'yorozuyo',
+  hymn_s: HYMN_ST,
+  hymn_0: {
+    title: 'yorozuyo',
     paragraphs: [
       [{
         phrase: 'yorozu yo no sekai ichiretsu miharasedo',
@@ -318,8 +311,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_1: {
-    titulo: 'hito kudari me',
+  hymn_1: {
+    title: 'hito kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, shō(o)gatsu(u)',
@@ -455,8 +448,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_2: {
-    titulo: 'futa kudari me',
+  hymn_2: {
+    title: 'futa kudari me',
     paragraphs: [
       [{
         phrase: 'ton ton(n) ton to shō(o)gatsu(u)',
@@ -591,8 +584,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_3: {
-    titulo: 'mi kudari me',
+  hymn_3: {
+    title: 'mi kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hi no moto shoyashiki no',
@@ -811,8 +804,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_4: {
-    titulo: 'yo kudari me',
+  hymn_4: {
+    title: 'yo kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hito ga nanigoto iwō(o) tomo',
@@ -1030,8 +1023,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_5: {
-    titulo: 'itsu kudari me',
+  hymn_5: {
+    title: 'itsu kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hiroi sekai no uchi nareba',
@@ -1246,8 +1239,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_6: {
-    titulo: 'mutsu kudari me',
+  hymn_6: {
+    title: 'mutsu kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hito no kokoro to yū(u) mono wa',
@@ -1466,8 +1459,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_7: {
-    titulo: 'nana kudari me',
+  hymn_7: {
+    title: 'nana kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hitokoto hanashi wa hinokishin',
@@ -1701,8 +1694,8 @@ const HYMNS = {
       }],
     ],
   },
-  hino_8: {
-    titulo: 'ya kudari me',
+  hymn_8: {
+    title: 'ya kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hiroi sekai ya kuni naka ni',
@@ -1916,8 +1909,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_9: {
-    titulo: 'kokono kudari me',
+  hymn_9: {
+    title: 'kokono kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hiroi sekai o uchi mawari',
@@ -2127,8 +2120,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_10: {
-    titulo: 'to kudari me',
+  hymn_10: {
+    title: 'to kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hito no kokoro to yū(u) mono wa',
@@ -2344,8 +2337,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_11: {
-    titulo: 'jūichi kudari me',
+  hymn_11: {
+    title: 'jūichi kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, hi no moto shoyashiki no',
@@ -2566,8 +2559,8 @@ const HYMNS = {
       }],
     ]
   },
-  hino_12: {
-    titulo: 'jūni kudari me',
+  hymn_12: {
+    title: 'jūni kudari me',
     paragraphs: [
       [{
         phrase: 'hitotsu, ichi ni daiku no ukagai ni',

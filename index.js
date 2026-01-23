@@ -32,16 +32,16 @@ class Config {
 
     qs('.menu-hymns li').innerHTML = this.hino.get_links()
     qs('main').innerHTML = this.hino.get_hymn_html()
-    qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hino.dado.titulo }`
+    qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hino.hymn.title }`
 
-    if (this.control.id == 's') {
-      let es = qsa('.mensagem p')
-      es[0].innerText = `0 de ${ this.control.qtd_s[0] } vezes`
-      es[1].innerText = `0 de 1 vez`
-      es[2].innerText = `0 de ${ this.control.qtd_s[1] } vezes ( de 0 de ${ this.control.qtd_s[2] } )`
-    }
+    // if (this.control.id == 's') {
+    //   let es = qsa('.mensagem p')
+    //   es[0].innerText = `0 de ${ this.control.qtd_s[0] } vezes`
+    //   es[1].innerText = `0 de 1 vez`
+    //   es[2].innerText = `0 de ${ this.control.qtd_s[1] } vezes ( de 0 de ${ this.control.qtd_s[2] } )`
+    // }
 
-    for (let chave of INSTRUMENTS) {
+    for (let chave of Uta.INSTRUMENTS) {
       if (this.control.instrus[chave]) {
         qs(`input[name=${ chave }]`).checked = true
         this.instrument(qs(`input[name=${ chave }]`))
@@ -121,7 +121,7 @@ class Config {
   // cria lista de checkbox de instrumentos
   get_instruments() {
     let html = ''
-    for (let chave of INSTRUMENTS) {
+    for (let chave of Uta.INSTRUMENTS) {
       html += `
         <li class="dropdown-item form-check ps-4">
           <input type="checkbox" class="form-check-input instrument" name="${ chave }" 
@@ -151,7 +151,7 @@ class Config {
     this.instrument_icon(c.name, c.checked)
     let count = 0
     qsa('.instrument').forEach(e => { if (e.checked) count += 1 }) // depende de .instrument
-    qs('#chk_all').checked  = count == INSTRUMENTS.length // depende de #chk_all
+    qs('#chk_all').checked  = count == Uta.INSTRUMENTS.length // depende de #chk_all
     qs('#chk_none').checked = count == 0 // depende de #ch_nenhum
   }
 

@@ -23,13 +23,14 @@ class Uta {
   ]
 
   constructor(id, tamanho, espaco) {
-    this.id = id
-    this.dado    = HYMNS[`hino_${ this.id }`]
+    this.id      = id
+    this.hymn    = HYMNS[`hymn_${ this.id }`]
     this.tamanho = tamanho
     this.espaco  = espaco
     this.largura = 0
     this.regexs  = []
     this.phrase
+    this.first = true
 
     for (let i in Uta.SEARCHES) { this.regexs.push(new RegExp(`^${ Uta.SEARCHES[i] }`)) }
   }
@@ -37,48 +38,194 @@ class Uta {
   // cria lista de link dos hinos
   get_links() {
     let html = ''
-    for (let chave in HYMNS) {
-      let aux = chave == 'hino_' + this.id ? 'active' : ''
+    for (let key in HYMNS) {
+      let aux = key == 'hymn_' + this.id ? 'active' : ''
       html += `
         <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
-          href="javascript:conf.set_hymn('${ chave.replace('hino_', '') }')">
-            ${ HYMNS[chave].titulo }
+          href="javascript:conf.set_hymn('${ key.replace('hymn_', '') }')">
+            ${ HYMNS[key].title }
         </a>
         <hr class="dropdown-divider m-0">`
     }
     return html
   }
 
+  // primeiro span com 3 pontos
+  get_first_span(i, j) {
+    let html = ''
+    if (this.first) {
+      html = `<span class="first-span paragraph_${ i } line_${ j }"><span>.</span><span>.</span><span>.</span></span>`
+      this.first = false
+    }
+    return html
+  }
+
+  // primeira sílaba
+  get_first_syllable(i, j) {
+    let html = ''
+    let clas = `beat first-beat ${ this.first ? 'd-none' : '' }`
+    let data = `data-paragraph="${ i }" data-line="${ j }" data-syllable="-1" data-part="1"`
+    html = `
+      <div class="syllable d-none d-md-block">
+        <progress class="${ clas }" ${ data } value="0" max="5"></progress>
+        ${ this.get_first_span(i, j) }
+      </div>`
+    return html
+  }
+
+  // texto da sílaba
   get_syllable_text() {
-    let syllable = null
+    let text = null
     for (let rg of this.regexs) {
       let m = this.phrase.match(rg)
       if (m) {
-        syllable = m[0]
+        text = m[0]
         this.phrase = this.phrase.replace(rg, '')
         break
       }
     }
-    return syllable
+    return text
   }
 
-  get_narimono(line, indice) {
+  get_narimono(line, index) {
     let html = ''
-    for (let chave of INSTRUMENTS) {
-      if (line[chave]) {
-        let char = line[chave].charAt(indice).trim()
-        let aux = `${ chave == 'kotsuzumi' ? 'estica ' : '' }${ chave } `
-        if (char.length > 0) {
-          html += `<div class="icone ${ aux }${ chave }_${ char } d-none"></div>`
-        } else {
-          html += `<div class="icone ${ aux }d-none"></div>`
-        }
+    for (let key of Uta.INSTRUMENTS) {
+      if (line[key]) {
+        let char = line[key].charAt(index).trim()
+        let aux = `${ key == 'kotsuzumi' ? 'stretch' : '' } ${ key }`
+        if (char.length > 0) aux = `${ aux } ${ key }_${ char }`
+        html += `<div class="icone ${ aux } d-none"></div>`
       }
     }
     return html
   }
 
-  get_syllable_part(syllable, classes, narimono) {
+  get_syllable_part(text, l, i, j, p, q, v) {
+    if (l.size < p + q) return ''
+    
+    if (text == '_')  text = ''
+    if (text == 'xi') text = 'i'
+    if (text == 'xo') text = 'o'
+    let clas = `part part_${ (p == 1 && !v) || (p == 2 && v) ? '1' : '2' }`
+    let data = `data-paragraph="${ i }"
+      data-line="${ j }"
+      data-syllable="${ q / 2 }"
+      data-part="${ p }"`
+
+    let html = `<span class="${ clas }">`
+    if (l.size > p + q) {
+      html += `<progress class="beat beat_${ p + q }" ${ data } value="0" max="5"></progress>`
+    }
+    html += `<div class="part_text">${ text }</div>`
+    html += this.get_narimono(l, q + p - 1)
+    html += '</span>'
+
+    return html
+  }
+
+  get_line(line, i, j) {
+    this.phrase = (line.phrase || '').replace(/ /g, '')
+    let html = `<div class="line line_${ j } ${ line.pause ? 'pause' : '' }">`
+    html += this.get_first_syllable(i, j)
+    if (line.pause) this.first = true
+
+    let id1 = 0
+    let id2 = 0
+    while (this.phrase.length > 0) {
+      let text = this.get_syllable_text()
+      if (!text) {
+        console.log(this.phrase)
+        return
+      }
+      html += `<div class="syllable syllable_${ id2 / 2 }">`
+      html += this.get_syllable_part(text, line, i, j, 1, id2, line.inverse)
+      text = ''
+      if (line.halfs && line.meios.indexOf(id1 + 1) != -1) {
+        text = this.get_syllable_text()
+        id1 += 1
+      }
+      html += this.get_syllable_part(text, line, i, j, 2, id2, line.inverse)
+      id1 += 1
+      id2 += 2
+      html += '</div>'
+    }
+    html += '</div>'
+    return html
+  }
+
+  get_paragraph(paragraph, i, size) {
+    let html = `<div class="paragraph paragraph_${ i }">`
+    for (let j in paragraph) {
+      let line = paragraph[j]
+      html += this.get_line(line, i, j)
+
+      // html += `<div class="line line_${ j } ${ line.parar ? 'parar' : '' }">`
+  
+      // let datas = `data-paragraph="${ i }"
+      //   data-line="${ j }"
+      //   data-syllable="${ -1}"
+      //   data-part="${ 1 }"`
+
+      // // criar sílaba inicial
+      // html += `
+      // <div class="syllable d-none d-md-block">
+      //   <progress class="beat first-beat ${ this.first ? 'd-none' : '' }" ${ datas } value="0" max="5">
+      //   </progress>`
+      // if (this.first) {
+      //   // sílaba inicial de três pontos do hino
+      //   html += `
+      //     <span class="first-span paragraph_${ i } line_${ j }">
+      //       <span>.</span><span>.</span><span>.</span>
+      //     </span>`
+      //   this.first = false
+      // }
+      // html += '</div>'
+      // if (line.parar) this.first = true
+
+      // let aux = this.get_line(line, i, j)
+      // if (j < paragraph.length - 1 || !line.parar) {
+      //   let div = document.createElement('div')
+      //   div.innerHTML = aux
+      //   let e = div.querySelector('.syllable:last-child span:last-child progress')
+      //   if (e) e.classList.remove('beat')
+      //   html += div.innerHTML
+      // } else {
+      //   html += aux
+      // }
+      
+      // if (line.mensagem) {
+      //   // criar parágrafo de mensagem sepadora
+      //   html += `
+      //     </div><div class="line" style="margin-left: ${ this.tamanho * this.espaco * 2.5 }px;">
+      //     <div class="border-bottom mb-4 px-1 mensagem">
+      //       <p class="text-end fst-italic fw-light m-1">${line.mensagem}</p>
+      //     </div>`
+      // }
+      // html += '</div>'
+    }
+    html += '</div>'
+    return html
+  }
+
+  get_hymn_html() {
+    this.first = true
+    let html = `<h1>${ this.hymn.title }</h1>\n`
+    for (let i in this.hymn.paragraphs) {
+      let paragraph = this.hymn.paragraphs[i]
+      let size = this.hymn.size
+      html += this.get_paragraph(paragraph, i, size)
+    }
+
+    // // ajuste da largura da mensagem
+    // let div = document.createElement('div')
+    // div.innerHTML = html
+    // div.querySelectorAll('.mensagem').forEach(e => { e.style.width = `${this.largura}px` })
+    // html = div.innerHTML
+  
+    return html
+  }
+
+  get_syllable_part_old(syllable, classes, narimono) {
     let html    = ''
     if (syllable == '_')  syllable = ''
     if (syllable == 'xi') syllable = 'i'
@@ -97,7 +244,7 @@ class Uta {
     return html
   }
 
-  get_line(line, i, j) {
+  get_line_old(line, i, j) {
     this.phrase = (line.phrase || '').replace(/ /g, '')
     let html   = ''
 
@@ -143,11 +290,11 @@ class Uta {
     return html
   }
 
-  get_hymn_html() {
+  get_hymn_html_old() {
     let primeiro = true
-    let html = `<h1>${ this.dado.titulo }</h1>\n`
-    for (let i in this.dado.paragraphs) {
-      let paragraph = this.dado.paragraphs[i]
+    let html = `<h1>${ this.hymn.title }</h1>\n`
+    for (let i in this.hymn.paragraphs) {
+      let paragraph = this.hymn.paragraphs[i]
       html += `<div class="paragraph paragraph_${ i }">`
       for (let j in paragraph) {
         let line = paragraph[j]
