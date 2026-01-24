@@ -12,7 +12,8 @@ class Config {
     this.control.scroll = !(aux.scroll == false)
     this.control.animation = !(aux.animation == false)
     this.control.instruments = aux.instruments || {}
-    this.play = new Play(this)
+    this.fill = new Fill(this)
+    this.link = new Link()
     this.hymn
 
     qs('.bpm_time').value = this.control.bpm_time
@@ -21,29 +22,23 @@ class Config {
     qs('.suwari_2').value = this.control.suwari_2
     qs('.scroll').checked = this.control.scroll
     qs('.animation').checked = this.control.animation
-    qs('.menu-instruments').innerHTML = this.get_instruments() + qs('.menu-instruments').innerHTML
+    qs('.menu-instruments').innerHTML = this.link.get_instruments() + qs('.menu-instruments').innerHTML
     
     this.set_hymn()
   }
 
   set_hymn(hymn_id) {
-    clearInterval(this.play.interval)
-    this.play.track_icon(0)
+    clearInterval(this.fill.interval)
+    this.fill.track_icon(0)
 
     if (hymn_id != null) this.control.hymn_id = hymn_id
     this.hymn = new Uta(this.control.hymn_id, this.control.font_size, this.control.space_width)
 
-    qs('.menu-hymns li').innerHTML = this.get_links()
+    qs('.menu-hymns li').innerHTML = this.link.get_links(this.control.hymn_id)
     qs('main').innerHTML = this.hymn.get_hymn_html()
     qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hymn.hymn.title }`
 
-    if (this.control.hymn_id == 'hymn_id') {
-      let es = qsa('.message p')
-      es[0].innerText = `0 de ${ this.control.suwari_0 } vezes`
-      es[1].innerText = `0 de 1 vez`
-      es[2].innerText = `0 de ${ this.control.suwari_1 } vezes ( de 0 de ${ this.control.suwari_2 } )`
-    }
-
+    qs('#chk_none').checked = true
     for (let key of Uta.INSTRUMENTS) {
       if (this.control.instruments[key]) {
         qs(`input[name=${ key }]`).checked = true
@@ -57,9 +52,11 @@ class Config {
     if (this.control.scroll)
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
 
-    this.play = new Play(this)
+    this.fill = new Fill(this)
+    this.fill.suwari_message()
   }
 
+  // define valor de configuração
   set(key, val) {
     this.control[key] = val
     localStorage.setItem('control', JSON.stringify(this.control)) 
@@ -74,6 +71,7 @@ class Config {
     }
   }
 
+  // retorna valor de configuração
   get(key) {
     return this.control[key]
   }
@@ -131,36 +129,35 @@ class Config {
       this.instrument_icon(e.name, e.checked)
     })
   }
-  
-  // cria lista de link dos hinos
-  get_links() {
-    let html = ''
-    for (let key in Uta.HYMNS) {
-      let aux = key == this.control.hymn_id ? 'active' : ''
-      html += `
-        <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
-          href="javascript:config.set_hymn('${ key }')">
-            ${ Uta.HYMNS[key].title }
-        </a>
-        <hr class="dropdown-divider m-0">`
-    }
-    return html
+
+  reset() {
+    this.set_hymn()
   }
 
-  // cria lista de checkbox de instrumentos
-  get_instruments() {
-    let html = ''
-    for (let key of Uta.INSTRUMENTS) {
-      html += `
-        <li class="dropdown-item form-check ps-4">
-          <input type="checkbox" class="form-check-input instrument" name="${ key }" 
-            id="check_${ key }" onchange="config.instrument(this)">
-          <label class="form-check-label" for="check_${ key }">${ key }</label>
-        </li>`
+  play() {
+    this.fill.play()
+  }
+
+  previous() {
+    let aux = this.control.hymn_id.substr(5)
+    if (aux != 'st') {
+      aux = aux == '00' ? 'st' : String(parseInt(aux) - 1).padStart(2, '0')
+      this.set_hymn('hymn_' + aux)
     }
-    return html
+  }
+
+  next() {
+    let aux = this.control.hymn_id.substr(5)
+    if (aux != '12') {
+      aux = aux == 'st' ? '00' : String(parseInt(aux) + 1).padStart(2, '0')
+      this.set_hymn('hymn_' + aux)
+    }
   }
 }
 
 // config depende da variável config
 var config
+
+document.addEventListener('DOMContentLoaded', function() {
+  config = new Config()
+})
