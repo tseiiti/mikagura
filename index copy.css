@@ -25,29 +25,29 @@ h1 {
   text-transform: capitalize;
 }
 
-.paragraph {
+.paragrafo {
   margin-top: var(--size-base);
 }
 
-.line {
+.linha {
   margin-top: var(--size-base);
   display: flex;
   flex-flow: row wrap;
 }
 
 /* Margem na segunda linha */
-.line:not(:first-child) {
+.linha:not(:first-child) {
   margin-left: 0;
 }
 
 @media (min-width: 768px) {
-  .line:not(:first-child) {
+  .linha:not(:first-child) {
     margin-left: calc(var(--size) * 4);
   }
 }
 
 /* Largura das notas */
-.syllable {
+.silaba {
   display: flex;
   width: calc(var(--size) * 2);
 }
@@ -59,7 +59,7 @@ h1 {
   text-align: center;
 }
 
-.part_text {
+.texto {
   width: var(--size);
   height: var(--size-base);
   position: relative;
@@ -67,7 +67,7 @@ h1 {
 }
 
 /* Linha Vertical */
-.part_text:before {
+.texto:before {
   content: "";
   position: absolute;
   border-left: 1px solid darkslategray;
@@ -77,12 +77,12 @@ h1 {
   visibility: visible;
 }
 
-.part_2 .part_text:before {
+.part_2 .texto:before {
   border-left: 1px dashed darkslategray;
 }
 
 /* Linha Horizontal */
-.part_text:after {
+.texto:after {
   content: "";
   position: absolute;
   border-top: 1px solid darkslategray;
@@ -92,10 +92,10 @@ h1 {
   visibility: visible;
 }
 
-/* .fim .part_text:after {
+.fim .texto:after {
   width: 0;
-} */
-.syllable:last-child .part:last-child .part_text:after {
+}
+.silaba:last-child .part_2 .texto:after {
   width: 0;
 }
 
@@ -115,11 +115,11 @@ h1 {
   background-position: center center;
 }
 
-.stretch {
+.estica {
   width: var(--size);
   height: var(--size);
 }
-.stretch::before {
+.estica::before {
   width: var(--size);
   height: var(--size);
   background-size: var(--size) var(--size);
@@ -177,11 +177,11 @@ h1 {
   text-transform: capitalize;
 }
 
-/* .checkbox-linha {
+.checkbox-linha {
   margin-top: var(--size-base);
   display: flex;
   flex-flow: row wrap;
-} */
+}
 
 .checkbox-label {
   margin-right: var(--size-base);
@@ -191,7 +191,7 @@ h1 {
   margin-right: var(--size-xs);
 }
 
-.open-on-hover:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
@@ -214,18 +214,18 @@ progress::-webkit-progress-bar { background: #eee; }
 progress::-moz-progress-bar { background: #888; }
 progress::-webkit-progress-value { background: #888; }
 
-/* .syllable:last-child .part_2 progress {
+.silaba:last-child .part_2 progress {
   width: 0;
 }
 
 .fim progress {
   width: 0;
-} */
+}
 
-.first-beat {
+.primeiro_tempo {
   margin-left: calc(var(--size) * 1.5);
 }
-.first-span span {
+.primeiro_span span {
   font-size: 60px;
   line-height: 36px;
   color: #ccc;
