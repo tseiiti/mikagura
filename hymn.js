@@ -698,9 +698,7 @@ const HYMN_03 = {
       kotsuzumi: '   4    12   43232',
       fue: '567 0 2 6 7 2 2 3 2 6 0',
       koto: '755 754 6 5 4 4 3 4 6 6',
-      size: 24,
-      pause: true,
-      message: 'pausar'
+      size: 24
     } ], [ {
       phrase: 'itsutsu, itsumo waraware soshirarete',
       hyoshigi: '  1   1   1   1   1   1   1',
@@ -722,7 +720,9 @@ const HYMN_03 = {
       fue: '567 0 2 6 7 2 2 3 2 6 0',
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 24,
-      halfs: [ 1 ]
+      halfs: [ 1 ],
+      pause: true,
+      message: 'pausar'
     } ], [ {
       phrase: 'muttsu, muri na negai wa shite kurena',
       hyoshigi: '  1   1   1   1   1   1   1',
@@ -808,7 +808,7 @@ const HYMN_03 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 24
     } ], [ {
-      phrase: 'tō(o)do kono tabi arawareta',
+      phrase: 'tō(o)do, kono tabi arawareta',
       hyoshigi: '  1   1   1   1   1   1',
       chanpon: '1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221',
