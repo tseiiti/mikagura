@@ -167,8 +167,8 @@ class Uta {
       if (line.message) {
         // parágrafo de mensagem sepadora
         html += `
-          <div class="line" style="margin-left: calc(var(--size) * 2.3);">
-            <div class="border-bottom mb-4 px-1 message" style="width: calc(var(--size) * ${ size });">
+          <div class="line" style="margin-left: calc(var(--size) * 2.3)">
+            <div class="border-bottom mb-4 px-1 message" style="width: calc(var(--size) * ${ size })">
               <p class="text-end fst-italic fw-light m-1">${line.message}</p>
             </div>
           </div>`

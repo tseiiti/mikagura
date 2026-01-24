@@ -9,7 +9,6 @@
   <title>Mikagura Uta</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="index.css">
   <script type="text/javascript" src="utils.js"></script>
@@ -163,16 +162,16 @@
 
             <!-- tocar -->
             <li class="nav-item">
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.play.reset()" title="recomeçar">
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.reset()" title="recomeçar">
                 <i class="bi bi-arrow-counterclockwise"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:config.play.track()" title="tocar">
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:config.play()" title="tocar">
                 <i class="bi bi-play-fill"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.play.previous()" title="hino anterior">
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.previous()" title="hino anterior">
                 <i class="bi bi-arrow-left-circle-fill"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.play.next()" title="próximo hino">
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.next()" title="próximo hino">
                 <i class="bi bi-arrow-right-circle-fill"></i>
               </a>
             </li>
@@ -184,14 +183,15 @@
 
   <main class="container-lg my-4"></main>
 
+  <!-- tocar fixo -->
   <div class="fixed-bottom">
     <div class="position-absolute bottom-0 end-0 m-2 text-secondary" style="font-size: 24px;">
       <span class="text-capitalize" style="margin-right: 8px; font-size: 20px;"></span>
 
-      <a class="nav-link d-inline me-1 play" href="javascript:config.play.track()" title="tocar">
+      <a class="nav-link d-inline me-1 play" href="javascript:config.play()" title="tocar">
         <i class="bi bi-play-fill"></i>
       </a>
-      <a class="nav-link d-inline me-1" href="javascript:config.play.next()" title="próximo hino">
+      <a class="nav-link d-inline me-1" href="javascript:config.next()" title="próximo hino">
         <i class="bi bi-arrow-right-circle-fill"></i>
       </a>
     </div>
@@ -199,9 +199,9 @@
 
   <script type="text/javascript" src="hymn.js"></script>
   <script type="text/javascript" src="uta.js"></script>
+  <script type="text/javascript" src="link.js"></script>
   <script type="text/javascript" src="config.js"></script>
-  <script type="text/javascript" src="play.js"></script>
-  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="fill.js"></script>
   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
