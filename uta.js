@@ -1,4 +1,21 @@
 class Uta {
+  static HYMNS = {
+    hymn_st: HYMN_ST,
+    hymn_00: HYMN_00,
+    hymn_01: HYMN_01,
+    hymn_02: HYMN_02,
+    hymn_03: HYMN_03,
+    hymn_04: HYMN_04,
+    hymn_05: HYMN_05,
+    hymn_06: HYMN_06,
+    hymn_07: HYMN_07,
+    hymn_08: HYMN_08,
+    hymn_09: HYMN_09,
+    hymn_10: HYMN_10,
+    hymn_11: HYMN_11,
+    hymn_12: HYMN_12,
+  }
+
   static SEARCHES = [
     '_', 'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 
     'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
@@ -24,7 +41,7 @@ class Uta {
 
   constructor(hymn_id, font_size, space_width) {
     this.hymn_id     = hymn_id
-    this.hymn        = HYMNS[`hymn_${ this.hymn_id }`]
+    this.hymn        = Uta.HYMNS[this.hymn_id]
     this.font_size   = font_size
     this.space_width = space_width
     this.regexs      = []

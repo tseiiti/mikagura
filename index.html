@@ -26,6 +26,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar_content">
           <ul class="navbar-nav me-auto">
+
+            <!-- menu para troca de hino -->
             <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Hinos
@@ -35,6 +37,7 @@
               </ul>
             </li>
 
+            <!-- menu para ativação de instrumentos -->
             <li class="nav-item dropdown mb-2 mb-md-0 open-on-hover">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Instrumentos
@@ -54,11 +57,14 @@
               </ul>
             </li>
 
+            <!-- configurações -->
             <li class="nav-item dropdown open-on-hover">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ajustes
               </a>
               <ul class="dropdown-menu px-3 px-md-2">
+
+                <!-- tamanho da fonte -->
                 <li class="nav-item">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras" 
                       name="font_size" data-val="-1" onclick="config.shift(this)">
@@ -72,6 +78,8 @@
                     <span class="font_size">16</span>px
                   </span>
                 </li>
+
+                <!-- espaço entre notas -->
                 <li class="nav-item">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre notas" 
                       name="space_width" data-val="-0.05" onclick="config.shift(this)">
@@ -89,6 +97,8 @@
                 <hr class="my-2 mx-0">
 
                 <li class="nav-item">
+
+                  <!-- tempo de batidas por minuto -->
                   <div class="row py-1" title="tempo em batidas por minuto">
                     <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
@@ -96,6 +106,8 @@
                         name="bpm_time" onchange="config.change(this)">
                     </div>
                   </div>
+
+                  <!-- quantidade da 1a parte -->
                   <div class="row py-1" title="quantidade de execução da 1a parte do suwari zutome">
                     <label for="suwari_0" class="col-4 col-sm-3 col-md-6 pe-0">parte 1</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
@@ -103,6 +115,8 @@
                         name="suwari_0" onchange="config.change(this)">
                     </div>
                   </div>
+
+                  <!-- quantidade da 3a parte -->
                   <div class="row py-1" title="quantidade de execução da 3a parte do suwari zutome">
                     <label for="suwari_1" class="col-4 col-sm-3 col-md-6 pe-0">parte 3</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
@@ -110,6 +124,8 @@
                         name="suwari_1" onchange="config.change(this)">
                     </div>
                   </div>
+
+                  <!-- quantidade de paradas da 3a parte -->
                   <div class="row py-1" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
                     <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0">
@@ -122,11 +138,15 @@
                 <hr class="my-2 mx-0">
 
                 <li class="nav-item">
+
+                  <!-- ativa rolagem -->
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input scroll" name="scroll" 
                       id="scroll" onchange="config.toggle(this)">
                     <label class="form-check-label" for="scroll">rolagem</label>
                   </div>
+
+                  <!-- ativa animação -->
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input animation" name="animation" 
                       id="animation" onchange="config.toggle(this)">
@@ -140,6 +160,8 @@
               <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
               <hr class="d-md-none my-2">
             </li>
+
+            <!-- tocar -->
             <li class="nav-item">
               <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.play.reset()" title="recomeçar">
                 <i class="bi bi-arrow-counterclockwise"></i>

@@ -2,7 +2,7 @@ class Config {
   constructor() {
     let aux = JSON.parse(localStorage.getItem('control') || '{}')
     this.control = {}
-    this.control.hymn_id = aux.hymn_id || '0'
+    this.control.hymn_id = aux.hymn_id || 'hymn_00'
     this.control.font_size = aux.font_size || 16
     this.control.space_width = aux.space_width  || 1.3
     this.control.bpm_time = aux.bpm_time || 60
@@ -37,7 +37,7 @@ class Config {
     qs('main').innerHTML = this.hymn.get_hymn_html()
     qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hymn.hymn.title }`
 
-    if (this.control.hymn_id == 's') {
+    if (this.control.hymn_id == 'hymn_id') {
       let es = qsa('.message p')
       es[0].innerText = `0 de ${ this.control.suwari_0 } vezes`
       es[1].innerText = `0 de 1 vez`
@@ -135,12 +135,12 @@ class Config {
   // cria lista de link dos hinos
   get_links() {
     let html = ''
-    for (let key in HYMNS) {
-      let aux = key == 'hymn_' + this.control.hymn_id ? 'active' : ''
+    for (let key in Uta.HYMNS) {
+      let aux = key == this.control.hymn_id ? 'active' : ''
       html += `
         <a class="dropdown-item px-2 menu-hymn menu-params ${ aux }"
-          href="javascript:config.set_hymn('${ key.replace('hymn_', '') }')">
-            ${ HYMNS[key].title }
+          href="javascript:config.set_hymn('${ key }')">
+            ${ Uta.HYMNS[key].title }
         </a>
         <hr class="dropdown-divider m-0">`
     }
@@ -161,3 +161,6 @@ class Config {
     return html
   }
 }
+
+// config depende da variável config
+var config
