@@ -109,7 +109,7 @@ class Play {
     clearInterval(this.id);
     this.id = setInterval(function(fx) {
       i += 1;
-      if (this.cg('animation')) this.b.value = i;
+      if (fx.cg('animation')) fx.b.value = i;
 
       if (i == 5) {
         i = 0;
