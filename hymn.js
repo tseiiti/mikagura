@@ -14,7 +14,7 @@ const HYMN_ST = {
       size: 16,
       halfs: [ 1, 3, 5, 7, 10, 13 ]
     }, {
-      phrase: 'tenri ō no mikoto _',
+      phrase: 'xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1',
       chanpon: '  1   1   1   3',
       surigane: '1 221 221 221 44',
@@ -23,7 +23,6 @@ const HYMN_ST = {
       fue: '3 0 2 6 7 2 0',
       koto: '3 3 4 6 5 4 4',
       size: 16,
-      halfs: [ 1 ],
       pause: true,
       message: '21 vezes'
     } ], [ {
@@ -2316,7 +2315,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'futatsu, fushiga na tasuke o shite iredo',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2338,7 +2337,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'mittsu, mizu no naka naru kono dorō(o)',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2358,7 +2357,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'yottsu, yoku ni kiri nai doro mizu ya',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2378,7 +2377,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'itsutsu, itsuitsu made(e) mo kono koto wa',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2400,7 +2399,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'muttsu, mugoi kotoba o dashi taru mo',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2420,7 +2419,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'nanatsu, nangi suru no mo kokoro kara',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2441,7 +2440,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'yattsu, yamai wa tsura(a)i mono naredo',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2462,7 +2461,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'kokonotsu, _ kono tabi made(e) wa ichiretsu ni',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
@@ -2484,7 +2483,7 @@ const HYMN_10 = {
     } ], [ {
       phrase: 'tō(o)do, kono tabi arawareta',
       hyoshigi: '  1   1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1   1',
+      chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '  12    12   43232',
