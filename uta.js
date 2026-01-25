@@ -17,26 +17,26 @@ class Uta {
   }
 
   static SEARCHES = [
-    '_', 'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 
+    '_', 'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 'xkan', 'xten', 
     'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
     '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 
     'do,', 'de,', 'ni,', 
     'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'dō', 'fu', 'fū', 'ga', 'gi', 'go', 'gu', 'ha', 
     'hi', 'ho', 'hō', 'ji', 'jo', 'jū', 'ka', 'ke', 'ki', 'ko', 'kō', 'ku', 'ma', 'me', 'mi', 
     'mo', 'mu', 'na', 'ne', 'nē', 'ni', 'no', 'nō', 'nu', 'ra', 're', 'ri', 'ro', 'rō', 'ru', 
-    'sa', 'se', 'so', 'sō', 'su', 'ta', 'te', 'to', 'tō', 'wa', 'wō', 'xi', 'xo', 'ya', 'yo', 
-    'yō', 'yu', 'yū', 'za', 'zo', 'zu', 
+    'sa', 'se', 'so', 'sō', 'su', 'ta', 'te', 'to', 'tō', 'wa', 'wō', 'xi', 'xn', 'xo', 'ya', 
+    'yo', 'yō', 'yu', 'yū', 'za', 'zo', 'zu', 
     'ō', 'i', 'o', 'n', 'e', 'u', 'a', 
   ]
 
   static INSTRUMENTS = [
-    "hyoshigi",
-    "chanpon",
-    "surigane",
-    "taiko",
-    "kotsuzumi",
-    "fue",
-    "koto"
+    'hyoshigi',
+    'chanpon',
+    'surigane',
+    'taiko',
+    'kotsuzumi',
+    'fue',
+    'koto'
   ]
 
   constructor(hymn_id, font_size, space_width) {
@@ -107,7 +107,10 @@ class Uta {
     if (l.size < p + q) return ''
     
     if (text == '_')  text = ''
+    if (text == 'xkan') text = 'kan'
+    if (text == 'xten') text = 'ten'
     if (text == 'xi') text = 'i'
+    if (text == 'xn') text = 'n'
     if (text == 'xo') text = 'o'
     let clas = `part part_${ (p == 1 && !v) || (p == 2 && v) ? '1' : '2' }`
     let data = `data-paragraph="${ i }"

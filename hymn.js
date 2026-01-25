@@ -49,7 +49,7 @@ const HYMN_ST = {
       size: 14,
       halfs: [ 1, 3, 5, 7, 9, 11 ]
     }, {
-      phrase: 'kono yono ji(i)to tento okatadorite',
+      phrase: 'kono yono ji(i)to xtento okatadorite',
       hyoshigi: '2   1   1   1   2',
       chanpon: '2 1   1   1   1 2',
       surigane: '3 221 221 221 223',
@@ -58,7 +58,7 @@ const HYMN_ST = {
       fue: '72 002 35 32 3 20',
       koto: '54 44  32  4 3 44',
       size: 18,
-      halfs: [ 1, 4, 6, 8, 10, 12, 14 ]
+      halfs: [ 1, 4, 6, 9, 11, 13 ]
     }, {
       phrase: 'fufu okoshiraekitarudena',
       hyoshigi: '2   1   1   1',
@@ -83,7 +83,7 @@ const HYMN_ST = {
       halfs: [ 1, 3, 5, 7, 9, 11 ],
       inverse: 1
     }, {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -92,7 +92,6 @@ const HYMN_ST = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ],
       pause: true,
       message: '1 vez'
     } ], [ {
@@ -107,7 +106,7 @@ const HYMN_ST = {
       size: 16,
       halfs: [ 1, 3, 5, 7, 10, 12, 14 ]
     }, {
-      phrase: 'ichiretsu sumashite kanrodai _',
+      phrase: 'ichiretsu sumashite xkanrodai _',
       hyoshigi: '1   1   1   1',
       chanpon: '  1   1   1   3',
       surigane: '1 221 221 221 44',
@@ -116,7 +115,7 @@ const HYMN_ST = {
       fue: ' 3 00 272 3 2',
       koto: ' 3 33 454 3 4',
       size: 16,
-      halfs: [ 1, 3, 5, 7, 9, 12 ],
+      halfs: [ 1, 3, 5, 7, 11 ],
       pause: true,
       message: '3 vezes ( de 3 )'
     } ]
@@ -292,7 +291,7 @@ const HYMN_00 = {
       size: 26,
       halfs: [ 1 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -301,7 +300,6 @@ const HYMN_00 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ],
       message: 'yoshi yoshi'
     } ]
   ]
@@ -403,7 +401,7 @@ const HYMN_01 = {
         koto: '755 754 6 5 4 3 2 3 4 2 1 8 4 3',
         size: 32
       } ], [ {
-        phrase: 'ya(a)ttsu, yamato wa hō(o)nen ya _',
+        phrase: 'ya(a)ttsu, yamato wa hō(o)nexn ya _',
         hyoshigi: '  1   1   1   1   1   1',
         chanpon: '1   1   1   1   1   1   1',
         surigane: '221 221 221 221 221 221 22',
@@ -411,7 +409,7 @@ const HYMN_01 = {
         kotsuzumi: '   4    12   43232',
         fue: '567 0 2 6 7 2 2 3 2 6 0',
         koto: '755 754 6 5 4 4 3 4 6 6',
-        size: 24
+        size: 26
       } ], [ {
         phrase: 'kokonotsu, _ koko made tsuite koi',
         hyoshigi: '1   1   1   1',
@@ -434,7 +432,7 @@ const HYMN_01 = {
         koto: '2 3 4 2 1 8 4 4 3 4 6 6',
         size: 26
       } ], [ {
-        phrase: 'namu tenri ō no mikoto _',
+        phrase: 'namu xtenri ō no mikoto _',
         hyoshigi: '1   1   1   1   1',
         chanpon: '  1   1   1   1   1',
         surigane: '1 221 221 221 221 22',
@@ -443,9 +441,8 @@ const HYMN_01 = {
         fue: '7 2 3 0 2 6 7 2 0',
         koto: '5 4 3 3 4 6 5 4 4',
         size: 20,
-        halfs: [ 3 ]
       } ], [ {
-        phrase: 'namu tenri ō no mikoto',
+        phrase: 'namu xtenri ō no mikoto',
         hyoshigi: '1   1   1   1   1',
         chanpon: '  1   1   1   1',
         surigane: '1 221 221 221 221',
@@ -454,7 +451,6 @@ const HYMN_01 = {
         fue: '7 2 3 0 2 6 7 2 0',
         koto: '5 4 3 3 4 6 5 4 4',
         size: 17,
-        halfs: [ 3 ]
       } ]
     ]
   }
@@ -585,7 +581,7 @@ const HYMN_02 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -594,10 +590,8 @@ const HYMN_02 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
-      size: 9,
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -606,7 +600,6 @@ const HYMN_02 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -828,7 +821,7 @@ const HYMN_03 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -837,9 +830,8 @@ const HYMN_03 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -848,7 +840,6 @@ const HYMN_03 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -1070,7 +1061,7 @@ const HYMN_04 = {
       size: 26,
       halfs: [ 1 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -1079,9 +1070,8 @@ const HYMN_04 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -1090,7 +1080,6 @@ const HYMN_04 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -1309,7 +1298,7 @@ const HYMN_05 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -1318,9 +1307,8 @@ const HYMN_05 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -1329,7 +1317,6 @@ const HYMN_05 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -1521,7 +1508,7 @@ const HYMN_06 = {
       size: 28,
       halfs: [ 3 ]
     }, {
-      phrase: 'hitotsu no kō(o) o mo minya naran',
+      phrase: 'hitotsu no kō(o) o mo minya naranu',
       hyoshigi: '  1   1   1   1   1   1',
       chanpon: '1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221',
@@ -1540,7 +1527,7 @@ const HYMN_06 = {
       kotsuzumi: '  12    12   43232',
       fue: '5 3 2 5 6 8 2 2 3 2 6 0',
       koto: '2 3 4 2 1 8 4 4 3 4 6 6',
-      size: 26
+      size: 24
     }, {
       phrase: 'ōgi no ukagai kore fushigi _',
       hyoshigi: '  1   1   1   1   1   1',
@@ -1550,9 +1537,9 @@ const HYMN_06 = {
       kotsuzumi: '   4    12   43232',
       fue: '567 0 2 6 7 2 2 3 2 6 0',
       koto: '755 754 6 5 4 4 3 4 6 6',
-      size: 24
+      size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -1561,9 +1548,8 @@ const HYMN_06 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -1572,7 +1558,6 @@ const HYMN_06 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -1654,7 +1639,7 @@ const HYMN_07 = {
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
       koto: '4 6 3 3 4 2 1 8 4 4 3 4 6 6',
       size: 28,
-      halfs: [ 4 ]
+      halfs: [ 3 ]
     }, {
       phrase: 'tare mo hoshii de arō(o)gana',
       hyoshigi: '  1   1   1   1   1   1',
@@ -1812,7 +1797,7 @@ const HYMN_07 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -1821,9 +1806,8 @@ const HYMN_07 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -1832,7 +1816,6 @@ const HYMN_07 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -1863,7 +1846,7 @@ const HYMN_08 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 24
     } ], [ {
-      phrase: 'futatsu, fushigi na fushin o suru naredo',
+      phrase: 'futatsu, fushigi na fushixn o suru naredo',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '1   1   1   1   1   1   1',
       surigane: '221 221 221 221 221 221 221',
@@ -1871,7 +1854,7 @@ const HYMN_08 = {
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
       koto: '4 6 3 3 4 2 1 8 4 4 3 4 6 6',
-      size: 26,
+      size: 27,
       halfs: [ 1, 4 ]
     }, {
       phrase: 'tare ni tanomi wa kaken de na',
@@ -2031,8 +2014,8 @@ const HYMN_08 = {
     } ], [ {
       phrase: 'tō(o)do, kono tabi ichiretsu ni',
       hyoshigi: '  1   1   1   1   1   1',
-      chanpon: '    1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221',
+      chanpon: '1   1   1   1   1   1',
+      surigane: '221 221 221 221 221 221',
       taiko: '  1                 2 1',
       kotsuzumi: '  12    12   43232',
       fue: '5 3 2 5 6 8 2 2 3 2 6 0',
@@ -2050,7 +2033,7 @@ const HYMN_08 = {
       size: 26,
       halfs: [ 1 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -2059,9 +2042,8 @@ const HYMN_08 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -2070,7 +2052,6 @@ const HYMN_08 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -2284,7 +2265,7 @@ const HYMN_09 = {
       koto: '755 754 6 5 4 4 3 4 6 6',
       size: 26
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -2293,9 +2274,8 @@ const HYMN_09 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -2304,7 +2284,6 @@ const HYMN_09 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -2338,7 +2317,7 @@ const HYMN_10 = {
       phrase: 'futatsu, fushiga na tasuke o shite iredo',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2360,7 +2339,7 @@ const HYMN_10 = {
       phrase: 'mittsu, mizu no naka naru kono dorō(o)',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2380,7 +2359,7 @@ const HYMN_10 = {
       phrase: 'yottsu, yoku ni kiri nai doro mizu ya',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2400,7 +2379,7 @@ const HYMN_10 = {
       phrase: 'itsutsu, itsuitsu made(e) mo kono koto wa',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2422,7 +2401,7 @@ const HYMN_10 = {
       phrase: 'muttsu, mugoi kotoba o dashi taru mo',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2442,7 +2421,7 @@ const HYMN_10 = {
       phrase: 'nanatsu, nangi suru no mo kokoro kara',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2463,7 +2442,7 @@ const HYMN_10 = {
       phrase: 'yattsu, yamai wa tsura(a)i mono naredo',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2484,7 +2463,7 @@ const HYMN_10 = {
       phrase: 'kokonotsu, _ kono tabi made(e) wa ichiretsu ni',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue: '2 6 3 0 2 5 6 8 2 2 3 2 6 0',
@@ -2506,7 +2485,7 @@ const HYMN_10 = {
       phrase: 'tō(o)do, kono tabi arawareta',
       hyoshigi: '  1   1   1   1   1   1   1',
       chanpon: '    1   1   1   1   1   1',
-      surigane: '  1 221 221 221 221 221 221',
+      surigane: '221 221 221 221 221 221 221',
       taiko: '  1                     2 1',
       kotsuzumi: '  12    12   43232',
       fue: '5 3 2 5 6 8 2 2 3 2 6 0',
@@ -2524,7 +2503,7 @@ const HYMN_10 = {
       size: 26,
       halfs: [ 1 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -2533,9 +2512,8 @@ const HYMN_10 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -2544,7 +2522,6 @@ const HYMN_10 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -2770,7 +2747,7 @@ const HYMN_11 = {
       koto: '5 5 5 5 4 6 5 4 4 3 4 6 6',
       size: 28
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -2779,9 +2756,8 @@ const HYMN_11 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -2790,7 +2766,6 @@ const HYMN_11 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
@@ -3009,7 +2984,7 @@ const HYMN_12 = {
       size: 26,
       halfs: [ 1 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto _',
+      phrase: 'namu xtenri ō no mikoto _',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1   1',
       surigane: '1 221 221 221 221 22',
@@ -3018,9 +2993,8 @@ const HYMN_12 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 20,
-      halfs: [ 3 ]
     } ], [ {
-      phrase: 'namu tenri ō no mikoto',
+      phrase: 'namu xtenri ō no mikoto',
       hyoshigi: '1   1   1   1   1',
       chanpon: '  1   1   1   1',
       surigane: '1 221 221 221 221',
@@ -3029,7 +3003,6 @@ const HYMN_12 = {
       fue: '7 2 3 0 2 6 7 2 0',
       koto: '5 4 3 3 4 6 5 4 4',
       size: 17,
-      halfs: [ 3 ]
     } ]
   ]
 }
