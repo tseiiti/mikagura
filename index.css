@@ -5,6 +5,8 @@
   --size-sm: calc(var(--size-base) * 0.5);
   --size: calc(var(--size-base) * var(--size-width-multiply));
   --size-lg: calc(var(--size-base) * 2);
+  --color-danger: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(6002%) hue-rotate(358deg) brightness(112%) contrast(113%);
+  --color-warning: brightness(0) saturate(100%) invert(39%) sepia(32%) saturate(3548%) hue-rotate(3deg)   brightness(110%) contrast(103%);
 }
 
 * {
@@ -128,17 +130,23 @@ h1 {
 
 /* 8800aaff */
 .hyoshigi_1::before  { background-image: url(images/hyoshigi_1.svg);  }
-.hyoshigi_2::before  { background-image: url(images/hyoshigi_2.svg);  }
+/* .hyoshigi_2::before  { background-image: url(images/hyoshigi_2.svg);  } */
+.hyoshigi_2::before  { background-image: url(images/hyoshigi_1.svg); filter: var(--color-danger); }
 .chanpon_1::before   { background-image: url(images/chanpon_1.svg);   }
 .chanpon_2::before   { background-image: url(images/chanpon_2.svg);   }
-.chanpon_3::before   { background-image: url(images/chanpon_3.svg);   }
+/* .chanpon_3::before   { background-image: url(images/chanpon_3.svg);   } */
+.chanpon_3::before   { background-image: url(images/chanpon_1.svg); filter: var(--color-warning); }
 .surigane_1::before  { background-image: url(images/surigane_1.svg);  }
 .surigane_2::before  { background-image: url(images/surigane_2.svg);  }
-.surigane_3::before  { background-image: url(images/surigane_3.svg);  }
-.surigane_4::before  { background-image: url(images/surigane_4.svg);  }
+/* .surigane_3::before  { background-image: url(images/surigane_3.svg);  } */
+.surigane_3::before  { background-image: url(images/surigane_1.svg); filter: var(--color-danger); }
+/* .surigane_4::before  { background-image: url(images/surigane_4.svg);  } */
+.surigane_4::before  { background-image: url(images/surigane_2.svg); filter: var(--color-warning); }
 .taiko_1::before     { background-image: url(images/taiko_1.svg);     }
 .taiko_2::before     { background-image: url(images/taiko_2.svg);     }
-.taiko_3::before     { background-image: url(images/taiko_3.svg);     }
+/* .taiko_3::before     { background-image: url(images/taiko_3.svg);     } */
+.taiko_3::before     { background-image: url(images/taiko_2.svg); filter: var(--color-warning); }
+.taiko_4::before     { background-image: url(images/taiko_1.svg); filter: var(--color-danger); }
 .fue_0::before       { background-image: url(images/fue_0.svg);       }
 .fue_2::before       { background-image: url(images/fue_2.svg);       }
 .fue_3::before       { background-image: url(images/fue_3.svg);       }
