@@ -92,7 +92,7 @@ const HYMN_ST = {
       koto:      '5 4 3 3 4 6 5 4 4',
       size:      17,
       pause:     true,
-      message:   '1 vez',
+      message:   'yoshi yoshi',
     } ], [ {
       phrase:    'ashiki o haro(o)te tasuke sekikomu',
       hyoshigi:  '1   1   1   1',

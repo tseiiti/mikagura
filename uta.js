@@ -112,7 +112,7 @@ class Uta {
     else if (text == 'xo')   text = 'o'
     else if (text == '_')    text = ''
 
-    let b = l.bolds && l.bolds.indexOf(r) != -1 ? 'fw-semibold' : ''
+    let b = l.bolds && l.bolds.indexOf(r) != -1 ? 'fw-medium' : '' // fw-semibold
     
     let clas = `part part_${ (p == 1 && !v) || (p == 2 && v) ? '1' : '2' }`
     let data = `data-paragraph="${ i }"

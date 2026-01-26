@@ -126,7 +126,7 @@ class Fill {
 
       let es = qsa('.message p')
       es[0].innerText = `${ this.qs_0 } de ${ this.cg('suwari_0') } vezes`
-      es[1].innerText = `${ this.p >= 1 ? 1 : 0 } de 1 vez`
+      // es[1].innerText = `${ this.p >= 1 ? 1 : 0 } de 1 vez`
       es[2].innerText = `${ this.qs_1 } de ${ this.cg('suwari_1') } vezes (de ${ this.qs_2 } de ${ this.cg('suwari_2') })`
     }
   }
