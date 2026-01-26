@@ -158,18 +158,6 @@ class Fill {
     return boolean
   }
 
-  // restaura value do parágrafo e troca 3 pontos por beat
-  play_suwari_restore() {
-    for (let i = this.ini; i <= this.cur; i++) {
-      this.beat[i].value = 0
-    }
-    this.cur = this.ini
-    this.bd()
-    this.b.classList.remove('d-none')
-    let e = qs(`.first-span.paragraph_${ this.p }.line_${ this.l }`)
-    e.classList.add('d-none')
-  }
-
   // volta 3 pontos do parágrafo
   play_suwari_start() {
     this.b.classList.add('d-none')
@@ -184,6 +172,18 @@ class Fill {
     e.classList.add('d-none')
     e = qs(`.first-span.paragraph_${ e.dataset.paragraph }.line_${ e.dataset.line }`)
     e.classList.remove('d-none')
+  }
+
+  // restaura value do parágrafo e troca 3 pontos por beat
+  play_suwari_restore() {
+    for (let i = this.ini; i <= this.cur; i++) {
+      this.beat[i].value = 0
+    }
+    this.cur = this.ini
+    this.bd()
+    this.b.classList.remove('d-none')
+    let e = qs(`.first-span.paragraph_${ this.p }.line_${ this.l }`)
+    e.classList.add('d-none')
   }
 
   // alterna negrito da sílaba atual

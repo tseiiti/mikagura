@@ -19,8 +19,7 @@ class Uta {
   static SEARCHES = [
     'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 'xkan', 'xten', 
     'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
-    '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 
-    'do,', 'de,', 'ni,', 
+    '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 'do,', 'de,', 'ni,', 
     'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'dō', 'fu', 'fū', 'ga', 'gi', 'go', 'gu', 'ha', 
     'hi', 'ho', 'hō', 'ji', 'jo', 'jū', 'ka', 'ke', 'ki', 'ko', 'kō', 'ku', 'ma', 'me', 'mi', 
     'mo', 'mu', 'na', 'ne', 'nē', 'ni', 'no', 'nō', 'nu', 'ra', 're', 'ri', 'ro', 'rō', 'ru', 
@@ -103,15 +102,18 @@ class Uta {
   }
 
   // sílaba - 2 partes da nota
-  get_syllable_part(text, l, i, j, p, q, v) {
+  get_syllable_part(text, l, i, j, p, q, r, v) {
     if (l.size < p + q) return ''
     
-    if (text == '_')  text = ''
-    if (text == 'xkan') text = 'kan'
-    if (text == 'xten') text = 'ten'
-    if (text == 'xi') text = 'i'
-    if (text == 'xn') text = 'n'
-    if (text == 'xo') text = 'o'
+         if (text == 'xkan') text = 'kan'
+    else if (text == 'xten') text = 'ten'
+    else if (text == 'xi')   text = 'i'
+    else if (text == 'xn')   text = 'n'
+    else if (text == 'xo')   text = 'o'
+    else if (text == '_')    text = ''
+
+    let b = l.bolds && l.bolds.indexOf(r) != -1 ? 'fw-semibold' : ''
+    
     let clas = `part part_${ (p == 1 && !v) || (p == 2 && v) ? '1' : '2' }`
     let data = `data-paragraph="${ i }"
       data-line="${ j }"
@@ -122,7 +124,7 @@ class Uta {
     if (l.size > p + q) {
       html += `<progress class="beat beat_${ p + q }" ${ data } value="0" max="5"></progress>`
     }
-    html += `<div class="part_text">${ text }</div>`
+    html += `<div class="part_text ${ b }">${ text }</div>`
     html += this.get_narimono(l, q + p - 1)
     html += '</span>'
 
@@ -145,13 +147,13 @@ class Uta {
         return
       }
       html += `<div class="syllable syllable_${ i2 / 2 }">`
-      html += this.get_syllable_part(text, line, i, j, 1, i2, line.inverse)
+      html += this.get_syllable_part(text, line, i, j, 1, i2, i1, line.inverse)
       text = ''
       if (line.halfs && line.halfs.indexOf(i1 + 1) != -1) {
         text = this.get_syllable_text()
         i1 += 1
       }
-      html += this.get_syllable_part(text, line, i, j, 2, i2, line.inverse)
+      html += this.get_syllable_part(text, line, i, j, 2, i2, i1, line.inverse)
       i1 += 1
       i2 += 2
       html += '</div>'
