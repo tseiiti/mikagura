@@ -613,7 +613,7 @@ const HYMN_03 = {
       chanpon:   '  2 2 1   1   1   1',
       surigane:  '  3 3 221 221 221 221',
       taiko:     '  1               2 1',
-      kotsuzumi: '      12   43232',
+      kotsuzumi: '      56   43232',
       fue:       '2 6 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 2 1 8 4 4 3 4 6 6',
       size:      22,
@@ -656,7 +656,7 @@ const HYMN_03 = {
       chanpon:   '1 2 2 1   1   1   1   1',
       surigane:  '223 3 221 221 221 221 221',
       taiko:     '  1                   2 1',
-      kotsuzumi: '    12    12   43232',
+      kotsuzumi: '    56    12   43232',
       fue:       '2 6 3 2 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 3 4 2 1 8 4 4 3 4 6 6',
       size:      26
@@ -896,7 +896,7 @@ const HYMN_04 = {
       chanpon:   '1 2 2 1   1   1   1   1',
       surigane:  '223 3 221 221 221 221 221',
       taiko:     '  1                   2 1',
-      kotsuzumi: '    12    12   43232',
+      kotsuzumi: '    56    12   43232',
       fue:       '2 6 3 2 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 3 4 2 1 8 4 4 3 4 6 6',
       size:      26
@@ -1374,7 +1374,7 @@ const HYMN_06 = {
       chanpon:   '1 2 2 1   1   1   1   1',
       surigane:  '223 3 221 221 221 221 221 221',
       taiko:     '  1                   2 1',
-      kotsuzumi: '    12    12   43232',
+      kotsuzumi: '    56    12   43232',
       fue:       '2 6 3 2 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 3 4 2 1 8 4 4 3 4 6 6',
       size:      26
@@ -1613,7 +1613,7 @@ const HYMN_07 = {
       chanpon:   '1 2 2 1   1   1   1   1',
       surigane:  '223 3 221 221 221 221 221',
       taiko:     '  1                   2 1',
-      kotsuzumi: '    12    12   43232',
+      kotsuzumi: '    56    12   43232',
       fue:       '2 6 3 2 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 3 4 2 1 8 4 4 3 4 6 6',
       size:      26
@@ -2535,7 +2535,7 @@ const HYMN_11 = {
       chanpon:   '  2 2 1   1   1   1',
       surigane:  '  3 3 221 221 221 221',
       taiko:     '  1               2 1',
-      kotsuzumi: '      12   43232',
+      kotsuzumi: '      56   43232',
       fue:       '2 6 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 2 1 8 4 4 3 4 6 6',
       size:      22,
@@ -2628,7 +2628,7 @@ const HYMN_11 = {
       chanpon:   '2 1   1   1   1   1   1',
       surigane:  '3 221 221 221 221 221 221',
       taiko:     '4                     2 1',
-      kotsuzumi: '   432    12   43232',
+      kotsuzumi: '   876    12   43232',
       fue:       '7 0 0 0 2 6 7 2 2 3 2 6 0',
       koto:      '5 5 5 5 4 6 5 4 4 3 4 6 6',
       size:      26
@@ -2741,7 +2741,7 @@ const HYMN_11 = {
       chanpon:   '2 1   1   1   1   1   1   1',
       surigane:  '3 221 221 221 221 221 221 22',
       taiko:     '4                     2 1',
-      kotsuzumi: '   432    12   43232',
+      kotsuzumi: '   876    12   43232',
       fue:       '7 0 0 0 2 6 7 2 2 3 2 6 0',
       koto:      '5 5 5 5 4 6 5 4 4 3 4 6 6',
       size:      28
