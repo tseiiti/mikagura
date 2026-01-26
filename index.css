@@ -94,9 +94,6 @@ h1 {
   visibility: visible;
 }
 
-/* .fim .part_text:after {
-  width: 0;
-} */
 .syllable:last-child .part:last-child .part_text:after {
   width: 0;
 }
@@ -104,7 +101,7 @@ h1 {
 /* Ícone */
 .icone {
   width: var(--size-base);
-  height: var(--size);
+  height: calc(var(--size-base) * 1.3);
 }
 
 .icone::before {
@@ -185,12 +182,6 @@ h1 {
   text-transform: capitalize;
 }
 
-/* .checkbox-linha {
-  margin-top: var(--size-base);
-  display: flex;
-  flex-flow: row wrap;
-} */
-
 .checkbox-label {
   margin-right: var(--size-base);
   text-transform: capitalize;
@@ -212,7 +203,7 @@ progress {
   position: absolute;
   margin-top: calc(var(--size-base) * 1.55);
   margin-left: calc(var(--size) * 0.5);
-  height: var(--size);
+  height: calc(var(--size-base) * 1.35);
   width: var(--size);
   opacity: 0.5;
   background: #eee;

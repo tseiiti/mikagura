@@ -394,9 +394,9 @@ const HYMN_01 = {
         hyoshigi:  '  1   1   1   1   1   1   1   1',
         chanpon:   '1   1   1   1   1   1   1   1',
         surigane:  '221 221 221 221 221 221 221 221',
-        taiko:    '  1                         2 1',
+        taiko:     '  1                         2 1',
         kotsuzumi: '   4    1232    12   43232',
-        fue:        '567 0 2 6 7 2 3 5 3 2 5 6 8 2 3',
+        fue:       '567 0 2 6 7 2 3 5 3 2 5 6 8 2 3',
         koto:      '755 754 6 5 4 3 2 3 4 2 1 8 4 3',
         size:      32
       } ], [ {
@@ -635,7 +635,7 @@ const HYMN_03 = {
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 221',
       taiko:     '  1                     2 1',
-      kotsuzumi: '      12   43232',
+      kotsuzumi: '      12    12   43232',
       fue:       '2 6 3 0 2 3 5 3 2 5 6 8 2 3',
       koto:      '4 6 3 3 4 3 2 3 4 2 1 8 4 3',
       size:      28,
@@ -1871,7 +1871,7 @@ const HYMN_08 = {
       chanpon:   '1 2 2 1   1   1 2 2 1   1',
       surigane:  '223 3 221 221 223 3 221 221 221',
       taiko:     '  1                     2 1',
-      kotsuzumi: '    12    12   43232',
+      kotsuzumi: '      12    12   43232',
       fue:       '2 6 3 2 5 6 8 2 2 3 2 6 0',
       koto:      '4 6 3 4 2 1 8 4 4 3 4 6 6',
       size:      28
@@ -2313,7 +2313,7 @@ const HYMN_10 = {
       koto:      '755 754 6 5 4 4 3 4 6 6',
       size:      24
     } ], [ {
-      phrase:    'futatsu, fushiga na tasuke o shite iredo',
+      phrase:    'futatsu, fushigi na tasuke o shite iredo',
       hyoshigi:  '  1   1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 221',
@@ -2821,7 +2821,7 @@ const HYMN_12 = {
       phrase:    'mittsu, mina sekai kara dandan to',
       hyoshigi:  '  2 2   1   1   2 2   1   1',
       chanpon:   '1 2 2 1   1   1 2 2 1   1',
-      surigane:  '223 3 221 221 223 3 221 221 221',
+      surigane:  '223 3 221 221 223 3 221 221',
       taiko:     '  1                     2 1',
       kotsuzumi: '      12    12   43232',
       fue:       '2 6 3 2 5 6 8 2 0 2 3 2 6 0',

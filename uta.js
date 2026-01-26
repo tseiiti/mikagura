@@ -17,7 +17,7 @@ class Uta {
   }
 
   static SEARCHES = [
-    '_', 'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 'xkan', 'xten', 
+    'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 'xkan', 'xten', 
     'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
     '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 
     'do,', 'de,', 'ni,', 
@@ -26,7 +26,7 @@ class Uta {
     'mo', 'mu', 'na', 'ne', 'nē', 'ni', 'no', 'nō', 'nu', 'ra', 're', 'ri', 'ro', 'rō', 'ru', 
     'sa', 'se', 'so', 'sō', 'su', 'ta', 'te', 'to', 'tō', 'wa', 'wō', 'xi', 'xn', 'xo', 'ya', 
     'yo', 'yō', 'yu', 'yū', 'za', 'zo', 'zu', 
-    'ō', 'i', 'o', 'n', 'e', 'u', 'a', 
+    'ō', 'i', 'o', 'n', 'e', 'u', 'a', '_', 
   ]
 
   static INSTRUMENTS = [
