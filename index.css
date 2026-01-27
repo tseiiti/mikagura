@@ -192,24 +192,6 @@ h1 {
   filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(80%) contrast(20%);
 }
 
-/* Links */
-/* .links {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-@media (min-width: 600px)  { .links { grid-template-columns: auto auto; } }
-@media (min-width: 800px)  { .links { grid-template-columns: auto auto auto auto; } }
-@media (min-width: 1000px) { .links { grid-template-columns: auto auto auto auto auto auto; } }
-@media (min-width: 1200px) { .links { grid-template-columns: auto auto auto auto auto auto auto auto; } }
-@media (min-width: 1400px) { .links { grid-template-columns: auto auto auto auto auto auto auto auto auto auto; } }
-@media (min-width: 1600px) { .links { grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto; } }
-@media (min-width: 1800px) { .links { grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto; } }
-
-.links a {
-  text-transform: capitalize;
-} */
-
 .checkbox-label {
   margin-right: var(--size-base);
   text-transform: capitalize;

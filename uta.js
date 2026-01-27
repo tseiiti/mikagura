@@ -17,15 +17,15 @@ class Uta {
   }
 
   static SEARCHES = [
-    'kokonotsu,', 'ttsu,', 'ttsu', 'tsu,', 'xkan', 'xten', 
-    'cha', 'chi', 'cho', 'kka', 'kki', 'kko', 'nya', 'ppa', 'ryō', 'shi', 'sho', 'shō', 'sse', 'tsu', 
+    'kokonotsu,', 'tsu,', 'xkan', 'xten', 
+    'nya', 'ryo', 'shi', 'sho', 'tsu', 'tya', 'tyo', 
     '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 'do,', 'de,', 'ni,', 
-    'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'dō', 'fu', 'fū', 'ga', 'gi', 'go', 'gu', 'ha', 
-    'hi', 'ho', 'hō', 'ji', 'jo', 'jū', 'ka', 'ke', 'ki', 'ko', 'kō', 'ku', 'ma', 'me', 'mi', 
-    'mo', 'mu', 'na', 'ne', 'nē', 'ni', 'no', 'nō', 'nu', 'ra', 're', 'ri', 'ro', 'rō', 'ru', 
-    'sa', 'se', 'so', 'sō', 'su', 'ta', 'te', 'to', 'tō', 'wa', 'wō', 'xi', 'xn', 'xo', 'ya', 
-    'yo', 'yō', 'yu', 'yū', 'za', 'zo', 'zu', 
-    'ō', 'i', 'o', 'n', 'e', 'u', 'a', '_', 
+    'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'fu', 'ga', 'gi', 'go', 'gu', 'ha', 
+    'hi', 'ho', 'ji', 'jo', 'ju', 'ka', 'ke', 'ki', 'ko', 'ku', 'ma', 'me', 'mi', 
+    'mo', 'mu', 'na', 'ne', 'ni', 'no', 'nu', 'pa', 'ra', 're', 'ri', 'ro', 'ru', 
+    'sa', 'se', 'so', 'su', 'ta', 'te', 'ti', 'to', 'wa', 'wo', 'xi', 'xn', 'xo', 
+    'ya', 'yo', 'yu', 'za', 'zo', 'zu', 
+    'a', 'e', 'i', 'n', 'o', 'u', '_', 
   ]
 
   static INSTRUMENTS = [
