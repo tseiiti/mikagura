@@ -5,7 +5,7 @@
   --size-sm: calc(var(--size-base) * 0.5);
   --size: calc(var(--size-base) * var(--size-width-multiply));
   --size-lg: calc(var(--size-base) * 2);
-  --color-danger: brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(6002%) hue-rotate(358deg) brightness(112%) contrast(113%);
+  --color-danger:  brightness(0) saturate(100%) invert(11%) sepia(83%) saturate(6002%) hue-rotate(358deg) brightness(112%) contrast(113%);
   --color-warning: brightness(0) saturate(100%) invert(39%) sepia(32%) saturate(3548%) hue-rotate(3deg)   brightness(110%) contrast(103%);
 }
 
@@ -125,32 +125,20 @@ h1 {
   margin-left: 50%;
 }
 
-/* 8800aaff */
+/* 8800aaff - cor padrão dos ícones */
 .hyoshigi_1::before  { background-image: url(images/hyoshigi_1.svg);  }
-/* .hyoshigi_2::before  { background-image: url(images/hyoshigi_2.svg);  } */
 .hyoshigi_2::before  { background-image: url(images/hyoshigi_1.svg); filter: var(--color-danger); }
 .chanpon_1::before   { background-image: url(images/chanpon_1.svg);   }
 .chanpon_2::before   { background-image: url(images/chanpon_2.svg);   }
-/* .chanpon_3::before   { background-image: url(images/chanpon_3.svg);   } */
 .chanpon_3::before   { background-image: url(images/chanpon_1.svg); filter: var(--color-warning); }
 .surigane_1::before  { background-image: url(images/surigane_1.svg);  }
 .surigane_2::before  { background-image: url(images/surigane_2.svg);  }
-/* .surigane_3::before  { background-image: url(images/surigane_3.svg);  } */
 .surigane_3::before  { background-image: url(images/surigane_1.svg); filter: var(--color-danger); }
-/* .surigane_4::before  { background-image: url(images/surigane_4.svg);  } */
 .surigane_4::before  { background-image: url(images/surigane_2.svg); filter: var(--color-warning); }
 .taiko_1::before     { background-image: url(images/taiko_1.svg);     }
 .taiko_2::before     { background-image: url(images/taiko_2.svg);     }
-/* .taiko_3::before     { background-image: url(images/taiko_3.svg);     } */
 .taiko_3::before     { background-image: url(images/taiko_2.svg); filter: var(--color-warning); }
 .taiko_4::before     { background-image: url(images/taiko_1.svg); filter: var(--color-danger); }
-.fue_0::before       { background-image: url(images/fue_0.svg);       }
-.fue_2::before       { background-image: url(images/fue_2.svg);       }
-.fue_3::before       { background-image: url(images/fue_3.svg);       }
-.fue_5::before       { background-image: url(images/fue_5.svg);       }
-.fue_6::before       { background-image: url(images/fue_6.svg);       }
-.fue_7::before       { background-image: url(images/fue_7.svg);       }
-.fue_8::before       { background-image: url(images/fue_8.svg);       }
 .kotsuzumi_1::before { background-image: url(images/kotsuzumi_1.svg); }
 .kotsuzumi_2::before { background-image: url(images/kotsuzumi_2.svg); }
 .kotsuzumi_3::before { background-image: url(images/kotsuzumi_3.svg); }
@@ -160,6 +148,13 @@ h1 {
 .kotsuzumi_7::before { background-image: url(images/kotsuzumi_3.svg); filter: var(--color-danger); }
 .kotsuzumi_8::before { background-image: url(images/kotsuzumi_4.svg); filter: var(--color-danger); }
 .kotsuzumi_9::before { background-image: url(images/chanpon_2.svg); }
+.fue_0::before       { background-image: url(images/fue_0.svg);       }
+.fue_2::before       { background-image: url(images/fue_2.svg);       }
+.fue_3::before       { background-image: url(images/fue_3.svg);       }
+.fue_5::before       { background-image: url(images/fue_5.svg);       }
+.fue_6::before       { background-image: url(images/fue_6.svg);       }
+.fue_7::before       { background-image: url(images/fue_7.svg);       }
+.fue_8::before       { background-image: url(images/fue_8.svg);       }
 .koto_1::before      { background-image: url(images/koto_1.svg);      }
 .koto_2::before      { background-image: url(images/koto_2.svg);      }
 .koto_3::before      { background-image: url(images/koto_3.svg);      }
@@ -169,8 +164,36 @@ h1 {
 .koto_7::before      { background-image: url(images/koto_7.svg);      }
 .koto_8::before      { background-image: url(images/koto_8.svg);      }
 
+.bi::before {
+  content: "";
+  display: inline-block;
+  vertical-align: -.15em;
+  width: 16px; height: 16px; background-size: 16px 16px;
+  filter: brightness(0) saturate(100%) invert(90%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(80%) contrast(80%);
+}
+
+.bi-x-circle::before                 { background-image: url(images/x-circle.svg); }
+.bi-arrow-left-circle::before        { background-image: url(images/arrow-left-circle.svg); }
+.bi-arrow-right-circle::before       { background-image: url(images/arrow-right-circle.svg); }
+.bi-play-circle::before              { background-image: url(images/play-circle.svg); }
+.bi-stop-circle::before              { background-image: url(images/stop-circle.svg); }
+.bi-arrows-collapse-vertical::before { background-image: url(images/arrows-collapse-vertical.svg); }
+.bi-arrows-expand-vertical::before   { background-image: url(images/arrows-expand-vertical.svg); }
+.bi-zoom-in::before                  { background-image: url(images/zoom-in.svg); }
+.bi-zoom-out::before                 { background-image: url(images/zoom-out.svg); }
+
+.bi-x-circle::before, .bi-arrow-left-circle::before, .bi-arrow-right-circle::before, .bi-play-circle::before, .bi-stop-circle::before {
+  vertical-align: -.3em;
+  width: 20px; height: 20px; background-size: 20px 20px; 
+}
+.bi-lg::before {
+  vertical-align: -.45em;
+  width: 28px; height: 28px; background-size: 28px 28px;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(80%) contrast(20%);
+}
+
 /* Links */
-.links {
+/* .links {
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -185,7 +208,7 @@ h1 {
 
 .links a {
   text-transform: capitalize;
-}
+} */
 
 .checkbox-label {
   margin-right: var(--size-base);
@@ -195,8 +218,10 @@ h1 {
   margin-right: var(--size-xs);
 }
 
-.open-on-hover:hover .dropdown-menu {
-  display: block;
+@media (min-width: 768px)  { 
+  .open-on-hover:hover .dropdown-menu {
+    display: block;
+  }  
 }
 
 .nav-link {
@@ -217,14 +242,6 @@ progress {
 progress::-webkit-progress-bar { background: #eee; }
 progress::-moz-progress-bar { background: #888; }
 progress::-webkit-progress-value { background: #888; }
-
-/* .syllable:last-child .part_2 progress {
-  width: 0;
-}
-
-.fim progress {
-  width: 0;
-} */
 
 .first-beat {
   margin-left: calc(var(--size) * 1.5);

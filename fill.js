@@ -205,14 +205,15 @@ class Fill {
 
     qsa('.play').forEach(e => {
       if ([ 1, 2 ].includes(this.sts)) {
-        e.innerHTML = '<i class="bi bi-stop-fill"></i>'
-        e.title = 'parar'
+        e.innerHTML = '<i class="bi bi-stop-circle"></i>'
+        e.title = 'parar a animação'
       } else {
-        e.innerHTML = '<i class="bi bi-play-fill"></i>'
-        e.title = 'tocar'
+        e.innerHTML = '<i class="bi bi-play-circle"></i>'
+        e.title = 'iniciar a animação da faixa de marcação'
         clearInterval(this.id)
       }
     })
+    qs('.fixed-bottom .play .bi').classList.add('bi-lg')
   }
 
   // get config value

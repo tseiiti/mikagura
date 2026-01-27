@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Mikagura Uta</title>
+  <title>Mikagura Uta - Narimono</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="index.css">
   <script type="text/javascript" src="utils.js"></script>
 </head>
@@ -28,10 +27,12 @@
 
             <!-- menu para troca de hino -->
             <li class="nav-item dropdown my-2 my-md-0 open-on-hover">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                 title="selecionar o hino">
                 Hinos
               </a>
-              <ul class="dropdown-menu text-nowrap text-capitalize menu-hymns">
+              <ul class="dropdown-menu text-nowrap text-capitalize menu-hymns"
+                  title="exibir ou ocultar ícone de instrumentos">
                 <li class="mx-2"></li>
               </ul>
             </li>
@@ -58,13 +59,14 @@
 
             <!-- configurações -->
             <li class="nav-item dropdown open-on-hover">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                  title="alterar configurações">
                 Ajustes
               </a>
               <ul class="dropdown-menu px-3 px-md-2">
 
                 <!-- tamanho da fonte -->
-                <li class="nav-item">
+                <li class="nav-item" title="tamanho da letra, padrão 16px">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras" 
                       name="font_size" data-val="-1" onclick="config.shift(this)">
                     <i class="bi bi-zoom-out"></i>
@@ -79,12 +81,12 @@
                 </li>
 
                 <!-- espaço entre notas -->
-                <li class="nav-item">
-                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre notas" 
+                <li class="nav-item" title="espaço entre as notas, padrão 1.30">
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="diminuir espaço entre as notas" 
                       name="space_width" data-val="-0.05" onclick="config.shift(this)">
                     <i class="bi bi-arrows-collapse-vertical"></i>
                   </a>
-                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar espaço entre notas" 
+                  <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="aumentar espaço entre as notas" 
                       name="space_width" data-val="0.05" onclick="config.shift(this)">
                     <i class="bi bi-arrows-expand-vertical"></i>
                   </a>
@@ -95,39 +97,50 @@
 
                 <hr class="my-2 mx-0">
 
-                <li class="nav-item">
-
-                  <!-- tempo de batidas por minuto -->
-                  <div class="row py-1" title="tempo em batidas por minuto">
+                <!-- tempo de batidas por minuto -->
+                <li class="nav-item" title="tempo em batidas por minuto da faixa de marcação, padrão 60">
+                  <div class="row py-1">
                     <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
-                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                    <div class="col-4 col-sm-3 col-md-6 ps-0" title="alterar tempo de batidas por minuto">
                       <input class="form-control py-0 bpm_time menu-params" type="number" id="bpm_time" 
                         name="bpm_time" onchange="config.change(this)">
                     </div>
                   </div>
+                </li>
 
-                  <!-- quantidade da 1a parte -->
-                  <div class="row py-1" title="quantidade de execução da 1a parte do suwari zutome">
+                <hr class="my-2 mx-0">
+
+                <li class="nav-item" title="quantidade de execução da 1a parte do suwari zutome, padrão 21">
+                  <label class="col-4 col-sm-3 col-md-6 pe-0 text-nowrap">Suwari Zutome:</label>
+                </li>
+
+                <!-- quantidade da 1a parte -->
+                <li class="nav-item" title="quantidade de execução da 1a parte do suwari zutome, padrão 21">
+                  <div class="row py-1">
                     <label for="suwari_0" class="col-4 col-sm-3 col-md-6 pe-0">parte 1</label>
-                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                    <div class="col-4 col-sm-3 col-md-6 ps-0" title="alteração terá efeito na execução da 1a parte do suwari zutome">
                       <input class="form-control py-0 suwari_0 menu-params" type="number" id="suwari_0" 
                         name="suwari_0" onchange="config.change(this)">
                     </div>
                   </div>
+                </li>
 
-                  <!-- quantidade da 3a parte -->
-                  <div class="row py-1" title="quantidade de execução da 3a parte do suwari zutome">
+                <!-- quantidade da 3a parte -->
+                <li class="nav-item" title="quantidade de execução da 3a parte do suwari zutome">
+                  <div class="row py-1">
                     <label for="suwari_1" class="col-4 col-sm-3 col-md-6 pe-0">parte 3</label>
-                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                    <div class="col-4 col-sm-3 col-md-6 ps-0" title="alteração execução da 3a parte do suwari zutome">
                       <input class="form-control py-0 suwari_1 menu-params" type="number" id="suwari_1" 
                         name="suwari_1" onchange="config.change(this)">
                     </div>
                   </div>
+                </li>
 
-                  <!-- quantidade de paradas da 3a parte -->
-                  <div class="row py-1" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
-                    <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes</label>
-                    <div class="col-4 col-sm-3 col-md-6 ps-0">
+                <!-- quantidade de paradas da 3a parte -->
+                <li class="nav-item" title="quantidade de paradas a cada conjuto de execução da 3a parte do suwari zutome">
+                  <div class="row py-1">
+                    <label for="suwari_2" class="col-4 col-sm-3 col-md-6 pe-0">vezes 3</label>
+                    <div class="col-4 col-sm-3 col-md-6 ps-0" title="alteração execução da 3a parte do suwari zutome">
                       <input class="form-control py-0 suwari_2 menu-params" type="number" id="suwari_2" 
                         name="suwari_2" onchange="config.change(this)">
                     </div>
@@ -136,16 +149,17 @@
                 
                 <hr class="my-2 mx-0">
 
-                <li class="nav-item">
-
-                  <!-- ativa rolagem -->
+                <!-- ativa rolagem -->
+                <li class="nav-item" title="rolagem automática da tela para o ponto da faixa de marcação">
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input scroll" name="scroll" 
                       id="scroll" onchange="config.toggle(this)">
                     <label class="form-check-label" for="scroll">rolagem</label>
                   </div>
+                </li>
 
-                  <!-- ativa animação -->
+                <!-- ativa animação -->
+                <li class="nav-item" title="animaçção da faixa de marcação">
                   <div class="form-check mx-1 my-1">
                     <input type="checkbox" class="form-check-input animation" name="animation" 
                       id="animation" onchange="config.toggle(this)">
@@ -162,17 +176,17 @@
 
             <!-- tocar -->
             <li class="nav-item">
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.reset()" title="recomeçar">
-                <i class="bi bi-arrow-counterclockwise"></i>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.reset()" title="recomeçar a animação da faixa de marcação">
+                <i class="bi bi-x-circle"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:config.play()" title="tocar">
-                <i class="bi bi-play-fill"></i>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 play menu-params" href="javascript:config.play()" title="iniciar a animação da faixa de marcação">
+                <i class="bi bi-play-circle"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.previous()" title="hino anterior">
-                <i class="bi bi-arrow-left-circle-fill"></i>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.previous()" title="selecionar o hino anterior">
+                <i class="bi bi-arrow-left-circle"></i>
               </a>
-              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.next()" title="próximo hino">
-                <i class="bi bi-arrow-right-circle-fill"></i>
+              <a class="nav-link d-inline-block px-1 pb-2 pb-md-0 menu-params" href="javascript:config.next()" title="selecionar o próximo hino">
+                <i class="bi bi-arrow-right-circle"></i>
               </a>
             </li>
           </ul>
@@ -185,14 +199,14 @@
 
   <!-- tocar fixo -->
   <div class="fixed-bottom">
-    <div class="position-absolute bottom-0 end-0 m-2 text-secondary" style="font-size: 24px;">
+    <div class="position-absolute bottom-0 end-0 m-2 text-secondary">
       <span class="text-capitalize" style="margin-right: 8px; font-size: 20px;"></span>
 
-      <a class="nav-link d-inline me-1 play" href="javascript:config.play()" title="tocar">
-        <i class="bi bi-play-fill"></i>
+      <a class="nav-link d-inline me-1 play" href="javascript:config.play()" title="iniciar a animação da faixa de marcação">
+        <i class="bi bi-play-circle bi-lg"></i>
       </a>
-      <a class="nav-link d-inline me-1" href="javascript:config.next()" title="próximo hino">
-        <i class="bi bi-arrow-right-circle-fill"></i>
+      <a class="nav-link d-inline me-1" href="javascript:config.next()" title="selecionar o próximo hino">
+        <i class="bi bi-arrow-right-circle bi-lg"></i>
       </a>
     </div>
   </div>

@@ -11,7 +11,7 @@ class Config {
     this.control.suwari_2 = aux.suwari_2 || 3
     this.control.scroll = !(aux.scroll == false)
     this.control.animation = !(aux.animation == false)
-    this.control.instruments = aux.instruments || {}
+    this.control.instruments = aux.instruments || { "fue": true }
     this.fill = new Fill(this)
     this.link = new Link()
     this.hymn
