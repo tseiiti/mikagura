@@ -2289,7 +2289,7 @@ const HYMN_09 = {
       koto:      '755 754 6 5 4 4 3 4 6 6',
       size:      24,
     } ], [ {
-      phrase:    'yatsu, yama no naka demo achi koti to',
+      phrase:    'yatsu, yama no naka demo ati koti to',
       hyoshigi:  '  1   1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 221',
@@ -2713,7 +2713,7 @@ const HYMN_11 = {
       koto:      '755 754 6 5 4 4 3 4 6 6',
       size:      24,
     } ], [ {
-      phrase:    'itsutsu, itsuitsu made(e) mo tsuchi moti ya',
+      phrase:    'itsutsu, itsuitsu made(e) mo tsuti moti ya',
       hyoshigi:  '  1   1   1   1   1   1   2',
       chanpon:   '1   1   1   1   1   1   1 2',
       surigane:  '221 221 221 221 221 221 223',
@@ -2756,7 +2756,7 @@ const HYMN_11 = {
       koto:      '755 754 6 5 4 4 3 4 6 6',
       size:      24,
     } ], [ {
-      phrase:    'nanatsu, nanika mezurashi tsuchi moti ya',
+      phrase:    'nanatsu, nanika mezurashi tsuti moti ya',
       hyoshigi:  '  1   1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 221',

@@ -65,12 +65,12 @@ class Config {
     }
     qs('.audio').classList.remove('d-none')
     this.audio.src = `audio/${this.control.hymn_id}.mp3`
-    this.audio.playbackRate = 2.0
-    
   }
 
   // define valor de configuração
   set(key, val) {
+    if (val <= 0) return
+    
     this.control[key] = val
     localStorage.setItem('control', JSON.stringify(this.control)) 
 
@@ -170,6 +170,7 @@ class Config {
   play_audio() {
     let e = qs('.audio')
     if (this.audio.paused) {
+      this.audio.playbackRate = this.control.rate
       this.audio.play()
       e.title = 'parar'
       e.innerHTML = '<i class="bi bi-sign-stop"></i>'
