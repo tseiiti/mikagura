@@ -126,66 +126,70 @@ h1 {
 }
 
 /* 8800aaff - cor padrão dos ícones */
-.hyoshigi_1::before  { background-image: url(images/hyoshigi_1.svg);  }
-.hyoshigi_2::before  { background-image: url(images/hyoshigi_1.svg); filter: var(--color-danger); }
-.chanpon_1::before   { background-image: url(images/chanpon_1.svg);   }
-.chanpon_2::before   { background-image: url(images/chanpon_2.svg);   }
-.chanpon_3::before   { background-image: url(images/chanpon_1.svg); filter: var(--color-warning); }
-.surigane_1::before  { background-image: url(images/surigane_1.svg);  }
-.surigane_2::before  { background-image: url(images/surigane_2.svg);  }
-.surigane_3::before  { background-image: url(images/surigane_1.svg); filter: var(--color-danger); }
-.surigane_4::before  { background-image: url(images/surigane_2.svg); filter: var(--color-warning); }
-.taiko_1::before     { background-image: url(images/taiko_1.svg);     }
-.taiko_2::before     { background-image: url(images/taiko_2.svg);     }
-.taiko_3::before     { background-image: url(images/taiko_2.svg); filter: var(--color-warning); }
-.taiko_4::before     { background-image: url(images/taiko_1.svg); filter: var(--color-danger); }
-.kotsuzumi_1::before { background-image: url(images/kotsuzumi_1.svg); }
-.kotsuzumi_2::before { background-image: url(images/kotsuzumi_2.svg); }
-.kotsuzumi_3::before { background-image: url(images/kotsuzumi_3.svg); }
-.kotsuzumi_4::before { background-image: url(images/kotsuzumi_4.svg); }
-.kotsuzumi_5::before { background-image: url(images/kotsuzumi_1.svg); filter: var(--color-danger); }
-.kotsuzumi_6::before { background-image: url(images/kotsuzumi_2.svg); filter: var(--color-danger); }
-.kotsuzumi_7::before { background-image: url(images/kotsuzumi_3.svg); filter: var(--color-danger); }
-.kotsuzumi_8::before { background-image: url(images/kotsuzumi_4.svg); filter: var(--color-danger); }
-.kotsuzumi_9::before { background-image: url(images/chanpon_2.svg); }
-.fue_0::before       { background-image: url(images/fue_0.svg);       }
-.fue_2::before       { background-image: url(images/fue_2.svg);       }
-.fue_3::before       { background-image: url(images/fue_3.svg);       }
-.fue_5::before       { background-image: url(images/fue_5.svg);       }
-.fue_6::before       { background-image: url(images/fue_6.svg);       }
-.fue_7::before       { background-image: url(images/fue_7.svg);       }
-.fue_8::before       { background-image: url(images/fue_8.svg);       }
-.koto_1::before      { background-image: url(images/koto_1.svg);      }
-.koto_2::before      { background-image: url(images/koto_2.svg);      }
-.koto_3::before      { background-image: url(images/koto_3.svg);      }
-.koto_4::before      { background-image: url(images/koto_4.svg);      }
-.koto_5::before      { background-image: url(images/koto_5.svg);      }
-.koto_6::before      { background-image: url(images/koto_6.svg);      }
-.koto_7::before      { background-image: url(images/koto_7.svg);      }
-.koto_8::before      { background-image: url(images/koto_8.svg);      }
+.hyoshigi_1::before  { background-image: url(image/hyoshigi_1.svg);  }
+.hyoshigi_2::before  { background-image: url(image/hyoshigi_1.svg); filter: var(--color-danger); }
+.chanpon_1::before   { background-image: url(image/chanpon_1.svg);   }
+.chanpon_2::before   { background-image: url(image/chanpon_2.svg);   }
+.chanpon_3::before   { background-image: url(image/chanpon_1.svg); filter: var(--color-warning); }
+.surigane_1::before  { background-image: url(image/surigane_1.svg);  }
+.surigane_2::before  { background-image: url(image/surigane_2.svg);  }
+.surigane_3::before  { background-image: url(image/surigane_1.svg); filter: var(--color-danger); }
+.surigane_4::before  { background-image: url(image/surigane_2.svg); filter: var(--color-warning); }
+.taiko_1::before     { background-image: url(image/taiko_1.svg);     }
+.taiko_2::before     { background-image: url(image/taiko_2.svg);     }
+.taiko_3::before     { background-image: url(image/taiko_2.svg); filter: var(--color-warning); }
+.taiko_4::before     { background-image: url(image/taiko_1.svg); filter: var(--color-danger); }
+.kotsuzumi_1::before { background-image: url(image/kotsuzumi_1.svg); }
+.kotsuzumi_2::before { background-image: url(image/kotsuzumi_2.svg); }
+.kotsuzumi_3::before { background-image: url(image/kotsuzumi_3.svg); }
+.kotsuzumi_4::before { background-image: url(image/kotsuzumi_4.svg); }
+.kotsuzumi_5::before { background-image: url(image/kotsuzumi_1.svg); filter: var(--color-danger); }
+.kotsuzumi_6::before { background-image: url(image/kotsuzumi_2.svg); filter: var(--color-danger); }
+.kotsuzumi_7::before { background-image: url(image/kotsuzumi_3.svg); filter: var(--color-danger); }
+.kotsuzumi_8::before { background-image: url(image/kotsuzumi_4.svg); filter: var(--color-danger); }
+.kotsuzumi_9::before { background-image: url(image/chanpon_2.svg); }
+.fue_0::before       { background-image: url(image/fue_0.svg);       }
+.fue_2::before       { background-image: url(image/fue_2.svg);       }
+.fue_3::before       { background-image: url(image/fue_3.svg);       }
+.fue_5::before       { background-image: url(image/fue_5.svg);       }
+.fue_6::before       { background-image: url(image/fue_6.svg);       }
+.fue_7::before       { background-image: url(image/fue_7.svg);       }
+.fue_8::before       { background-image: url(image/fue_8.svg);       }
+.koto_1::before      { background-image: url(image/koto_1.svg);      }
+.koto_2::before      { background-image: url(image/koto_2.svg);      }
+.koto_3::before      { background-image: url(image/koto_3.svg);      }
+.koto_4::before      { background-image: url(image/koto_4.svg);      }
+.koto_5::before      { background-image: url(image/koto_5.svg);      }
+.koto_6::before      { background-image: url(image/koto_6.svg);      }
+.koto_7::before      { background-image: url(image/koto_7.svg);      }
+.koto_8::before      { background-image: url(image/koto_8.svg);      }
 
 .bi::before {
   content: "";
   display: inline-block;
-  vertical-align: -.15em;
-  width: 16px; height: 16px; background-size: 16px 16px;
+  vertical-align: -.3em;
+  width: 20px; height: 20px; background-size: 20px 20px; 
   filter: brightness(0) saturate(100%) invert(90%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(80%) contrast(80%);
 }
 
-.bi-x-circle::before                 { background-image: url(images/x-circle.svg); }
-.bi-arrow-left-circle::before        { background-image: url(images/arrow-left-circle.svg); }
-.bi-arrow-right-circle::before       { background-image: url(images/arrow-right-circle.svg); }
-.bi-play-circle::before              { background-image: url(images/play-circle.svg); }
-.bi-stop-circle::before              { background-image: url(images/stop-circle.svg); }
-.bi-arrows-collapse-vertical::before { background-image: url(images/arrows-collapse-vertical.svg); }
-.bi-arrows-expand-vertical::before   { background-image: url(images/arrows-expand-vertical.svg); }
-.bi-zoom-in::before                  { background-image: url(images/zoom-in.svg); }
-.bi-zoom-out::before                 { background-image: url(images/zoom-out.svg); }
+.bi-x-circle::before                 { background-image: url(image/x-circle.svg); }
+.bi-arrow-left-circle::before        { background-image: url(image/arrow-left-circle.svg); }
+.bi-arrow-right-circle::before       { background-image: url(image/arrow-right-circle.svg); }
+.bi-play-circle::before              { background-image: url(image/play-circle.svg); }
+.bi-stop-circle::before              { background-image: url(image/stop-circle.svg); }
+.bi-music-note-beamed::before        { background-image: url(image/music-note-beamed.svg); }
+.bi-volume-mute::before              { background-image: url(image/volume-mute.svg); }
+.bi-sign-stop::before              { background-image: url(image/sign-stop.svg); }
+.bi-arrows-collapse-vertical::before { background-image: url(image/arrows-collapse-vertical.svg); }
+.bi-arrows-expand-vertical::before   { background-image: url(image/arrows-expand-vertical.svg); }
+.bi-zoom-in::before                  { background-image: url(image/zoom-in.svg); }
+.bi-zoom-out::before                 { background-image: url(image/zoom-out.svg); }
 
-.bi-x-circle::before, .bi-arrow-left-circle::before, .bi-arrow-right-circle::before, .bi-play-circle::before, .bi-stop-circle::before {
-  vertical-align: -.3em;
-  width: 20px; height: 20px; background-size: 20px 20px; 
+.bi-zoom-in::before, .bi-zoom-out::before, .bi-arrows-collapse-vertical::before, .bi-arrows-expand-vertical::before {
+  vertical-align: -.15em;
+  width: 16px; height: 16px; background-size: 16px 16px;
 }
+
 .bi-lg::before {
   vertical-align: -.45em;
   width: 28px; height: 28px; background-size: 28px 28px;
