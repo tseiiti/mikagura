@@ -50,59 +50,75 @@ class Uta {
     for (let i in Uta.SEARCHES) { this.regexs.push(new RegExp(`^${ Uta.SEARCHES[i] }`)) }
   }
 
-  // primeiro span com 3 pontos
-  get_first_span(i, j) {
-    let html = ''
-    if (this.first) {
-      html = `<span class="first-span paragraph_${ i } line_${ j }"><span>.</span><span>.</span><span>.</span></span>`
-      this.first = false
+  get_hymn_html() {
+    this.first = true
+    let html = `<h1>${ this.hymn.title }</h1>\n`
+    for (let i in this.hymn.paragraphs) {
+      let paragraph = this.hymn.paragraphs[i]
+      let size = this.hymn.size
+      html += this.#get_paragraph(paragraph, i, size)
     }
     return html
   }
 
-  // primeira sílaba
-  get_first_syllable(i, j) {
-    let html = ''
-    let clas = `beat first-beat ${ this.first ? 'd-none' : '' }`
-    let data = `data-paragraph="${ i }" data-line="${ j }" data-syllable="-1" data-part="1"`
-    html = `
-      <div class="syllable d-none d-md-block">
-        <progress class="${ clas }" ${ data } value="0" max="5"></progress>
-        ${ this.get_first_span(i, j) }
-      </div>`
+  /////////////////////////////////////////////////////////////////////////////
+  // Private Methods
+  /////////////////////////////////////////////////////////////////////////////
+
+  // parágrafo
+  #get_paragraph(paragraph, i, size) {
+    let html = `<div class="paragraph paragraph_${ i }">`
+    for (let j in paragraph) {
+      let line = paragraph[j]
+      html += this.#get_line(line, i, j)
+
+      if (line.message) {
+        // parágrafo de mensagem sepadora
+        html += `
+          <div class="line" style="margin-left: calc(var(--size) * 2.3)">
+            <div class="border-bottom mb-4 px-1 message" style="width: calc(var(--size) * ${ size })">
+              <p class="text-end fst-italic fw-light m-1">${ line.message }</p>
+            </div>
+          </div>`
+      }
+    }
+    html += '</div>'
     return html
   }
 
-  // texto da sílaba
-  get_syllable_text() {
-    let text = null
-    for (let rg of this.regexs) {
-      let m = this.phrase.match(rg)
-      if (m) {
-        text = m[0]
-        this.phrase = this.phrase.replace(rg, '')
-        break
-      }
-    }
-    return text
-  }
+  // linha
+  #get_line(line, i, j) {
+    this.phrase = (line.phrase || '').replace(/ /g, '')
+    let html = `<div class="line line_${ j } ${ line.pause ? 'pause' : '' }">`
+    html += this.#get_first_syllable(i, j)
+    if (line.pause) this.first = true
 
-  // ícones instrumentos
-  get_narimono(line, index) {
-    let html = ''
-    for (let key of Uta.INSTRUMENTS) {
-      if (line[key]) {
-        let char = line[key].charAt(index).trim()
-        let aux = `${ key == 'kotsuzumi' ? 'stretch' : '' } ${ key }`
-        if (char.length > 0) aux = `${ aux } ${ key }_${ char }`
-        html += `<div class="icone ${ aux } d-none"></div>`
+    let i1 = 0
+    let i2 = 0
+    while (this.phrase.length > 0) {
+      let text = this.#get_syllable_text()
+      if (!text) {
+        console.log(this.phrase)
+        return
       }
+      html += `<div class="syllable syllable_${ i2 / 2 }">`
+      html += this.#get_syllable_part(text, line, i, j, 1, i2, i1, line.inverse)
+      text = ''
+      if (line.halfs && line.halfs.indexOf(i1 + 1) != -1) {
+        text = this.#get_syllable_text()
+        i1 += 1
+      }
+      html += this.#get_syllable_part(text, line, i, j, 2, i2, i1, line.inverse)
+      i1 += 1
+      i2 += 2
+      html += '</div>'
     }
+    html += '</div>'
     return html
   }
 
   // sílaba - 2 partes da nota
-  get_syllable_part(text, l, i, j, p, q, r, v) {
+  #get_syllable_part(text, l, i, j, p, q, r, v) {
     if (l.size < p + q) return ''
     
          if (text == 'xkan') text = 'kan'
@@ -125,72 +141,60 @@ class Uta {
       html += `<progress class="beat beat_${ p + q }" ${ data } value="0" max="5"></progress>`
     }
     html += `<div class="part_text ${ b }">${ text }</div>`
-    html += this.get_narimono(l, q + p - 1)
+    html += this.#get_narimono(l, q + p - 1)
     html += '</span>'
 
     return html
   }
 
-  // linha
-  get_line(line, i, j) {
-    this.phrase = (line.phrase || '').replace(/ /g, '')
-    let html = `<div class="line line_${ j } ${ line.pause ? 'pause' : '' }">`
-    html += this.get_first_syllable(i, j)
-    if (line.pause) this.first = true
-
-    let i1 = 0
-    let i2 = 0
-    while (this.phrase.length > 0) {
-      let text = this.get_syllable_text()
-      if (!text) {
-        console.log(this.phrase)
-        return
+  // ícones instrumentos
+  #get_narimono(line, index) {
+    let html = ''
+    for (let key of Uta.INSTRUMENTS) {
+      if (line[key]) {
+        let char = line[key].charAt(index).trim()
+        let aux = `${ key == 'kotsuzumi' ? 'stretch' : '' } ${ key }`
+        if (char.length > 0) aux = `${ aux } ${ key }_${ char }`
+        html += `<div class="icone ${ aux } d-none"></div>`
       }
-      html += `<div class="syllable syllable_${ i2 / 2 }">`
-      html += this.get_syllable_part(text, line, i, j, 1, i2, i1, line.inverse)
-      text = ''
-      if (line.halfs && line.halfs.indexOf(i1 + 1) != -1) {
-        text = this.get_syllable_text()
-        i1 += 1
-      }
-      html += this.get_syllable_part(text, line, i, j, 2, i2, i1, line.inverse)
-      i1 += 1
-      i2 += 2
-      html += '</div>'
     }
-    html += '</div>'
     return html
   }
 
-  // parágrafo
-  get_paragraph(paragraph, i, size) {
-    let html = `<div class="paragraph paragraph_${ i }">`
-    for (let j in paragraph) {
-      let line = paragraph[j]
-      html += this.get_line(line, i, j)
-
-      if (line.message) {
-        // parágrafo de mensagem sepadora
-        html += `
-          <div class="line" style="margin-left: calc(var(--size) * 2.3)">
-            <div class="border-bottom mb-4 px-1 message" style="width: calc(var(--size) * ${ size })">
-              <p class="text-end fst-italic fw-light m-1">${line.message}</p>
-            </div>
-          </div>`
+  // texto da sílaba
+  #get_syllable_text() {
+    let text = null
+    for (let rg of this.regexs) {
+      let m = this.phrase.match(rg)
+      if (m) {
+        text = m[0]
+        this.phrase = this.phrase.replace(rg, '')
+        break
       }
     }
-    html += '</div>'
+    return text
+  }
+
+  // primeiro span com 3 pontos
+  #get_first_span(i, j) {
+    let html = ''
+    if (this.first) {
+      html = `<span class="first-span paragraph_${ i } line_${ j }"><span>.</span><span>.</span><span>.</span></span>`
+      this.first = false
+    }
     return html
   }
 
-  get_hymn_html() {
-    this.first = true
-    let html = `<h1>${ this.hymn.title }</h1>\n`
-    for (let i in this.hymn.paragraphs) {
-      let paragraph = this.hymn.paragraphs[i]
-      let size = this.hymn.size
-      html += this.get_paragraph(paragraph, i, size)
-    }
+  // primeira sílaba
+  #get_first_syllable(i, j) {
+    let html = ''
+    let clas = `beat first-beat ${ this.first ? 'd-none' : '' }`
+    let data = `data-paragraph="${ i }" data-line="${ j }" data-syllable="-1" data-part="1"`
+    html = `
+      <div class="syllable d-none d-md-block">
+        <progress class="${ clas }" ${ data } value="0" max="5"></progress>
+        ${ this.#get_first_span(i, j) }
+      </div>`
     return html
   }
 }
