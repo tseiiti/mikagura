@@ -234,3 +234,7 @@ progress::-webkit-progress-value { background: #888; }
   line-height: 36px;
   color: #ccc;
 }
+
+audio {
+  height: 24px;
+}

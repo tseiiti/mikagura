@@ -53,12 +53,12 @@ class Uta {
   get_hymn_html() {
     this.first = true
     let html = `<h1>${ this.hymn.title }</h1>\n`
-    html += `
-      <audio controls id="myAudio">
-        <source src="audio/${ this.hymn_id }.mp3" type="audio/mpeg">
-      </audio>
-    `
+
+    if (this.hymn_id != 'hymn_st') 
+      html += this.#get_audio(this.hymn_id)
     for (let i in this.hymn.paragraphs) {
+      if (this.hymn_id == 'hymn_st') 
+        html += this.#get_audio(`hymn_s${i}`)
       let paragraph = this.hymn.paragraphs[i]
       let size = this.hymn.size
       html += this.#get_paragraph(paragraph, i, size)
@@ -201,5 +201,14 @@ class Uta {
         ${ this.#get_first_span(i, j) }
       </div>`
     return html
+  }
+
+  // audio
+  #get_audio(src) {
+    return `
+      <audio controls id="myAudio">
+        <source src="audio/${ src }.mp3" type="audio/mpeg">
+      </audio>
+    `
   }
 }

@@ -13,6 +13,7 @@ const HYMN_ST = {
       koto:      '4  44  32  33 45',
       size:      16,
       halfs:     [ 1, 3, 5, 7, 10, 13 ],
+      audio:     'hymn_s1',
     }, {
       phrase:    'xtenri o no mikoto _',
       hyoshigi:  '1   1   1   1',
@@ -47,6 +48,7 @@ const HYMN_ST = {
       koto:      ' 4 4 3 4 3 44',
       size:      14,
       halfs:     [ 1, 3, 5, 7, 9, 11 ],
+      audio:     'hymn_s2',
     }, {
       phrase:    'kono yono ji(i)to xtento okatadorite',
       hyoshigi:  '2   1   1   1   2',
@@ -104,6 +106,7 @@ const HYMN_ST = {
       koto:      '4  44  32  33 45',
       size:      16,
       halfs:     [ 1, 3, 5, 7, 10, 12, 14 ],
+      audio:     'hymn_s3',
     }, {
       phrase:    'itiretsu sumashite xkanrodai _',
       hyoshigi:  '1   1   1   1',
