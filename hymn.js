@@ -1369,7 +1369,7 @@ const HYMN_05 = {
 }
 
 const HYMN_06 = {
-  title: 'mutsu kudari me',
+  title: 'mu kudari me',
   size: 29,
   paragraphs: [
     [ {

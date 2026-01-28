@@ -177,9 +177,6 @@ h1 {
 .bi-arrow-right-circle::before       { background-image: url(image/arrow-right-circle.svg); }
 .bi-play-circle::before              { background-image: url(image/play-circle.svg); }
 .bi-stop-circle::before              { background-image: url(image/stop-circle.svg); }
-.bi-music-note-beamed::before        { background-image: url(image/music-note-beamed.svg); }
-.bi-volume-mute::before              { background-image: url(image/volume-mute.svg); }
-.bi-sign-stop::before              { background-image: url(image/sign-stop.svg); }
 .bi-arrows-collapse-vertical::before { background-image: url(image/arrows-collapse-vertical.svg); }
 .bi-arrows-expand-vertical::before   { background-image: url(image/arrows-expand-vertical.svg); }
 .bi-zoom-in::before                  { background-image: url(image/zoom-in.svg); }

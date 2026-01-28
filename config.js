@@ -6,20 +6,17 @@ class Config {
     this.control.font_size = aux.font_size ?? 16
     this.control.space_width = aux.space_width  ?? 1.3
     this.control.bpm_time = aux.bpm_time ?? 60
-    this.control.rate = aux.rate ?? 1.0
     this.control.suwari_0 = aux.suwari_0 ?? 21
     this.control.suwari_1 = aux.suwari_1 ?? 3
     this.control.suwari_2 = aux.suwari_2 ?? 3
     this.control.scroll = aux.scroll ?? true
     this.control.animation = aux.animation ?? true
     this.control.instruments = aux.instruments ?? { "fue": true }
-    this.audio = new Audio(`audio/hymn_00.mp3`)
     this.fill = new Fill(this)
     this.link = new Link()
     this.hymn
 
     qs('.bpm_time').value = this.control.bpm_time
-    qs('.rate').value = this.control.rate
     qs('.suwari_0').value = this.control.suwari_0
     qs('.suwari_1').value = this.control.suwari_1
     qs('.suwari_2').value = this.control.suwari_2
@@ -33,7 +30,6 @@ class Config {
   set_hymn(hymn_id) {
     clearInterval(this.fill.interval)
     this.fill.track_icon(0)
-    if (!this.audio.paused) this.play_audio()
 
     if (hymn_id != null) this.control.hymn_id = hymn_id
     this.hymn = new Uta(this.control.hymn_id, this.control.font_size, this.control.space_width)
@@ -58,13 +54,6 @@ class Config {
 
     this.fill = new Fill(this)
     this.fill.suwari_message()
-
-    if (this.control.hymn_id == 'hymn_st') {
-      qs('.audio').classList.add('d-none')
-      return
-    }
-    qs('.audio').classList.remove('d-none')
-    this.audio.src = `audio/${this.control.hymn_id}.mp3`
   }
 
   // ajuste + e -
@@ -104,20 +93,6 @@ class Config {
     if (aux != '12') {
       aux = aux == 'st' ? '00' : String(parseInt(aux) + 1).padStart(2, '0')
       this.set_hymn('hymn_' + aux)
-    }
-  }
-
-  play_audio() {
-    let e = qs('.audio')
-    if (this.audio.paused) {
-      this.audio.playbackRate = this.control.rate
-      this.audio.play()
-      e.title = 'parar'
-      e.innerHTML = '<i class="bi bi-sign-stop"></i>'
-    } else {
-      this.audio.pause()
-      e.title = 'tocar'
-      e.innerHTML = '<i class="bi bi-music-note-beamed"></i>'
     }
   }
 

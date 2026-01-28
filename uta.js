@@ -53,6 +53,11 @@ class Uta {
   get_hymn_html() {
     this.first = true
     let html = `<h1>${ this.hymn.title }</h1>\n`
+    html += `
+      <audio controls id="myAudio">
+        <source src="audio/${ this.hymn_id }.mp3" type="audio/mpeg">
+      </audio>
+    `
     for (let i in this.hymn.paragraphs) {
       let paragraph = this.hymn.paragraphs[i]
       let size = this.hymn.size
