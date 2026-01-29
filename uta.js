@@ -207,7 +207,7 @@ class Uta {
   // audio
   #get_audio(src) {
     return `
-      <audio controls id="myAudio">
+      <audio controls preload="none">
         <source src="audio/${ src }.mp3" type="audio/mpeg">
       </audio>
     `

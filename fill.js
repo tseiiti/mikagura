@@ -4,6 +4,7 @@ class Fill {
     this.id   = 0 // id do interval
     this.cur  = 0 // id de beat atual
     this.ini  = 0 // id de beat inicial
+    this.i    = 0 // status
     this.sts  = 0 // status
     this.qs_0 = 0
     this.qs_1 = 0
@@ -26,7 +27,10 @@ class Fill {
 
     if (this.sts == 0) {
       this.#track_start()
-    } else if (this.sts == 1 || this.sts == 2) {
+    } else if (this.sts == 1) {
+      this.#play_suwari_restart()
+      this.track_icon(0)
+    } else if (this.sts == 2) {
       this.track_icon(3)
     } else {
       this.#track()
@@ -72,8 +76,8 @@ class Fill {
   #track_start() {
     this.#bd()
     if (this.fsw) {
-      this.#play_suwari_restore()
-      this.#play_suwari_start()
+      this.#play_suwari_loop()
+      this.#play_suwari_restart()
     }
     this.track_icon(1)
 
@@ -91,6 +95,7 @@ class Fill {
       if (i >= 3) {
         clearInterval(fx.id)
         fx.ini = fx.cur
+        fx.i = 0
         fx.#track()
         return
       }
@@ -114,15 +119,14 @@ class Fill {
 
     this.suwari_message()
     
-    let i = 0
     this.#emphasis(true)
     clearInterval(this.id)
     this.id = setInterval(function(fx) {
-      i += 1
-      if (fx.#cg('animation')) fx.b.value = i
+      fx.i += 1
+      if (fx.#cg('animation')) fx.b.value = fx.i
 
-      if (i >= 5) {
-        i = 0
+      if (fx.i >= 5) {
+        fx.i = 0
         fx.#emphasis(false)
         fx.#track_aux()
       }
@@ -158,11 +162,11 @@ class Fill {
 
     let boolean = false
     if (this.qs_0 < this.#cg('suwari_0') && this.p == 0) {
-      this.#play_suwari_restore()
+      this.#play_suwari_loop()
       this.qs_0 += 1
       boolean = true
     } else if (this.qs_1 < this.#cg('suwari_1') && this.p == 2) {
-      this.#play_suwari_restore()
+      this.#play_suwari_loop()
       this.qs_1 += 1
       boolean = true
     } else {
@@ -180,7 +184,7 @@ class Fill {
   }
 
   // volta 3 pontos do parágrafo
-  #play_suwari_start() {
+  #play_suwari_restart() {
     this.b.classList.add('d-none')
     let e = qs(`.first-span.paragraph_${ this.p }.line_${ this.l }`)
     e.classList.remove('d-none')
@@ -195,8 +199,8 @@ class Fill {
     e.classList.remove('d-none')
   }
 
-  // restaura value do parágrafo e troca 3 pontos por beat
-  #play_suwari_restore() {
+  // zera value do parágrafo e troca 3 pontos por beat
+  #play_suwari_loop() {
     for (let i = this.ini; i <= this.cur; i++) {
       this.beat[i].value = 0
     }
