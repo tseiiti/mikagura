@@ -178,6 +178,7 @@ class Fill {
         this.fsw   = true
       }
       this.#play_suwari_final()
+      return false
     }
     this.suwari_message()
     return boolean
