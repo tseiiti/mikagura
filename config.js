@@ -36,7 +36,7 @@ class Config {
 
     qs('.menu-hymns li').innerHTML = this.link.get_links(this.control.hymn_id)
     qs('main').innerHTML = this.hymn.get_hymn_html()
-    qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hymn.hymn.title }`
+    qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hymn.title }`
 
     qs('#chk_none').checked = true
     for (let key of Uta.INSTRUMENTS) {

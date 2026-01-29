@@ -41,6 +41,7 @@ class Uta {
   constructor(hymn_id, font_size, space_width) {
     this.hymn_id     = hymn_id
     this.hymn        = Uta.HYMNS[this.hymn_id]
+    this.title       = this.hymn.title
     this.font_size   = font_size
     this.space_width = space_width
     this.regexs      = []
@@ -52,7 +53,7 @@ class Uta {
 
   get_hymn_html() {
     this.first = true
-    let html = `<h1>${ this.hymn.title }</h1>\n`
+    let html = `<h1>${ this.title }</h1>\n`
 
     if (this.hymn_id != 'hymn_st') 
       html += this.#get_audio(this.hymn_id)

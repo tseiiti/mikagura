@@ -105,7 +105,7 @@ h1 {
   width: 0;
 }
 
-/* Ícone */
+/* Ícones instrumentos */
 .icone {
   width: var(--size-base);
   height: calc(var(--size-base) * 1.3);
