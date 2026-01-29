@@ -50,7 +50,7 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:40"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:40"
        x="137.81306"
        y="295.68057"
        id="text2"><tspan
@@ -58,10 +58,10 @@
          id="tspan2"
          x="137.81306"
          y="295.68057"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8800aa">5</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8800aa">5</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:364.726px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:32.0082"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:364.726px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:32.0082"
        x="112.75984"
        y="637.63147"
        id="text2-3"
@@ -70,6 +70,6 @@
          id="tspan2-5"
          x="112.75984"
          y="637.63147"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:364.726px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:32.0082;fill:#8800aa">x</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:364.726px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:32.0082;fill:#8800aa">x</tspan></text>
   </g>
 </svg>

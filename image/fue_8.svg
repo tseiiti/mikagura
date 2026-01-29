@@ -49,7 +49,7 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:40"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#8800aa;stroke-width:40"
        x="17.706362"
        y="438.14331"
        id="text2"><tspan
@@ -57,7 +57,7 @@
          id="tspan2"
          x="17.706362"
          y="438.14331"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8800aa">53</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:426.667px;font-family:Roboto,Arial,Helvetica;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8800aa">53</tspan></text>
     <path
        d="m 256.00107,0 a 259.14482,151.18111 0 0 0 -242.270604,97.8418 259.14482,151.18111 0 0 0 -1.280849,1.6875 15.782756,14.271496 0 0 0 -0.194395,0.31445 15.782756,14.271496 0 0 0 -1.924514,6.83008 15.782756,14.271496 0 0 0 15.782742,14.27148 15.782756,14.271496 0 0 0 14.221101,-8.15039 15.782756,14.271496 0 0 1 -0.453589,0.85743 229.88653,132.28346 0 0 1 216.120108,-87.19532 229.88653,132.28346 0 0 1 216.02941,87.05078 15.782756,14.271496 0 0 1 -0.42119,-0.8164 15.782756,14.271496 0 0 0 14.27726,8.2539 15.782756,14.271496 0 0 0 15.78274,-14.27148 15.782756,14.271496 0 0 0 -1.59836,-6.19336 259.14482,151.18111 0 0 0 -2.4213,-3.27734 A 259.14482,151.18111 0 0 0 256.00107,0 Z"
        style="fill:#8800aa;stroke-width:53.9858"
