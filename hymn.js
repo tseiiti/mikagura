@@ -4,6 +4,8 @@ const HYMN_ST = {
   paragraphs: [
     [ {
       phrase:    'ashiki o haro(o)te tasuke tamae',
+      jap:       'あしきをはらうてたすけたまえ',
+      eng:       'Sweeping away evils, please save us,',
       hyoshigi:  '1   1   1   1',
       chanpon:   '  1   1   1   1',
       surigane:  '1 221 221 221 22',
@@ -16,6 +18,8 @@ const HYMN_ST = {
       audio:     'hymn_s1',
     }, {
       phrase:    'xtenri o no mikoto _',
+      jap:       'てんりわうのみこと',
+      eng:       'Tenri-Ō-no-Mikoto.',
       hyoshigi:  '1   1   1   1',
       chanpon:   '  1   1   1   3',
       surigane:  '1 221 221 221 44',
@@ -28,6 +32,8 @@ const HYMN_ST = {
       message:   '21 vezes',
     } ], [ {
       phrase:    'tyoto hanashi kami no yu koto kiitekure',
+      jap:       'ちよとはなしかみのいふこときいてくれ',
+      eng:       'Just a word: Listen to what God says.',
       hyoshigi:  '1   1   1   1   1   1   2',
       chanpon:   '  1   1   1   1   1   1 2',
       surigane:  '1 221 221 221 221 221 223',
@@ -39,6 +45,8 @@ const HYMN_ST = {
       halfs:     [ 10, 12, 14 ],
     }, {
       phrase:    'ashiki no koto(o)wa iwandena',
+      jap:       'あしきのことはいはんでな',
+      eng:       'I never tell you anything wrong.',
       hyoshigi:  '2   1   1   2',
       chanpon:   '2 1   1   1 2',
       surigane:  '3 221 221 223',
@@ -51,6 +59,8 @@ const HYMN_ST = {
       audio:     'hymn_s2',
     }, {
       phrase:    'kono yono ji(i)to xtento okatadorite',
+      jap:       'このよのぢいとてんとをかたどりて',
+      eng:       'Representing heaven and earth',
       hyoshigi:  '2   1   1   1   2',
       chanpon:   '2 1   1   1   1 2',
       surigane:  '3 221 221 221 223',
@@ -62,6 +72,8 @@ const HYMN_ST = {
       halfs:     [ 1, 4, 6, 9, 11, 13 ],
     }, {
       phrase:    'fufu okoshiraekitarudena',
+      jap:       'ふうふをこしらへきたるでな',
+      eng:       'I have created husband and wife.',
       hyoshigi:  '2   1   1   1',
       chanpon:   '2 1   1   1',
       surigane:  '3 221 221 221',
@@ -73,6 +85,8 @@ const HYMN_ST = {
       halfs:     [ 2, 4, 6, 8, 10 ],
     }, {
       phrase:    'korewa konoyono hajimedashi __',
+      jap:       'これハこのよのはじめだし',
+      eng:       'This is the beginning of the world.',
       hyoshigi:  '   1   1   1',
       chanpon:   ' 1   1   1   1',
       surigane:  ' 221 221 221 22',
@@ -85,6 +99,8 @@ const HYMN_ST = {
       inverse:   1,
     }, {
       phrase:    'namu xtenri o no mikoto',
+      jap:       'なむてんりわうのみこと',
+      eng:       'Namu Tenri-Ō-no-Mikoto',
       hyoshigi:  '1   1   1   1   1',
       chanpon:   '  1   1   1   1',
       surigane:  '1 221 221 221 221',
@@ -97,6 +113,8 @@ const HYMN_ST = {
       message:   'yoshi yoshi',
     } ], [ {
       phrase:    'ashiki o haro(o)te tasuke sekikomu',
+      jap:       'あしきをはらうてたすけせきこむ',
+      eng:       'Sweeping away evils, hasten to save us.',
       hyoshigi:  '1   1   1   1',
       chanpon:   '  1   1   1   1',
       surigane:  '1 221 221 221 22',
@@ -109,6 +127,8 @@ const HYMN_ST = {
       audio:     'hymn_s3',
     }, {
       phrase:    'itiretsu sumashite xkanrodai _',
+      jap:       'あしきをはらうてたすけせきこむ',
+      eng:       'All humankind equally purified, the Kanrodai.',
       hyoshigi:  '1   1   1   1',
       chanpon:   '  1   1   1   3',
       surigane:  '1 221 221 221 44',
@@ -125,11 +145,15 @@ const HYMN_ST = {
 }
 
 const HYMN_00 = {
-  title: 'yorozuyo',
+  title: 'Yorozuyo',
+  t_jap: 'よろづよ八首',
+  t_eng: 'Eight Verses of the Yorozuyo',
   size: 34,
   paragraphs: [
     [ {
       phrase:    'yorozu yo no sekai itiretsu miharasedo',
+      jap:       'よろづよのせかい一れつみはらせど',
+      eng:       'Looking all over the world and through all ages,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -140,6 +164,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'mune no wakarita mono wa nai _',
+      jap:       'むねのわかりたものはない',
+      eng:       'I find no one who has understood My heart.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -150,6 +176,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'sono hazu ya toite kikashita koto wa nai',
+      jap:       'そのはずやといてきかしたことハない',
+      eng:       'So should it be, for I have never taught it before,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -160,6 +188,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'shiranu ga muri dewa nai wai na _',
+      jap:       'しらぬがむりでハないわいな',
+      eng:       'It is natural that you know nothing.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -171,6 +201,8 @@ const HYMN_00 = {
       halfs:     [ 1 ],
     } ], [ {
       phrase:    'kono tabi wa kami ga omote e arawarete',
+      jap:       'このたびはかみがおもてへあらハれて',
+      eng:       'This time I, God, revealing Myself to the fore,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -181,6 +213,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'nanika isai o toki kikasu _',
+      jap:       'なにかいさいをときゝかす',
+      eng:       'Teach you all the truth in detail.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -191,6 +225,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'kono tokoro yamato no jiba(a) no kamigata to',
+      jap:       'このところやまとのぢばのかみがたと',
+      eng:       'You are calling this place the Jiba, the home of God, in Yamato;',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -202,6 +238,8 @@ const HYMN_00 = {
       halfs:     [ 6 ],
     }, {
       phrase:    'yu(u)te ire domo moto shiranu _',
+      jap:       'いうていれどももとしらぬ',
+      eng:       'But you do not know of its origin.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -212,6 +250,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'kono moto o kuwashiku kii(i)ta koto naraba',
+      jap:       'このもとをくはしくきいたことならバ',
+      eng:       'If you are told of this origin in full,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -223,6 +263,8 @@ const HYMN_00 = {
       halfs:     [ 6 ],
     }, {
       phrase:    'ikana mono demo koishi naru _',
+      jap:       'いかなものでもこいしなる',
+      eng:       'Great yearning will come over you, whoever you may be.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -233,6 +275,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'kikitakuba tazune kuru nara yute kikasu',
+      jap:       'きゝたくバたづねくるならいうてきかす',
+      eng:       'If you wish to hear and will come to Me,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -243,6 +287,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'yorozu isai no moto naru o _',
+      jap:       'よろづいさいのもとなる',
+      eng:       'I will tell you the truth that this place is the origin of any and everything.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -253,6 +299,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'kami ga dete nanika isai o toku naraba',
+      jap:       'かみがでゝなにかいさいをとくならバ',
+      eng:       'When I, God, reveal Myself and teach you everything in detail,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -263,6 +311,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'sekai itiretsu isamu nari _',
+      jap:       'せかい一れついさむなり',
+      eng:       'All people in the world will become cheerful.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -273,6 +323,8 @@ const HYMN_00 = {
       size:      26,
     } ], [ {
       phrase:    'itiretsu ni hayaku tasuke o isogu kara',
+      jap:       '一れつにはやくたすけをいそぐから',
+      eng:       'As I hasten to save all of you equally,',
       hyoshigi:  '1   1   1   1   1   1   1   1   1',
       chanpon:   '  1   1   1   1   1   1   1   1',
       surigane:  '1 221 221 221 221 221 221 221 221',
@@ -283,6 +335,8 @@ const HYMN_00 = {
       size:      34,
     }, {
       phrase:    'sekai no kokoro mo isame kake _',
+      jap:       'せかいのこゝろもいさめかけ',
+      eng:       'I will set out to cheer up all the minds of the world.',
       hyoshigi:  '  1   1   1   1   1   1',
       chanpon:   '1   1   1   1   1   1   1',
       surigane:  '221 221 221 221 221 221 22',
@@ -294,6 +348,8 @@ const HYMN_00 = {
       halfs:     [ 1 ],
     } ], [ {
       phrase:    'namu xtenri o no mikoto',
+      jap:       'なむてんりわうのみこと',
+      eng:       'Namu Tenri-Ō-no-Mikoto',
       hyoshigi:  '1   1   1   1   1',
       chanpon:   '  1   1   1   1',
       surigane:  '1 221 221 221 221',
