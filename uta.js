@@ -17,15 +17,15 @@ class Uta {
   }
 
   static SEARCHES = [
-    'kokonotsu,', 'tsu,', 'xkan', 'xten', 
-    'nya', 'ryo', 'shi', 'sho', 'tsu', 'tya', 'tyo', 
-    '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 'do,', 'de,', 'ni,', 
-    'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'fu', 'ga', 'gi', 'go', 'gu', 'ha', 
-    'hi', 'ho', 'ji', 'jo', 'ju', 'ka', 'ke', 'ki', 'ko', 'ku', 'ma', 'me', 'mi', 
-    'mo', 'mu', 'na', 'ne', 'ni', 'no', 'nu', 'pa', 'ra', 're', 'ri', 'ro', 'ru', 
-    'sa', 'se', 'so', 'su', 'ta', 'te', 'ti', 'to', 'wa', 'wo', 'xi', 'xn', 'xo', 
-    'ya', 'yo', 'yu', 'za', 'zo', 'zu', 
-    'a', 'e', 'i', 'n', 'o', 'u', '_', 
+    'kokonotsu,', 'tsu,', 'xkan', 'xten',
+    'nya', 'ryo', 'shi', 'sho', 'tsu', 'tya', 'tyo',
+    '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 'do,', 'de,', 'ni,',
+    'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'fu', 'ga', 'gi', 'go', 'gu', 'ha',
+    'hi', 'ho', 'ji', 'jo', 'ju', 'ka', 'ke', 'ki', 'ko', 'ku', 'ma', 'me', 'mi',
+    'mo', 'mu', 'na', 'ne', 'ni', 'no', 'nu', 'pa', 'ra', 're', 'ri', 'ro', 'ru',
+    'sa', 'se', 'so', 'su', 'ta', 'te', 'ti', 'to', 'wa', 'wo', 'xi', 'xn', 'xo',
+    'ya', 'yo', 'yu', 'za', 'zo', 'zu',
+    'a', 'e', 'i', 'n', 'o', 'u', '_',
   ]
 
   static INSTRUMENTS = [
@@ -35,13 +35,22 @@ class Uta {
     'taiko',
     'kotsuzumi',
     'fue',
-    'koto'
+    'koto',
   ]
 
-  constructor(hymn_id, font_size, space_width) {
+  static LANGUAGES = [
+    'japanese',
+    'romaji',
+    'english',
+  ]
+
+  constructor(hymn_id, mode, font_size, space_width, layout, languages) {
     this.hymn_id     = hymn_id
     this.hymn        = Uta.HYMNS[this.hymn_id]
     this.title       = this.hymn.title
+    this.mode        = mode
+    this.layout      = layout
+    this.languages   = languages
     this.font_size   = font_size
     this.space_width = space_width
     this.regexs      = []
@@ -55,10 +64,81 @@ class Uta {
     this.first = true
     let html = `<h1>${ this.title }</h1>\n`
 
-    if (this.hymn_id != 'hymn_st') 
+    if (this.hymn_id != 'hymn_st')
       html += this.#get_audio(this.hymn_id)
+
+    if (this.mode == 2)
+      html += this.#get_stanzas()
+    else
+      html += this.#get_paragraphs()
+
+    return html
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  // Private Methods
+  /////////////////////////////////////////////////////////////////////////////
+
+  // html dos idiomas das canções
+  #get_stanzas() {
+    let html = ''
+
+    if (this.layout == 2) {
+      html += `<div class="poem mt-3">`
+      for (let i in this.hymn.paragraphs) {
+        if (this.hymn_id == 'hymn_st')
+          html += this.#get_audio(`hymn_s${i}`)
+        let stanza = this.hymn.paragraphs[i]
+        for (let key of Uta.LANGUAGES) {
+          if (this.languages[key]) {
+            html += this.#get_stanza(stanza, i, key)
+          }
+        }
+      }
+    } else {
+      let first = true
+      html += '<div class="row">'
+      for (let key of Uta.LANGUAGES) {
+        if (this.languages[key]) {
+          html += `<div class="col-md-6 poem mt-3">`
+          html += `<h4 class="text-capitalize">${ key }</h4>`
+          for (let i in this.hymn.paragraphs) {
+            if (this.hymn_id == 'hymn_st' && first)
+              html += `
+                <audio controls preload="none" class="mt-3 mb-2" style="width: 300px;">
+                  <source src="audio/hymn_s${i}.mp3" type="audio/mpeg">
+                </audio>
+              `
+            let stanza = this.hymn.paragraphs[i]
+            html += this.#get_stanza(stanza, i, key)
+          }
+          html += '</div>'
+          first = false
+        }
+      }
+    }
+    html += '</div>'
+    return html
+  }
+
+  #get_stanza(stanza, i, key) {
+    let html = `<div class="stanza stanza_${ i } mb-3">`
+    for (let j in stanza) {
+      let verse = stanza[j]
+      html += `
+      <p class="verse verse_${ j } mb-1">
+        ${ verse[key] }
+      </p>`
+    }
+    html += '</div>'
+    return html
+  }
+
+  // html para notas musicais
+  #get_paragraphs() {
+    let html = ''
     for (let i in this.hymn.paragraphs) {
-      if (this.hymn_id == 'hymn_st') 
+      if (this.hymn_id == 'hymn_st')
         html += this.#get_audio(`hymn_s${i}`)
       let paragraph = this.hymn.paragraphs[i]
       let size = this.hymn.size
@@ -66,10 +146,6 @@ class Uta {
     }
     return html
   }
-
-  /////////////////////////////////////////////////////////////////////////////
-  // Private Methods
-  /////////////////////////////////////////////////////////////////////////////
 
   // parágrafo
   #get_paragraph(paragraph, i, size) {
@@ -126,7 +202,7 @@ class Uta {
   // sílaba - 2 partes da nota
   #get_syllable_part(text, l, i, j, p, q, r, v) {
     if (l.size < p + q) return ''
-    
+
          if (text == 'xkan') text = 'kan'
     else if (text == 'xten') text = 'ten'
     else if (text == 'xi')   text = 'i'
@@ -135,7 +211,7 @@ class Uta {
     else if (text == '_')    text = ''
 
     let b = l.bolds && l.bolds.indexOf(r) != -1 ? 'fw-medium' : '' // fw-semibold
-    
+
     let clas = `part part_${ (p == 1 && !v) || (p == 2 && v) ? '1' : '2' }`
     let data = `data-paragraph="${ i }"
       data-line="${ j }"
