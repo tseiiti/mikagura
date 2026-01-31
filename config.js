@@ -11,7 +11,6 @@ class Config {
     this.control.suwari_1 = aux.suwari_1 ?? 3
     this.control.suwari_2 = aux.suwari_2 ?? 3
     this.control.scroll = aux.scroll ?? true
-    this.control.layout = aux.layout ?? 1 // 1: cartões, 2: listas
     this.control.animation = aux.animation ?? true
     this.control.instruments = aux.instruments ?? { "fue": true }
     this.control.languages = aux.languages ?? {}
@@ -29,12 +28,13 @@ class Config {
 
     // carrega html do hino
     if (hymn_id != null) this.control.hymn_id = hymn_id
+    localStorage.setItem('control', JSON.stringify(this.control))
+
     this.hymn = new Uta(
       this.control.hymn_id,
       this.control.mode,
       this.control.font_size,
       this.control.space_width,
-      this.control.layout,
       this.control.languages,
     )
     qs('main').innerHTML = this.hymn.get_hymn_html()
@@ -168,8 +168,6 @@ class Config {
     this.#set('font_size', this.control.font_size)
     if (this.control.mode == 2) qs('#chk_lang').checked = true
     else qs('#chk_inst').checked = true
-    if (this.control.layout == 2) qs('#chk_list').checked = true
-    else qs('#chk_card').checked = true
   }
 
   // alterna visualização de ícones de instrumentos
@@ -197,7 +195,7 @@ class Config {
     this.control[key] = val
     localStorage.setItem('control', JSON.stringify(this.control))
 
-    if (key == 'mode' || key == 'layout') this.set_hymn()
+    if (key == 'mode') this.set_hymn()
     if (key == 'font_size')
       this.#property('size-base', `${ val }px`)
     if (key == 'space_width') {

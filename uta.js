@@ -42,14 +42,18 @@ class Uta {
     'japanese',
     'romaji',
     'english',
+    'chinese',
+    'french',
+    'korean',
+    'portuguese',
+    'spanish',
   ]
 
-  constructor(hymn_id, mode, font_size, space_width, layout, languages) {
+  constructor(hymn_id, mode, font_size, space_width, languages) {
     this.hymn_id     = hymn_id
     this.hymn        = Uta.HYMNS[this.hymn_id]
     this.title       = this.hymn.title
     this.mode        = mode
-    this.layout      = layout
     this.languages   = languages
     this.font_size   = font_size
     this.space_width = space_width
@@ -82,39 +86,22 @@ class Uta {
   // html dos idiomas das canções
   #get_stanzas() {
     let html = ''
+    let first = true
 
-    if (this.layout == 2) {
-      html += `<div class="poem mt-3">`
-      for (let i in this.hymn.paragraphs) {
-        if (this.hymn_id == 'hymn_st')
-          html += this.#get_audio(`hymn_s${i}`)
-        let stanza = this.hymn.paragraphs[i]
-        for (let key of Uta.LANGUAGES) {
-          if (this.languages[key]) {
-            html += this.#get_stanza(stanza, i, key)
-          }
+    html += '<div class="row">'
+    for (let key of Uta.LANGUAGES) {
+      if (this.languages[key]) {
+        html += `<div class="col-md-6 poem mt-4">`
+        html += `<h4>${ this.hymn[key] } (${ key })</h4>`
+        for (let i in this.hymn.paragraphs) {
+          if (this.hymn_id == 'hymn_st' && first)
+            html += this.#get_audio(`hymn_s${i}`, true)
+
+          let stanza = this.hymn.paragraphs[i]
+          html += this.#get_stanza(stanza, i, key)
         }
-      }
-    } else {
-      let first = true
-      html += '<div class="row">'
-      for (let key of Uta.LANGUAGES) {
-        if (this.languages[key]) {
-          html += `<div class="col-md-6 poem mt-3">`
-          html += `<h4 class="text-capitalize">${ key }</h4>`
-          for (let i in this.hymn.paragraphs) {
-            if (this.hymn_id == 'hymn_st' && first)
-              html += `
-                <audio controls preload="none" class="mt-3 mb-2" style="width: 300px;">
-                  <source src="audio/hymn_s${i}.mp3" type="audio/mpeg">
-                </audio>
-              `
-            let stanza = this.hymn.paragraphs[i]
-            html += this.#get_stanza(stanza, i, key)
-          }
-          html += '</div>'
-          first = false
-        }
+        html += '</div>'
+        first = false
       }
     }
     html += '</div>'
@@ -281,9 +268,9 @@ class Uta {
   }
 
   // audio
-  #get_audio(src) {
+  #get_audio(src, short = false) {
     return `
-      <audio controls preload="none">
+      <audio controls preload="none" ${ short ? 'class="mt-3 mb-2" style="width: 300px;"' : '' }>
         <source src="audio/${ src }.mp3" type="audio/mpeg">
       </audio>
     `
