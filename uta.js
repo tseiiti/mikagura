@@ -68,9 +68,6 @@ class Uta {
     this.first = true
     let html = `<h1>${ this.title }</h1>\n`
 
-    if (this.hymn_id != 'hymn_st')
-      html += this.#get_audio(this.hymn_id)
-
     if (this.mode == 2)
       html += this.#get_stanzas()
     else
@@ -86,8 +83,11 @@ class Uta {
   // html dos idiomas das canções
   #get_stanzas() {
     let html = ''
-    let first = true
 
+    if (this.hymn_id != 'hymn_st')
+      html += this.#get_audio(this.hymn_id)
+
+    let first = true
     html += '<div class="row">'
     for (let key of Uta.LANGUAGES) {
       if (this.languages[key]) {
@@ -125,8 +125,6 @@ class Uta {
   #get_paragraphs() {
     let html = ''
     for (let i in this.hymn.paragraphs) {
-      if (this.hymn_id == 'hymn_st')
-        html += this.#get_audio(`hymn_s${i}`)
       let paragraph = this.hymn.paragraphs[i]
       let size = this.hymn.size
       html += this.#get_paragraph(paragraph, i, size)

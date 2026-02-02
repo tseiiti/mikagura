@@ -144,7 +144,7 @@ const HYMN_ST = {
       koto:       '544 3 4 3 44',
       size:       15,
       halfs:      [ 1, 3, 5, 7, 9, 11 ],
-      inverse:   1,
+      inverse:    1,
     }, {
       phrase:     'namu xtenri o no mikoto',
       japanese:   'なむてんりわうのみこと',

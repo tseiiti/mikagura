@@ -109,10 +109,10 @@ class Config {
     this.control.instruments[e.name] = e.checked
     localStorage.setItem('control', JSON.stringify(this.control))
 
-    let count = 0
-    qsa('.instrument').forEach(f => { if (f.checked) count += 1 })
-    qs('#chk_all').checked  = count == Uta.INSTRUMENTS.length
-    qs('#chk_none').checked = count == 0
+    // let count = 0
+    // qsa('.instrument').forEach(f => { if (f.checked) count += 1 })
+    // qs('#chk_all').checked  = count == Uta.INSTRUMENTS.length
+    // qs('#chk_none').checked = count == 0
   }
 
   // execução de todos instrument icon
@@ -149,15 +149,15 @@ class Config {
     qs('.menu-instruments').innerHTML = this.link.get_instruments() + qs('.menu-instruments').innerHTML
     qs('.menu-languages').innerHTML = this.link.get_languages() + qs('.menu-languages').innerHTML
 
-    let count = 0
+    // let count = 0
     for (let key of Uta.INSTRUMENTS) {
       if (this.control.instruments[key]) {
         qs(`input.instrument[name=${ key }]`).checked = true
-        count += 1
+        // count += 1
       }
     }
-    qs('#chk_all').checked  = count == Uta.INSTRUMENTS.length
-    qs('#chk_none').checked = count == 0
+    // qs('#chk_all').checked  = count == Uta.INSTRUMENTS.length
+    // qs('#chk_none').checked = count == 0
 
     for (let key of Uta.LANGUAGES) {
       if (this.control.languages[key]) {
