@@ -75,20 +75,6 @@
               </a>
               <ul class="dropdown-menu px-3 px-md-2">
 
-                <!-- instrumentos ou idiomas -->
-                <li class="nav-item d-flex justify-content-center" title="selecionar entre instrumentos ou idiomas">
-                  <button class="nav-link " onclick="config.change(this)"
-                    value="1" name="mode" title="modo instrumentos" id="chk_inst">
-                    <i class="bi bi-file-earmark-music"></i>
-                  </button>
-                  <button class="nav-link " onclick="config.change(this)"
-                    value="2" name="mode" title="modo idiomas" id="chk_lang">
-                    <i class="bi bi-globe-americas"></i>
-                  </button>
-                </li>
-
-                <hr class="my-2 mx-0">
-
                 <!-- tamanho da fonte -->
                 <li class="nav-item" title="tamanho da letra, padrão 16px">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras"
@@ -215,6 +201,14 @@
 
             <!-- tocar -->
             <li class="nav-item">
+              <button class="nav-link d-inline-block px-1 pb-2 pb-md-0" onclick="config.change(this)"
+                value="1" name="mode" title="modo instrumentos" id="chk_inst">
+                <i class="bi bi-file-earmark-music"></i>
+              </button>
+              <button class="nav-link d-inline-block px-1 pb-2 pb-md-0" onclick="config.change(this)"
+                value="2" name="mode" title="modo idiomas" id="chk_lang">
+                <i class="bi bi-globe-americas"></i>
+              </button>
               <a class="nav-link d-inline-block px-1 pb-2 pb-md-0" href="javascript:config.reset()" title="recomeçar a animação da faixa de marcação">
                 <i class="bi bi-x-circle"></i>
               </a>
