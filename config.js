@@ -60,6 +60,12 @@ class Config {
       }
       this.#set('space_width', this.control.space_width)
       this.fill.suwari_message()
+
+      qs('#chk_inst i').classList.add('bi-white')
+      qs('#chk_lang i').classList.remove('bi-white')
+    } else {
+      qs('#chk_inst i').classList.remove('bi-white')
+      qs('#chk_lang i').classList.add('bi-white')
     }
   }
 
@@ -130,8 +136,8 @@ class Config {
     this.control.languages[e.name] = e.checked
     localStorage.setItem('control', JSON.stringify(this.control))
 
-    if (qs('#chk_lang').checked)
-      this.set_hymn()
+    // if (qs('#chk_lang').checked)
+    //   this.set_hymn()
   }
 
   /////////////////////////////////////////////////////////////////////////////
@@ -166,8 +172,8 @@ class Config {
     }
 
     this.#set('font_size', this.control.font_size)
-    if (this.control.mode == 2) qs('#chk_lang').checked = true
-    else qs('#chk_inst').checked = true
+    // if (this.control.mode == 2) qs('#chk_lang').checked = true
+    // else qs('#chk_inst').checked = true
   }
 
   // alterna visualização de ícones de instrumentos

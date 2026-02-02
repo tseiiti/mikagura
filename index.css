@@ -182,6 +182,8 @@ h1 {
 .bi-arrows-expand-vertical::before   { background-image: url(image/arrows-expand-vertical.svg); }
 .bi-zoom-in::before                  { background-image: url(image/zoom-in.svg); }
 .bi-zoom-out::before                 { background-image: url(image/zoom-out.svg); }
+.bi-file-earmark-music::before       { background-image: url(image/file-earmark-music.svg); }
+.bi-globe-americas::before           { background-image: url(image/globe-americas.svg); }
 
 .bi-zoom-in::before, .bi-zoom-out::before, .bi-arrows-collapse-vertical::before, .bi-arrows-expand-vertical::before {
   vertical-align: -.15em;
@@ -192,6 +194,10 @@ h1 {
   vertical-align: -.45em;
   width: 28px; height: 28px; background-size: 28px 28px;
   filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(80%) contrast(20%);
+}
+
+.bi-white::before {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(66%) saturate(103%) hue-rotate(262deg) brightness(118%) contrast(100%);
 }
 
 .checkbox-label {

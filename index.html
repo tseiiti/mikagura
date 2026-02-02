@@ -75,6 +75,20 @@
               </a>
               <ul class="dropdown-menu px-3 px-md-2">
 
+                <!-- instrumentos ou idiomas -->
+                <li class="nav-item d-flex justify-content-center" title="selecionar entre instrumentos ou idiomas">
+                  <button class="nav-link " onclick="config.change(this)"
+                    value="1" name="mode" title="modo instrumentos" id="chk_inst">
+                    <i class="bi bi-file-earmark-music"></i>
+                  </button>
+                  <button class="nav-link " onclick="config.change(this)"
+                    value="2" name="mode" title="modo idiomas" id="chk_lang">
+                    <i class="bi bi-globe-americas"></i>
+                  </button>
+                </li>
+
+                <hr class="my-2 mx-0">
+
                 <!-- tamanho da fonte -->
                 <li class="nav-item" title="tamanho da letra, padrão 16px">
                   <a class="nav-link d-inline-block px-3 py-2 px-md-2 py-md-1" title="reduzir o tamanho das letras"
@@ -110,7 +124,7 @@
                 <!-- tempo de batidas por minuto -->
                 <li class="nav-item" title="tempo em batidas por minuto da faixa de marcação, padrão 60">
                   <div class="row py-1">
-                    <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">bpm</label>
+                    <label for="bpm_time" class="col-4 col-sm-3 col-md-6 pe-0">BPM</label>
                     <div class="col-4 col-sm-3 col-md-6 ps-0" title="alterar tempo de batidas por minuto">
                       <input class="form-control py-0 bpm_time" type="number" min="1" max="999"
                         id="bpm_time" name="bpm_time" onchange="config.change(this)">
@@ -161,7 +175,7 @@
 
                 <!-- ativa rolagem -->
                 <li class="nav-item" title="rolagem automática da tela para o ponto da faixa de marcação">
-                  <div class="form-check mx-1 my-1">
+                  <div class="form-check form-switch mx-1 my-1">
                     <input type="checkbox" class="form-check-input scroll" name="scroll"
                       id="scroll" onchange="config.toggle(this)">
                     <label class="form-check-label" for="scroll">rolagem</label>
@@ -170,16 +184,15 @@
 
                 <!-- ativa animação -->
                 <li class="nav-item" title="animação da faixa de marcação">
-                  <div class="form-check mx-1 my-1">
+                  <div class="form-check form-switch mx-1 my-1">
                     <input type="checkbox" class="form-check-input animation" name="animation"
                       id="animation" onchange="config.toggle(this)">
                     <label class="form-check-label" for="animation">animação</label>
                   </div>
                 </li>
 
-                <hr class="my-2 mx-0">
+                <!-- <hr class="my-2 mx-0">
 
-                <!-- instrumentos ou idiomas -->
                 <li class="nav-item" title="selecionar entre instrumentos ou idiomas">
                   <div class="dropdown-item form-check mx-2">
                     <input class="form-check-input" type="radio" name="mode" id="chk_inst"
@@ -191,7 +204,7 @@
                       value="2" onchange="config.change(this)">
                     <label class="form-check-label" for="chk_lang">idiomas</label>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </li>
 
