@@ -40,13 +40,13 @@ class Uta {
 
   static LANGUAGES = [
     'japanese',
-    'romaji',
-    'english',
-    'chinese',
-    'french',
-    'korean',
     'portuguese',
     'spanish',
+    'romaji',
+    'english',
+    'french',
+    'chinese',
+    'korean',
   ]
 
   constructor(hymn_id, mode, font_size, space_width, languages) {
