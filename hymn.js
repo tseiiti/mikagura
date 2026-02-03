@@ -28,6 +28,7 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
+      link_video: 'https://www.youtube.com/watch?v=EXnRiIIXV9c&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=7s',
       halfs:      [ 1, 3, 5, 7, 10, 13 ],
     }, {
       phrase:     'xtenri o no mikoto _',
@@ -67,6 +68,7 @@ const HYMN_ST = {
       fue:        '2     0 0 2 3   0 272 3 2',
       koto:       '4     4 4   3   3 454 3 4',
       size:       26,
+      link_video: 'https://www.youtube.com/watch?v=URPD4e9AjEk&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
       halfs:      [ 10, 12, 14 ],
     }, {
       phrase:     'ashiki no koto(o)wa iwandena',
@@ -183,6 +185,7 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
+      link_video: 'https://www.youtube.com/watch?v=18N1Ewc3Lbo&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
       halfs:      [ 1, 3, 5, 7, 10, 12, 14 ],
     }, {
       phrase:     'itiretsu sumashite xkanrodai _',
@@ -220,6 +223,7 @@ const HYMN_00 = {
   portuguese: 'Yorozuyo',
   spanish:    'Yorozuyo',
   size:       34,
+  link_video: 'https://www.youtube.com/watch?v=jH9HAR9NWN4&t=13s',
   paragraphs: [
     [ {
       phrase:     'yorozu yo no sekai itiretsu miharasedo',
@@ -546,7 +550,8 @@ const HYMN_01 = {
   korean:     '제一장',
   portuguese: 'Hino I',
   spanish:    'Himno I',
-  size:     32,
+  size:       32,
+  link_video: 'https://www.youtube.com/watch?v=l4PGnx07hUg&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, sho(o)gatsu(u)',
@@ -826,7 +831,8 @@ const HYMN_02 = {
   korean:     '제二장',
   portuguese: 'Hino II',
   spanish:    'Himno II',
-  size:     32,
+  size:       32,
+  link_video: 'https://www.youtube.com/watch?v=42iQ4C5b_qs&t=13s',
   paragraphs: [
     [ {
       phrase:     'ton ton(n) ton to sho(o)gatsu(u)',
@@ -978,7 +984,7 @@ const HYMN_02 = {
       size:       24,
       bolds:      [ 0, 1, 2 ],
     } ], [ {
-      phrase:     'nanatsu, nanju(u) o sukui agureba(a)',
+      phrase:     'nanatsu, nanjyu(u) o sukui agureba(a)',
       japanese:   '七ツ なんじふをすくひあぐれバ',
       romaji:     'nanatsu nanjū o sukui agureba',
       english:    'Seventh, If you help others who are suffering,',
@@ -1104,7 +1110,8 @@ const HYMN_03 = {
   korean:     '제三장',
   portuguese: 'Hino III',
   spanish:    'Himno III',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=na-ri-RkNuw&t=41s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -1538,7 +1545,8 @@ const HYMN_04 = {
   korean:     '제四장',
   portuguese: 'Hino IV',
   spanish:    'Himno IV',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=Ok2_30RocJg&t=32s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito ga nanigoto iwo(o) tomo',
@@ -1972,7 +1980,8 @@ const HYMN_05 = {
   korean:     '제五장',
   portuguese: 'Hino V',
   spanish:    'Himno V',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=4oXr0Y02GBg&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai no uti nareba',
@@ -2223,7 +2232,7 @@ const HYMN_05 = {
       bolds:      [ 0, 1, 2 ],
       halfs:      [ 1, 4 ],
     }, {
-      phrase:     'tasuke itijo no kono tokoro',
+      phrase:     'tasuke itijyo no kono tokoro',
       japanese:   'たすけいちじよのこのところ',
       romaji:     'tasuke ichijo no kono tokoro',
       english:    'Because this is the place of single-hearted salvation.',
@@ -2402,7 +2411,8 @@ const HYMN_06 = {
   korean:     '제六장',
   portuguese: 'Hino VI',
   spanish:    'Himno VI',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=ERuotqBmiog&t=41s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -2837,7 +2847,8 @@ const HYMN_07 = {
   korean:     '제七장',
   portuguese: 'Hino VII',
   spanish:    'Himno VII',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=t7x_c-0sonM&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hitokoto hanashi wa hinokishin',
@@ -3305,7 +3316,8 @@ const HYMN_08 = {
   korean:     '제八장',
   portuguese: 'Hino VIII',
   spanish:    'Himno VIII',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=eu6L_qP4Qy4&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai ya kuni naka ni',
@@ -3735,7 +3747,8 @@ const HYMN_09 = {
   korean:     '제九장',
   portuguese: 'Hino IX',
   spanish:    'Himno IX',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=PyZWEtuTAPo&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai o uti mawari',
@@ -3776,7 +3789,7 @@ const HYMN_09 = {
       koto:       '755 754 6 5 4 4 3 4 6 6',
       size:       24,
     } ], [ {
-      phrase:     'futatsu, fuju(u) naki yo ni shite yaro(o)',
+      phrase:     'futatsu, fujyu(u) naki yo ni shite yaro(o)',
       japanese:   '二ツ ふじゆうなきやうにしてやらう',
       romaji:     'futatsu fujū naki yo ni shite yarō',
       english:    'Second, Against any hardship I will protect you;',
@@ -4160,7 +4173,8 @@ const HYMN_10 = {
   korean:     '제十장',
   portuguese: 'Hino X',
   spanish:    'Himno X',
-  size:     29,
+  size:       29,
+  link_video: 'http://youtube.com/watch?v=Ui8-Qghx8ig&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -4592,7 +4606,8 @@ const HYMN_11 = {
   korean:     '제十一장',
   portuguese: 'Hino XI',
   spanish:    'Himno XI',
-  size:     31,
+  size:       31,
+  link_video: 'https://www.youtube.com/watch?v=sZEoR4J4tL0&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -4953,7 +4968,7 @@ const HYMN_11 = {
       size:       24,
       bolds:      [ 0, 1, 2 ],
     }, {
-      phrase:     'jubun mono(o) o tsukuri tori',
+      phrase:     'jyubun mono(o) o tsukuri tori',
       japanese:   'じふぶんものをつくりとり',
       romaji:     'jūbun mono o tsukuri tori',
       english:    'We reaped a sufficient harvest.',
@@ -5038,7 +5053,8 @@ const HYMN_12 = {
   korean:     '제十二장',
   portuguese: 'Hino XII',
   spanish:    'Himno XII',
-  size:     29,
+  size:       29,
+  link_video: 'https://www.youtube.com/watch?v=Gt9pTd7JFhU&t=13s',
   paragraphs: [
     [ {
       phrase:     'hitotsu, iti ni daiku no ukagai ni',

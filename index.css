@@ -37,18 +37,6 @@ h1 {
   margin-left: 0;
 }
 
-@media (min-width: 768px) {
-  * {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  }
-  .line:not(:first-child) {
-    margin-left: calc(var(--size) * 4);
-  }
-  .verse:not(:first-child) {
-    margin-left: calc(var(--size) * 2);
-  }
-}
-
 /* Largura das notas */
 .syllable {
   display: flex;
@@ -185,6 +173,20 @@ h1 {
 .bi-file-earmark-music::before       { background-image: url(image/file-earmark-music.svg); }
 .bi-globe-americas::before           { background-image: url(image/globe-americas.svg); }
 
+.bi-youtube::before {
+  background-image: url(image/youtube.svg);
+  /* vertical-align: -0.3em; */
+  width: 32px; height: 32px; background-size: 32px 32px;
+  filter: var(--color-danger);
+}
+
+.bi-collection-play-fill::before {
+  background-image: url(image/collection-play-fill.svg);
+  vertical-align: 0.6em;
+  width: 26px; height: 26px; background-size: 26px 26px;
+  filter: var(--color-danger);
+}
+
 .bi-zoom-in::before, .bi-zoom-out::before, .bi-arrows-collapse-vertical::before, .bi-arrows-expand-vertical::before {
   vertical-align: -.15em;
   width: 16px; height: 16px; background-size: 16px 16px;
@@ -206,12 +208,6 @@ h1 {
 }
 .checkbox-span {
   margin-right: var(--size-xs);
-}
-
-@media (min-width: 768px)  {
-  .open-on-hover:hover .dropdown-menu {
-    display: block;
-  }
 }
 
 .nav-link {
@@ -244,5 +240,26 @@ progress::-webkit-progress-value { background: #888; }
 
 audio {
   height: 24px;
-  width: 400px;
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  * {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  }
+  .line:not(:first-child) {
+    margin-left: calc(var(--size) * 4);
+  }
+  .verse:not(:first-child) {
+    margin-left: calc(var(--size) * 2);
+  }
+  .open-on-hover:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 860px) {
+  audio {
+    width: 400px;
+  }
 }

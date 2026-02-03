@@ -18,10 +18,10 @@ class Uta {
 
   static SEARCHES = [
     'kokonotsu,', 'tsu,', 'xkan', 'xten',
-    'nya', 'ryo', 'shi', 'sho', 'tsu', 'tya', 'tyo',
+    'jyo', 'jyu', 'nya', 'ryo', 'shi', 'sho', 'tsu', 'tya', 'tyo',
     '\\(a\\)', '\\(o\\)', '\\(e\\)', '\\(i\\)', '\\(u\\)', '\\(n\\)', 'do,', 'de,', 'ni,',
     'ba', 'bi', 'bo', 'bu', 'da', 'de', 'do', 'fu', 'ga', 'gi', 'go', 'gu', 'ha',
-    'hi', 'ho', 'ji', 'jo', 'ju', 'ka', 'ke', 'ki', 'ko', 'ku', 'ma', 'me', 'mi',
+    'hi', 'ho', 'ji', 'ka', 'ke', 'ki', 'ko', 'ku', 'ma', 'me', 'mi',
     'mo', 'mu', 'na', 'ne', 'ni', 'no', 'nu', 'pa', 'ra', 're', 'ri', 'ro', 'ru',
     'sa', 'se', 'so', 'su', 'ta', 'te', 'ti', 'to', 'wa', 'wo', 'xi', 'xn', 'xo',
     'ya', 'yo', 'yu', 'za', 'zo', 'zu',
@@ -85,7 +85,7 @@ class Uta {
     let html = ''
 
     if (this.hymn_id != 'hymn_st')
-      html += this.#get_audio(this.hymn_id)
+      html += this.#get_audio(this.hymn_id, this.hymn.link_video)
 
     let first = true
     html += '<div class="row">'
@@ -94,10 +94,11 @@ class Uta {
         html += `<div class="col-md-6 poem mt-4">`
         html += `<h4>${ this.hymn[key] } (${ key })</h4>`
         for (let i in this.hymn.paragraphs) {
-          if (this.hymn_id == 'hymn_st' && first)
-            html += this.#get_audio(`hymn_s${i}`, true)
-
           let stanza = this.hymn.paragraphs[i]
+
+          if (this.hymn_id == 'hymn_st' && first)
+            html += this.#get_audio(`hymn_s${i}`, stanza[0].link_video)
+
           html += this.#get_stanza(stanza, i, key)
         }
         html += '</div>'
@@ -266,11 +267,30 @@ class Uta {
   }
 
   // audio
-  #get_audio(src, short = false) {
+  #get_audio(src, link) {
     return `
-      <audio controls preload="none" ${ short ? 'class="mt-3 mb-2" style="width: 300px;"' : '' }>
+      <audio controls preload="none" class="me-3">
         <source src="audio/${ src }.mp3" type="audio/mpeg">
       </audio>
+
+      <a class="nav-link d-inline-block me-3" href="${ link }" target="_blank" title="vídeo youtube">
+        <i class="bi bi-youtube"></i>
+      </a>
+
+      <button type="button" class="btn p-0 border-0" data-bs-toggle="modal" data-bs-target="#video_modal"
+        title="video otefuri">
+        <i class="bi bi-collection-play-fill"></i>
+      </button>
+
+      <div class="modal fade" id="video_modal" tabindex="-1" aria-labelledby="video_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <video height="auto" width="100%" controls>
+              <source src="video/mk_00_yorozu_hashu_otefuri.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+        </div>
+      </div>
     `
   }
 }
