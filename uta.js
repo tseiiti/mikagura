@@ -269,24 +269,22 @@ class Uta {
   // audio
   #get_audio(src, link) {
     return `
-      <audio controls preload="none" class="me-3">
+      <audio controls preload="metadata" class="me-3">
         <source src="audio/${ src }.mp3" type="audio/mpeg">
       </audio>
-
-      <a class="nav-link d-inline-block me-3" href="${ link }" target="_blank" title="vídeo youtube">
+      <a class="nav-link d-inline-block me-3" href="${ link }" target="_blank" 
+          title="vídeo exemplo do youtube">
         <i class="bi bi-youtube"></i>
       </a>
-
-      <button type="button" class="btn p-0 border-0" data-bs-toggle="modal" data-bs-target="#video_modal"
-        title="video otefuri">
+      <button type="button" class="btn p-0 border-0" data-bs-toggle="modal" 
+          data-bs-target="#video_modal" title="video otefuri">
         <i class="bi bi-collection-play-fill"></i>
       </button>
-
       <div class="modal fade" id="video_modal" tabindex="-1" aria-labelledby="video_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
           <div class="modal-content">
-            <video height="auto" width="100%" controls>
-              <source src="video/mk_00_yorozu_hashu_otefuri.mp4" type="video/mp4" allowfullscreen>
+            <video controls preload="metadata" height="auto" width="100%">
+              <source src="video/${ src }.mp4" type="video/mp4" allowfullscreen>
             </video>
           </div>
         </div>

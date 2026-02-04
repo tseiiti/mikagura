@@ -48,8 +48,16 @@ class Config {
     })
     qs(`.menu-hymn-${ this.control.hymn_id }`).classList.add('active')
 
-    // atualiza html modo 1 (instrumentos)
-    if (this.control.mode == 1) {
+    if (this.control.mode == 2) {
+      // atualiza html modo 2 (idiomas)
+      qs('#chk_inst i').classList.remove('bi-white')
+      qs('#chk_lang i').classList.add('bi-white')
+
+      qs('#video_modal').addEventListener('hidden.bs.modal', event => {
+        qs('video').pause()
+      })
+    } else {
+      // atualiza html modo 1 (instrumentos)
       this.fill = new Fill(this)
       qs('.fixed-bottom span.text-capitalize').innerHTML = ` ${ this.hymn.title }`
 
@@ -63,9 +71,6 @@ class Config {
 
       qs('#chk_inst i').classList.add('bi-white')
       qs('#chk_lang i').classList.remove('bi-white')
-    } else {
-      qs('#chk_inst i').classList.remove('bi-white')
-      qs('#chk_lang i').classList.add('bi-white')
     }
   }
 
