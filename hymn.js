@@ -28,7 +28,8 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
-      link_video: 'https://www.youtube.com/watch?v=EXnRiIIXV9c&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=7s',
+      link_1:     'https://www.youtube.com/watch?v=EXnRiIIXV9c&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=7s',
+      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE&t=7s',
       halfs:      [ 1, 3, 5, 7, 10, 13 ],
     }, {
       phrase:     'xtenri o no mikoto _',
@@ -68,7 +69,8 @@ const HYMN_ST = {
       fue:        '2     0 0 2 3   0 272 3 2',
       koto:       '4     4 4   3   3 454 3 4',
       size:       26,
-      link_video: 'https://www.youtube.com/watch?v=URPD4e9AjEk&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
+      link_1:     'https://www.youtube.com/watch?v=URPD4e9AjEk&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
+      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE',
       halfs:      [ 10, 12, 14 ],
     }, {
       phrase:     'ashiki no koto(o)wa iwandena',
@@ -185,7 +187,8 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
-      link_video: 'https://www.youtube.com/watch?v=18N1Ewc3Lbo&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
+      link_1:     'https://www.youtube.com/watch?v=18N1Ewc3Lbo&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
+      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE',
       halfs:      [ 1, 3, 5, 7, 10, 12, 14 ],
     }, {
       phrase:     'itiretsu sumashite xkanrodai _',
@@ -223,7 +226,7 @@ const HYMN_00 = {
   portuguese: 'Yorozuyo',
   spanish:    'Yorozuyo',
   size:       34,
-  link_video: 'https://www.youtube.com/watch?v=jH9HAR9NWN4&t=13s',
+  links:      [ { link: 'jH9HAR9NWN4', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'yorozu yo no sekai itiretsu miharasedo',
@@ -551,7 +554,7 @@ const HYMN_01 = {
   portuguese: 'Hino I',
   spanish:    'Himno I',
   size:       32,
-  link_video: 'https://www.youtube.com/watch?v=l4PGnx07hUg&t=13s',
+  links:      [ { link: 'l4PGnx07hUg', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, sho(o)gatsu(u)',
@@ -832,7 +835,7 @@ const HYMN_02 = {
   portuguese: 'Hino II',
   spanish:    'Himno II',
   size:       32,
-  link_video: 'https://www.youtube.com/watch?v=42iQ4C5b_qs&t=13s',
+  links:      [ { link: '42iQ4C5b_qs', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'ton ton(n) ton to sho(o)gatsu(u)',
@@ -1111,7 +1114,7 @@ const HYMN_03 = {
   portuguese: 'Hino III',
   spanish:    'Himno III',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=na-ri-RkNuw&t=41s',
+  links:      [ { link: 'na-ri-RkNuw', start: 41 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -1546,7 +1549,7 @@ const HYMN_04 = {
   portuguese: 'Hino IV',
   spanish:    'Himno IV',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=Ok2_30RocJg&t=32s',
+  links:      [ { link: 'Ok2_30RocJg', start: 32 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito ga nanigoto iwo(o) tomo',
@@ -1981,7 +1984,7 @@ const HYMN_05 = {
   portuguese: 'Hino V',
   spanish:    'Himno V',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=4oXr0Y02GBg&t=13s',
+  links:      [ { link: '4oXr0Y02GBg', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai no uti nareba',
@@ -2412,7 +2415,7 @@ const HYMN_06 = {
   portuguese: 'Hino VI',
   spanish:    'Himno VI',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=ERuotqBmiog&t=41s',
+  links:      [ { link: 'ERuotqBmiog', start: 41 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -2848,7 +2851,7 @@ const HYMN_07 = {
   portuguese: 'Hino VII',
   spanish:    'Himno VII',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=t7x_c-0sonM&t=13s',
+  links:      [ { link: 't7x_c-0sonM', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hitokoto hanashi wa hinokishin',
@@ -3317,7 +3320,7 @@ const HYMN_08 = {
   portuguese: 'Hino VIII',
   spanish:    'Himno VIII',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=eu6L_qP4Qy4&t=13s',
+  links:      [ { link: 'eu6L_qP4Qy4', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai ya kuni naka ni',
@@ -3748,7 +3751,7 @@ const HYMN_09 = {
   portuguese: 'Hino IX',
   spanish:    'Himno IX',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=PyZWEtuTAPo&t=13s',
+  links:      [ { link: 'PyZWEtuTAPo', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai o uti mawari',
@@ -4174,7 +4177,7 @@ const HYMN_10 = {
   portuguese: 'Hino X',
   spanish:    'Himno X',
   size:       29,
-  link_video: 'http://youtube.com/watch?v=Ui8-Qghx8ig&t=13s',
+  links:      [ { link: 'Qghx8ig', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -4607,7 +4610,7 @@ const HYMN_11 = {
   portuguese: 'Hino XI',
   spanish:    'Himno XI',
   size:       31,
-  link_video: 'https://www.youtube.com/watch?v=sZEoR4J4tL0&t=13s',
+  links:      [ { link: 'sZEoR4J4tL0', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -5054,7 +5057,7 @@ const HYMN_12 = {
   portuguese: 'Hino XII',
   spanish:    'Himno XII',
   size:       29,
-  link_video: 'https://www.youtube.com/watch?v=Gt9pTd7JFhU&t=13s',
+  links:      [ { link: 'Gt9pTd7JFhU', start: 13 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, iti ni daiku no ukagai ni',

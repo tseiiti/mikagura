@@ -293,4 +293,4 @@ class Uta {
   }
 }
 
-// <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/na-ri-RkNuw?start=13" frameborder="0"></iframe>
+// <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/na-ri-RkNuw?start=13&autoplay=1" frameborder="0"></iframe>
