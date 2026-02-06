@@ -185,7 +185,7 @@ universal-access-circle
  */
 .bi-youtube::before {
   background-image: url(image/youtube.svg);
-  /* vertical-align: -0.3em; */
+  vertical-align: .5em;
   width: 32px; height: 32px; background-size: 32px 32px;
   filter: var(--color-danger);
 }
@@ -193,7 +193,7 @@ universal-access-circle
 .bi-collection-play-fill::before {
   background-image: url(image/collection-play-fill.svg);
   vertical-align: 0.6em;
-  width: 26px; height: 26px; background-size: 26px 26px;
+  width: 28px; height: 28px; background-size: 28px 28px;
   filter: var(--color-danger);
 }
 

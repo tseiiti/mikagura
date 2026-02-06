@@ -53,9 +53,9 @@ class Config {
       qs('#chk_inst i').classList.remove('bi-white')
       qs('#chk_lang i').classList.add('bi-white')
 
-      qs('#video_modal').addEventListener('hidden.bs.modal', event => {
-        qs('video').pause()
-      })
+      // qs('#video_modal').addEventListener('hidden.bs.modal', event => {
+      //   qs('video').pause()
+      // })
     } else {
       // atualiza html modo 1 (instrumentos)
       this.fill = new Fill(this)
@@ -143,6 +143,17 @@ class Config {
 
     // if (qs('#chk_lang').checked)
     //   this.set_hymn()
+  }
+
+  video(e) {
+    qs('#video_modal iframe').src = e.dataset.url
+    // '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/VTuRvBWq1kE?start=7&autoplay=1&origin=http://example.com" frameborder="0"></iframe>'
+    // `
+    //         <video controls preload="metadata" height="auto" width="100%">
+    //           <source src="video/${ src }.mp4" type="video/mp4" allowfullscreen>
+    //         </video>`
+    let modal = new bootstrap.Modal('#video_modal')
+    modal.show()
   }
 
   /////////////////////////////////////////////////////////////////////////////

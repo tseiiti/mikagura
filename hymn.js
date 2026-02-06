@@ -28,8 +28,7 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
-      link_1:     'https://www.youtube.com/watch?v=EXnRiIIXV9c&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=7s',
-      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE&t=7s',
+      links:      [ { link: 'EXnRiIIXV9c', start: 100 } ],
       halfs:      [ 1, 3, 5, 7, 10, 13 ],
     }, {
       phrase:     'xtenri o no mikoto _',
@@ -57,7 +56,7 @@ const HYMN_ST = {
       romaji:     'Choto hanashi Kami no yū koto kiite kure',
       english:    'Just a word: Listen to what God says.',
       chinese:    '君且細聽神所言',
-      french:     "Voici: Dieu a quelque chose à vous dire. Prêtez l’oreille!",
+      french:     "Voici: Dieu a quelque chose à vous dire. Prêtez l'oreille!",
       korean:     '잠깐 이야기 천신의 말을 들어다오',
       portuguese: 'Uma palavra! Escutem o que Deus diz,',
       spanish:    '¡Sólo unas palabras! Escuchad lo que Dios os dice:',
@@ -69,8 +68,7 @@ const HYMN_ST = {
       fue:        '2     0 0 2 3   0 272 3 2',
       koto:       '4     4 4   3   3 454 3 4',
       size:       26,
-      link_1:     'https://www.youtube.com/watch?v=URPD4e9AjEk&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
-      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE',
+      links:      [ { link: 'URPD4e9AjEk', start: 345 } ],
       halfs:      [ 10, 12, 14 ],
     }, {
       phrase:     'ashiki no koto(o)wa iwandena',
@@ -78,7 +76,7 @@ const HYMN_ST = {
       romaji:     'Ashiki no koto wa iwan dena',
       english:    'I never tell you anything wrong.',
       chinese:    '邪惡事情決不談',
-      french:     "Car jamais Je ne vous dis rien d’erroné.",
+      french:     "Car jamais Je ne vous dis rien d'erroné.",
       korean:     '그릇된 말은 아닐것이니',
       portuguese: 'pois não lhes digo nada que seja mal.',
       spanish:    'No os diré nada malo.',
@@ -97,7 +95,7 @@ const HYMN_ST = {
       romaji:     'Kono yō no ji to ten to o katadorite',
       english:    'Representing heaven and earth',
       chinese:    '仿照天地',
-      french:     "A l’image du ciel et de la terre de ce monde,",
+      french:     "A l'image du ciel et de la terre de ce monde,",
       korean:     '이 세상 땅과 하늘의 본을 받아서',
       portuguese: 'Modelando pela terra e céu do mundo,',
       spanish:    'Tomando como modelo la tierra y el cielo del mundo,',
@@ -116,7 +114,7 @@ const HYMN_ST = {
       romaji:     'Fūfu o koshirae kitaru dena',
       english:    'I have created husband and wife.',
       chinese:    '造夫婦',
-      french:     "J’ai créé l’homme et la femme:",
+      french:     "J'ai créé l'homme et la femme:",
       korean:     '부부를 점지하여 왔었으므로',
       portuguese: 'Eu tenho criado marido e mulher.',
       spanish:    'he creado a los esposos.',
@@ -135,7 +133,7 @@ const HYMN_ST = {
       romaji:     'Kore wa kono yo no hajime dashi',
       english:    'This is the beginning of the world.',
       chinese:    '此乃人世之開端',
-      french:     "C’est ainsi que fut commencé ce monde.",
+      french:     "C'est ainsi que fut commencé ce monde.",
       korean:     '이것이 이 세상의 시초이니라',
       portuguese: 'Isto é o princípio deste mundo.',
       spanish:    'Este es el comienzo del mundo.',
@@ -175,7 +173,7 @@ const HYMN_ST = {
       romaji:     'Ashiki o harōte, tasuke sekikomu',
       english:    'Sweeping away evils, hasten to save us.',
       chinese:    '去惡拯救神急待',
-      french:     "J’ai hâte de balayer vos maux, J’ai hâte de vous sauver.",
+      french:     "J'ai hâte de balayer vos maux, J'ai hâte de vous sauver.",
       korean:     '악한 것을 제거하고 도움을 서두르니',
       portuguese: 'Limpando os males, apressamos a salvação.',
       spanish:    'Limpiando los males, me apresuro a salvaros.',
@@ -187,8 +185,7 @@ const HYMN_ST = {
       fue:        '2  00  35  30 27',
       koto:       '4  44  32  33 45',
       size:       16,
-      link_1:     'https://www.youtube.com/watch?v=18N1Ewc3Lbo&list=PLBwfTQ0BeczIYhEwsINA7nuoXgq9gyEv5&t=4s',
-      link_2:     'https://www.youtube.com/watch?v=VTuRvBWq1kE',
+      links:      [ { link: '18N1Ewc3Lbo', start: 119 } ],
       halfs:      [ 1, 3, 5, 7, 10, 12, 14 ],
     }, {
       phrase:     'itiretsu sumashite xkanrodai _',
@@ -226,7 +223,7 @@ const HYMN_00 = {
   portuguese: 'Yorozuyo',
   spanish:    'Yorozuyo',
   size:       34,
-  links:      [ { link: 'jH9HAR9NWN4', start: 13 } ],
+  links:      [ { link: 'jH9HAR9NWN4', start: 16, end: 285 } ],
   paragraphs: [
     [ {
       phrase:     'yorozu yo no sekai itiretsu miharasedo',
@@ -554,7 +551,7 @@ const HYMN_01 = {
   portuguese: 'Hino I',
   spanish:    'Himno I',
   size:       32,
-  links:      [ { link: 'l4PGnx07hUg', start: 13 } ],
+  links:      [ { link: 'l4PGnx07hUg', start: 17, end: 174 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, sho(o)gatsu(u)',
@@ -835,7 +832,7 @@ const HYMN_02 = {
   portuguese: 'Hino II',
   spanish:    'Himno II',
   size:       32,
-  links:      [ { link: '42iQ4C5b_qs', start: 13 } ],
+  links:      [ { link: '42iQ4C5b_qs', start: 16, end: 184 } ],
   paragraphs: [
     [ {
       phrase:     'ton ton(n) ton to sho(o)gatsu(u)',
@@ -1114,7 +1111,7 @@ const HYMN_03 = {
   portuguese: 'Hino III',
   spanish:    'Himno III',
   size:       29,
-  links:      [ { link: 'na-ri-RkNuw', start: 41 } ],
+  links:      [ { link: 'na-ri-RkNuw', start: 43, end: 337 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -1549,7 +1546,7 @@ const HYMN_04 = {
   portuguese: 'Hino IV',
   spanish:    'Himno IV',
   size:       29,
-  links:      [ { link: 'Ok2_30RocJg', start: 32 } ],
+  links:      [ { link: 'Ok2_30RocJg', start: 36, end: 328 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito ga nanigoto iwo(o) tomo',
@@ -1984,7 +1981,7 @@ const HYMN_05 = {
   portuguese: 'Hino V',
   spanish:    'Himno V',
   size:       29,
-  links:      [ { link: '4oXr0Y02GBg', start: 13 } ],
+  links:      [ { link: '4oXr0Y02GBg', start: 17, end: 290 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai no uti nareba',
@@ -2415,7 +2412,7 @@ const HYMN_06 = {
   portuguese: 'Hino VI',
   spanish:    'Himno VI',
   size:       29,
-  links:      [ { link: 'ERuotqBmiog', start: 41 } ],
+  links:      [ { link: 'ERuotqBmiog', start: 43, end: 314 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -2851,7 +2848,7 @@ const HYMN_07 = {
   portuguese: 'Hino VII',
   spanish:    'Himno VII',
   size:       29,
-  links:      [ { link: 't7x_c-0sonM', start: 13 } ],
+  links:      [ { link: 't7x_c-0sonM', start: 16, end: 340 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hitokoto hanashi wa hinokishin',
@@ -3320,7 +3317,7 @@ const HYMN_08 = {
   portuguese: 'Hino VIII',
   spanish:    'Himno VIII',
   size:       29,
-  links:      [ { link: 'eu6L_qP4Qy4', start: 13 } ],
+  links:      [ { link: 'eu6L_qP4Qy4', start: 16, end: 312 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai ya kuni naka ni',
@@ -3751,7 +3748,7 @@ const HYMN_09 = {
   portuguese: 'Hino IX',
   spanish:    'Himno IX',
   size:       29,
-  links:      [ { link: 'PyZWEtuTAPo', start: 13 } ],
+  links:      [ { link: 'PyZWEtuTAPo', start: 16, end: 281 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hiroi sekai o uti mawari',
@@ -4177,7 +4174,7 @@ const HYMN_10 = {
   portuguese: 'Hino X',
   spanish:    'Himno X',
   size:       29,
-  links:      [ { link: 'Qghx8ig', start: 13 } ],
+  links:      [ { link: 'Ui8-Qghx8ig', start: 16, end: 280 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hito no kokoro to yu(u) mono wa',
@@ -4610,7 +4607,7 @@ const HYMN_11 = {
   portuguese: 'Hino XI',
   spanish:    'Himno XI',
   size:       31,
-  links:      [ { link: 'sZEoR4J4tL0', start: 13 } ],
+  links:      [ { link: 'sZEoR4J4tL0', start: 16, end: 290 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, hi no moto shoyashiki no',
@@ -5057,7 +5054,7 @@ const HYMN_12 = {
   portuguese: 'Hino XII',
   spanish:    'Himno XII',
   size:       29,
-  links:      [ { link: 'Gt9pTd7JFhU', start: 13 } ],
+  links:      [ { link: 'Gt9pTd7JFhU', start: 17, end: 277 } ],
   paragraphs: [
     [ {
       phrase:     'hitotsu, iti ni daiku no ukagai ni',

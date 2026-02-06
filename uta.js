@@ -85,7 +85,7 @@ class Uta {
     let html = ''
 
     if (this.hymn_id != 'hymn_st')
-      html += this.#get_audio(this.hymn_id, this.hymn.link_video)
+      html += this.#get_audio(this.hymn_id, this.hymn.links)
 
     let first = true
     html += '<div class="row">'
@@ -97,7 +97,7 @@ class Uta {
           let stanza = this.hymn.paragraphs[i]
 
           if (this.hymn_id == 'hymn_st' && first)
-            html += this.#get_audio(`hymn_s${i}`, stanza[0].link_video)
+            html += this.#get_audio(`hymn_s${i}`, stanza[0].links)
 
           html += this.#get_stanza(stanza, i, key)
         }
@@ -267,30 +267,43 @@ class Uta {
   }
 
   // audio
-  #get_audio(src, link) {
-    return `
+  #get_audio(id, links) {
+    let html = `
       <audio controls preload="metadata" class="me-3">
-        <source src="audio/${ src }.mp3" type="audio/mpeg">
-      </audio>
-      <a class="nav-link d-inline-block me-3" href="${ link }" target="_blank" 
-          title="vídeo exemplo do youtube">
+        <source src="audio/${ id }.mp3" type="audio/mpeg">
+      </audio>`
+
+    html += `
+      <button type="button" class="btn p-0 border-0 me-3" data-bs-toggle="modal" 
+          data-bs-target="#video_modal_${ id }_1" title="video otefuri">
         <i class="bi bi-youtube"></i>
-      </a>
+      </button>
+      <div class="modal fade" id="video_modal_${ id }_1" tabindex="-1" aria-labelledby="label_modal_${ id }_1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="ratio ratio-16x9">
+              <iframe id="yt_${ id }_1" type="text/html" 
+                src="https://www.youtube.com/embed/${ links[0].link }?start=${ links[0].start }&end=${ links[0].end }&autoplay=1" 
+                frameborder="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>`
+    
+    html += `
       <button type="button" class="btn p-0 border-0" data-bs-toggle="modal" 
-          data-bs-target="#video_modal" title="video otefuri">
+          data-bs-target="#video_modal_${ id }_2" title="video otefuri">
         <i class="bi bi-collection-play-fill"></i>
       </button>
-      <div class="modal fade" id="video_modal" tabindex="-1" aria-labelledby="video_modal_label" aria-hidden="true">
+      <div class="modal fade" id="video_modal_${ id }_2" tabindex="-1" aria-labelledby="label_modal_${ id }_1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
           <div class="modal-content">
             <video controls preload="metadata" height="auto" width="100%">
-              <source src="video/${ src }.mp4" type="video/mp4" allowfullscreen>
+              <source src="video/${ id }.mp4" type="video/mp4" >
             </video>
           </div>
         </div>
-      </div>
-    `
+      </div>`
+    return html
   }
 }
-
-// <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/na-ri-RkNuw?start=13&autoplay=1" frameborder="0"></iframe>
