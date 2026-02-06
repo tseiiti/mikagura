@@ -275,37 +275,32 @@ export class Uta {
         <source src="audio/${ id }.mp3" type="audio/mpeg">
       </audio>`
 
-    html += `
-      <button type="button" class="btn p-0 border-0 me-3" data-bs-toggle="modal" 
-          data-bs-target="#video_modal_${ id }_1" title="demonstração da dança otefuri">
-        <i class="bi bi-youtube"></i>
-      </button>
-      <div class="modal fade" id="video_modal_${ id }_1" aria-labelledby="label_modal_${ id }_1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <div class="ratio ratio-16x9">
-              <iframe id="yt_${ id }_1" type="text/html" 
-                src="https://www.youtube.com/embed/${ links[0].link }?start=${ links[0].start }&end=${ links[0].end }&autoplay=1" 
-                frameborder="0"></iframe>
-            </div>
-          </div>
-        </div>
+    let content = `
+      <div class="ratio ratio-16x9">
+        <iframe id="yt_${ id }_1" type="text/html"
+          src="https://www.youtube.com/embed/${ links[0].link }?start=${ links[0].start }&end=${ links[0].end }&autoplay=1"
+          frameborder="0"></iframe>
       </div>`
-    
-    html += `
-      <button type="button" class="btn p-0 border-0" data-bs-toggle="modal" 
-          data-bs-target="#video_modal_${ id }_2" title="canto com acompanhamento do texto">
-        <i class="bi bi-collection-play-fill"></i>
-      </button>
-      <div class="modal fade" id="video_modal_${ id }_2" aria-labelledby="label_modal_${ id }_1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <video controls preload="metadata" height="auto" width="100%">
-              <source src="video/${ id }.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>`
+    html += this.#get_modal(id, 1, 'canto com acompanhamento do texto', 'film', content)
+
+    content = `
+      <video controls preload="metadata" height="auto" width="100%">
+        <source src="video/${ id }.mp4" type="video/mp4">
+      </video>`
+    html += this.#get_modal(id, 2, 'canto com acompanhamento do texto', 'translate', content)
     return html
+  }
+
+  #get_modal(id, i, title, icon, content) {
+    return `
+      <button type="button" class="btn p-0 border-0 me-2" data-bs-toggle="modal"
+          data-bs-target="#video_modal_${ id }_${ i }" title="${ title }">
+        <i class="bi bi-${ icon }"></i>
+      </button>
+      <div class="modal fade" id="video_modal_${ id }_${ i }" aria-labelledby="label_modal_${ id }_${ i }" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">${ content }</div>
+        </div>
+      </div>`
   }
 }

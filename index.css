@@ -172,27 +172,11 @@ h1 {
 .bi-zoom-out::before                 { background-image: url(image/zoom-out.svg); }
 .bi-file-earmark-music::before       { background-image: url(image/file-earmark-music.svg); }
 .bi-globe-americas::before           { background-image: url(image/globe-americas.svg); }
-/* 
-boombox
-camera-reels
-disc
-film
-file-earmark-slides
-file-earmark-music
-music-note-list
-translate
-universal-access-circle
- */
-.bi-youtube::before {
-  background-image: url(image/youtube.svg);
-  vertical-align: .5em;
-  width: 32px; height: 32px; background-size: 32px 32px;
-  filter: var(--color-danger);
-}
+.bi-film::before                     { background-image: url(image/film.svg); }
+.bi-translate::before                { background-image: url(image/translate.svg); }
 
-.bi-collection-play-fill::before {
-  background-image: url(image/collection-play-fill.svg);
-  vertical-align: 0.6em;
+.bi-film::before, .bi-translate::before {
+  vertical-align: .5em;
   width: 28px; height: 28px; background-size: 28px 28px;
   filter: var(--color-danger);
 }
